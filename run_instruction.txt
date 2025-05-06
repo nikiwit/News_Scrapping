@@ -1,0 +1,7 @@
+cd business_news
+python main.py --mode once  # For a single run
+python main.py --mode schedule  # To run every 30 minutes
+
+cd it_news
+python main.py --mode once  # For a single run
+python main.py --mode schedule  # To run every 30 minutes
