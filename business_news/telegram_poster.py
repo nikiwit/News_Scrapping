@@ -12,7 +12,7 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.FileHandler("business_telegram.log"),
+        logging.FileHandler("business_news/logs/business_telegram.log"),
         logging.StreamHandler()
     ]
 )

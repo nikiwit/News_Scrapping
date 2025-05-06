@@ -1,146 +1,107 @@
-## llm_processor.py
+# business_llm_processor.py
 import os
 import json
 import logging
-import requests
+import openai
 from pathlib import Path
 
 from config import LLM_API_KEY, LLM_API_URL, NEWS_DIR
 from prompts import (
-    STARTUPS_NEWS_PROMPT, ENTREPRENEURSHIP_NEWS_PROMPT, 
-    BUSINESS_NEWS_PROMPT, SILICON_VALLEY_NEWS_PROMPT
+    STARTUPS_NEWS_PROMPT,
+    ENTREPRENEURSHIP_NEWS_PROMPT,
+    BUSINESS_NEWS_PROMPT,
+    SILICON_VALLEY_NEWS_PROMPT
 )
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler("business_llm.log"),
+        logging.FileHandler("business_news/logs/business_llm.log"),
         logging.StreamHandler()
     ]
 )
 logger = logging.getLogger(__name__)
 
+# Initialize OpenAI (AIMLAPI) client
+openai.api_key  = "cc7a53d5d84a486695240b9f1576b91d"
+openai.api_base = "https://api.aimlapi.com/v1"
+
 class LLMProcessor:
-    def __init__(self, api_key=LLM_API_KEY, api_url=LLM_API_URL):
-        self.api_key = api_key
-        self.api_url = api_url
-        
+    def __init__(self):
+        pass
+
     def get_prompt_for_category(self, category):
-        """Select the appropriate prompt based on article category"""
-        category_prompts = {
+        """Select the appropriate prompt based on article category."""
+        return {
             "startups": STARTUPS_NEWS_PROMPT,
             "entrepreneurship": ENTREPRENEURSHIP_NEWS_PROMPT,
             "business": BUSINESS_NEWS_PROMPT,
             "silicon_valley": SILICON_VALLEY_NEWS_PROMPT
-        }
-        return category_prompts.get(category, BUSINESS_NEWS_PROMPT)
-        
+        }.get(category, BUSINESS_NEWS_PROMPT)
+
     def format_article_with_llm(self, article):
-        """Process an article with the LLM API to create a formatted post"""
-        prompt_template = self.get_prompt_for_category(article.get("category", "business"))
-        
-        # Fill the prompt template with article data
-        prompt = prompt_template.format(
+        """Process an article with AIMLAPI to create a formatted post."""
+        prompt = self.get_prompt_for_category(article.get("category", "business")).format(
             title=article["title"],
             source=article["source"],
             url=article["url"],
             content=article["content"]
         )
-        
-        # Prepare the API request payload
-        # This example uses Anthropic's Claude API format; adjust for your chosen LLM
-        payload = {
-            "model": "claude-3-haiku-20240307",
-            "max_tokens": 1000,
-            "messages": [
-                {"role": "user", "content": prompt}
-            ]
-        }
-        
-        headers = {
-            "x-api-key": self.api_key,
-            "anthropic-version": "2023-06-01",
-            "content-type": "application/json"
-        }
-        
+
         try:
-            response = requests.post(
-                self.api_url,
-                json=payload,
-                headers=headers,
-                timeout=30
+            resp = openai.ChatCompletion.create(
+                model="gpt-4o",             # or another supported model
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=1000
             )
-            
-            if response.status_code == 200:
-                result = response.json()
-                formatted_text = result["content"][0]["text"]
-                return formatted_text
-            else:
-                logger.error(f"LLM API error: {response.status_code} - {response.text}")
-                # Fallback formatting if API fails
-                return self.create_fallback_format(article)
+            return resp.choices[0].message.content
+
         except Exception as e:
-            logger.error(f"Error processing article with LLM: {str(e)}")
+            logger.error(f"AIMLAPI error: {e}")
             return self.create_fallback_format(article)
-    
+
     def create_fallback_format(self, article):
-        """Create a basic formatted post if LLM processing fails"""
+        """Create a basic formatted post if LLM processing fails."""
         title = article["title"]
         source = article["source"]
         url = article["url"]
         category = article.get("category", "business")
-        
-        # Get first paragraph as summary
-        content_lines = article["content"].split("\n\n")
-        summary = content_lines[0] if content_lines else "No summary available"
-        
-        # Get emoji based on category
-        emoji_map = {
+
+        summary = article["content"].split("\n\n")[0] or "No summary available"
+        emoji = {
             "startups": "🚀",
             "entrepreneurship": "👨‍💼",
             "business": "📊",
             "silicon_valley": "💻"
-        }
-        emoji = emoji_map.get(category, "💼")
-        
-        # Format a basic post
-        formatted_text = (
+        }.get(category, "💼")
+
+        return (
             f"{emoji} <b>{title}</b>\n\n"
             f"{summary}\n\n"
             f"Read more: <a href='{url}'>{source}</a>"
         )
-        
-        return formatted_text
-        
+
     def process_news_file(self, news_file_path):
-        """Process all articles in a news file with LLM"""
-        processed_path = None
-        
+        """Process all articles in a news file with AIMLAPI."""
         try:
-            with open(news_file_path, 'r', encoding='utf-8') as file:
-                articles = json.load(file)
-                
-            processed_articles = []
-            
-            for article in articles:
-                logger.info(f"Processing article: {article['title']}")
-                formatted_text = self.format_article_with_llm(article)
-                
-                processed_article = article.copy()
-                processed_article["formatted_text"] = formatted_text
-                processed_articles.append(processed_article)
-                
-            # Save processed articles
-            processed_path = news_file_path.replace(".json", "_processed.json")
-            
-            with open(processed_path, 'w', encoding='utf-8') as file:
-                json.dump(processed_articles, file, ensure_ascii=False, indent=2)
-                
-            logger.info(f"Processed {len(processed_articles)} articles and saved to {processed_path}")
-            
+            with open(news_file_path, encoding="utf-8") as f:
+                articles = json.load(f)
+
+            processed = []
+            for art in articles:
+                logger.info(f"Processing article: {art['title']}")
+                art["formatted_text"] = self.format_article_with_llm(art)
+                processed.append(art)
+
+            out_path = Path(news_file_path).with_suffix(".processed.json")
+            with open(out_path, "w", encoding="utf-8") as f:
+                json.dump(processed, f, ensure_ascii=False, indent=2)
+
+            logger.info(f"Saved {len(processed)} formatted articles to {out_path}")
+            return str(out_path)
+
         except Exception as e:
-            logger.error(f"Error processing news file: {str(e)}")
-            
-        return processed_path
+            logger.error(f"Error processing news file: {e}")
+            return None
