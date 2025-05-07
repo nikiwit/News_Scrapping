@@ -26,3 +26,24 @@
 2025-05-07 07:28:14,590 - news_scraper - INFO - Found 0 articles on VentureBeat
 2025-05-07 07:28:14,590 - news_scraper - WARNING - No articles to save
 2025-05-07 07:28:14,590 - __main__ - ERROR - Failed to scrape news
+2025-05-07 08:08:21,759 - __main__ - INFO - Scraping TechCrunch...
+2025-05-07 08:08:23,896 - __main__ - INFO - Found 0 articles on TechCrunch
+2025-05-07 08:08:23,896 - __main__ - INFO - Scraping Forbes...
+2025-05-07 08:08:23,961 - __main__ - WARNING - Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-07 08:08:23,961 - __main__ - WARNING - Scraping not allowed for https://www.forbes.com/entrepreneurs/ according to robots.txt
+2025-05-07 08:08:23,961 - __main__ - INFO - Found 0 articles on Forbes
+2025-05-07 08:08:23,961 - __main__ - INFO - Scraping Inc....
+2025-05-07 08:08:24,871 - __main__ - WARNING - Failed to fetch https://www.inc.com/startups: HTTP 403
+2025-05-07 08:08:24,871 - __main__ - INFO - Found 0 articles on Inc.
+2025-05-07 08:08:24,871 - __main__ - INFO - Scraping Fast Company...
+2025-05-07 08:08:26,126 - __main__ - WARNING - Failed to fetch https://www.fastcompany.com/section/startups: HTTP 403
+2025-05-07 08:08:26,127 - __main__ - INFO - Found 0 articles on Fast Company
+2025-05-07 08:08:26,127 - __main__ - INFO - Scraping CNBC...
+2025-05-07 08:08:26,194 - __main__ - WARNING - Scraping not allowed for https://www.cnbc.com/entrepreneur/ according to robots.txt
+2025-05-07 08:08:26,194 - __main__ - INFO - Found 0 articles on CNBC
+2025-05-07 08:08:26,194 - __main__ - INFO - Scraping Business Insider...
+2025-05-07 08:08:26,981 - __main__ - WARNING - Failed to fetch https://www.businessinsider.com/prime/startups: HTTP 404
+2025-05-07 08:08:26,981 - __main__ - INFO - Found 0 articles on Business Insider
+2025-05-07 08:08:26,981 - __main__ - INFO - Scraping VentureBeat...
+2025-05-07 08:08:28,667 - __main__ - INFO - Found 0 articles on VentureBeat
+2025-05-07 08:08:28,667 - __main__ - WARNING - No articles to save
