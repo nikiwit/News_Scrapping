@@ -1,0 +1,70 @@
+2025-05-07 08:57:26,101 INFO Starting news scrape (past_hours=3)...
+2025-05-07 08:57:26,101 INFO Starting tech news scrape
+2025-05-07 08:57:26,102 INFO === Source: TechCrunch (since 2025-05-06T21:57:26.101650+00:00) ===
+2025-05-07 08:57:26,102 INFO Parsing RSS for TechCrunch
+2025-05-07 08:57:27,079 INFO Processing article 1/1 from TechCrunch
+2025-05-07 08:57:27,079 INFO Fetching article: https://techcrunch.com/2025/05/06/hugging-face-releases-a-free-operator-like-agentic-ai-tool/
+2025-05-07 08:57:29,141 INFO === Source: The Verge (since 2025-05-06T21:57:26.101650+00:00) ===
+2025-05-07 08:57:29,141 INFO Parsing RSS for The Verge
+2025-05-07 08:57:29,301 INFO Processing article 1/4 from The Verge
+2025-05-07 08:57:29,301 INFO Fetching article: https://www.theverge.com/news/662313/meme-coin-stablecoin-genius-act-corruption-trump
+2025-05-07 08:57:29,532 INFO Processing article 2/4 from The Verge
+2025-05-07 08:57:29,532 INFO Fetching article: https://www.theverge.com/news/662321/amazon-zoox-recall-robotaxi-las-vegas-crash-software-fix
+2025-05-07 08:57:31,830 INFO Processing article 3/4 from The Verge
+2025-05-07 08:57:31,830 INFO Fetching article: https://www.theverge.com/22985108/best-fitness-tracker
+2025-05-07 08:57:33,656 INFO Processing article 4/4 from The Verge
+2025-05-07 08:57:33,656 INFO Fetching article: https://www.theverge.com/news/662242/meta-nso-group-pegasus-whatsapp-hack-damages
+2025-05-07 08:57:35,526 INFO === Source: Wired (since 2025-05-06T21:57:26.101650+00:00) ===
+2025-05-07 08:57:35,527 INFO Parsing RSS for Wired
+2025-05-07 08:57:35,633 INFO === Source: Ars Technica (since 2025-05-06T21:57:26.101650+00:00) ===
+2025-05-07 08:57:35,633 INFO Parsing RSS for Ars Technica
+2025-05-07 08:57:36,379 INFO Saved 5 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/it_news
+2025-05-07 08:57:36,379 INFO Tech news scrape complete, found 5 new articles
+2025-05-07 08:57:36,379 INFO Tech news scrape complete, found 5 new articles
+2025-05-07 08:57:36,379 INFO Starting business news scrape
+2025-05-07 08:57:36,379 INFO === Source: Forbes (since 2025-05-06T21:57:36.379435+00:00) ===
+2025-05-07 08:57:36,379 INFO Parsing RSS for Forbes
+2025-05-07 08:57:36,768 INFO Processing article 1/6 from Forbes
+2025-05-07 08:57:36,768 INFO Fetching article: https://www.forbes.com/sites/erikkain/2025/05/06/todays-wordle-1418-hints-clues-and-answer-for-wednesday-may-7th/
+2025-05-07 08:57:36,825 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-07 08:57:36,825 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/erikkain/2025/05/06/todays-wordle-1418-hints-clues-and-answer-for-wednesday-may-7th/
+2025-05-07 08:57:36,825 INFO Processing article 2/6 from Forbes
+2025-05-07 08:57:36,825 INFO Fetching article: https://www.forbes.com/sites/veronicavillafane/2025/05/06/argentinas-the-eternaut-storms-to-no-1-on-netflix-global-top-10/
+2025-05-07 08:57:36,913 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-07 08:57:36,913 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/veronicavillafane/2025/05/06/argentinas-the-eternaut-storms-to-no-1-on-netflix-global-top-10/
+2025-05-07 08:57:36,914 INFO Processing article 3/6 from Forbes
+2025-05-07 08:57:36,914 INFO Fetching article: https://www.forbes.com/sites/timlammers/2025/05/06/will-there-be-a-season-2-of-tina-feys-the-four-seasons/
+2025-05-07 08:57:36,952 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-07 08:57:36,952 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/timlammers/2025/05/06/will-there-be-a-season-2-of-tina-feys-the-four-seasons/
+2025-05-07 08:57:36,952 INFO Processing article 4/6 from Forbes
+2025-05-07 08:57:36,952 INFO Fetching article: https://www.forbes.com/sites/timellis/2025/05/06/jannik-sinner-is-back-in-the-room-after-suspension-he-knows-rome-form-cant-be-built-in-a-day/
+2025-05-07 08:57:37,035 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-07 08:57:37,035 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/timellis/2025/05/06/jannik-sinner-is-back-in-the-room-after-suspension-he-knows-rome-form-cant-be-built-in-a-day/
+2025-05-07 08:57:37,035 INFO Processing article 5/6 from Forbes
+2025-05-07 08:57:37,035 INFO Fetching article: https://www.forbes.com/sites/antoniopequenoiv/2025/05/06/sean-diddy-combs-trial-underway-heres-what-to-know-about-his-federal-charges/
+2025-05-07 08:57:37,090 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-07 08:57:37,090 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/antoniopequenoiv/2025/05/06/sean-diddy-combs-trial-underway-heres-what-to-know-about-his-federal-charges/
+2025-05-07 08:57:37,090 INFO Processing article 6/6 from Forbes
+2025-05-07 08:57:37,090 INFO Fetching article: https://www.forbes.com/sites/danafeldman/2025/05/06/tina-fey-talks-truth-in-netflix-comedy-the-four-seasons/
+2025-05-07 08:57:37,155 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-07 08:57:37,155 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/danafeldman/2025/05/06/tina-fey-talks-truth-in-netflix-comedy-the-four-seasons/
+2025-05-07 08:57:37,155 INFO === Source: Business Insider (since 2025-05-06T21:57:36.379435+00:00) ===
+2025-05-07 08:57:37,155 INFO Parsing RSS for Business Insider
+2025-05-07 08:57:38,572 INFO Processing article 1/1 from Business Insider
+2025-05-07 08:57:38,572 INFO Fetching article: https://www.businessinsider.com/real-id-everything-you-need-to-know-2025-5
+2025-05-07 08:57:39,514 INFO === Source: Fast Company (since 2025-05-06T21:57:36.379435+00:00) ===
+2025-05-07 08:57:39,514 INFO Parsing RSS for Fast Company
+2025-05-07 08:57:39,843 INFO Processing article 1/3 from Fast Company
+2025-05-07 08:57:39,843 INFO Fetching article: https://www.fastcompany.com/91328709/ais-role-in-patient-centric-care
+2025-05-07 08:57:41,057 WARNING HTTP 403 for https://www.fastcompany.com/91328709/ais-role-in-patient-centric-care
+2025-05-07 08:57:41,058 INFO Processing article 2/3 from Fast Company
+2025-05-07 08:57:41,058 INFO Fetching article: https://www.fastcompany.com/91328691/social-media-is-more-important-than-you-may-realize
+2025-05-07 08:57:43,079 WARNING HTTP 403 for https://www.fastcompany.com/91328691/social-media-is-more-important-than-you-may-realize
+2025-05-07 08:57:43,080 INFO Processing article 3/3 from Fast Company
+2025-05-07 08:57:43,080 INFO Fetching article: https://www.fastcompany.com/91328670/skills-over-degrees
+2025-05-07 08:57:45,032 WARNING HTTP 403 for https://www.fastcompany.com/91328670/skills-over-degrees
+2025-05-07 08:57:45,033 INFO === Source: Inc. (since 2025-05-06T21:57:36.379435+00:00) ===
+2025-05-07 08:57:45,033 INFO Parsing RSS for Inc.
+2025-05-07 08:57:47,250 INFO Saved 10 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/business_news
+2025-05-07 08:57:47,250 INFO Business news scrape complete, found 10 new articles
+2025-05-07 08:57:47,250 INFO Business news scrape complete, found 10 new articles
