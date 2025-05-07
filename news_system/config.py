@@ -24,6 +24,7 @@ RATE_LIMIT_SECONDS = 2  # Time to wait between requests to the same domain
 DEFAULT_SCRAPE_INTERVAL_HOURS = 3  # Default time to look back for new articles
 
 # News sources configuration
+# News sources configuration
 TECH_NEWS_SOURCES = [
     {
         "name": "TechCrunch",
@@ -48,6 +49,102 @@ TECH_NEWS_SOURCES = [
         "rss_url": "https://feeds.arstechnica.com/arstechnica/index",
         "url": "https://arstechnica.com",
         "category": "it_news"
+    },
+    {
+        "name": "Hacker News",
+        "rss_url": "https://news.ycombinator.com/rss",
+        "url": "https://news.ycombinator.com",
+        "category": "it_news"
+    },
+    {
+        "name": "MIT Technology Review",
+        "rss_url": "https://www.technologyreview.com/feed/",
+        "url": "https://www.technologyreview.com",
+        "category": "it_news"
+    },
+    {
+        "name": "ZDNet",
+        "rss_url": "https://www.zdnet.com/news/rss.xml",
+        "url": "https://www.zdnet.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Mashable Tech",
+        "rss_url": "https://mashable.com/feeds/rss/tech",
+        "url": "https://mashable.com/tech",
+        "category": "it_news"
+    },
+    {
+        "name": "Engadget",
+        "rss_url": "https://www.engadget.com/rss.xml",
+        "url": "https://www.engadget.com",
+        "category": "it_news"
+    },
+    {
+        "name": "The Next Web",
+        "rss_url": "https://thenextweb.com/feed/",
+        "url": "https://thenextweb.com",
+        "category": "it_news"
+    },
+    {
+        "name": "ReadWrite",
+        "rss_url": "https://readwrite.com/feed/",
+        "url": "https://readwrite.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Slashdot",
+        "rss_url": "https://rss.slashdot.org/Slashdot/slashdotMain",
+        "url": "https://slashdot.org",
+        "category": "it_news"
+    },
+    {
+        "name": "VentureBeat",
+        "rss_url": "https://venturebeat.com/feed/",
+        "url": "https://venturebeat.com",
+        "category": "it_news"
+    },
+    {
+        "name": "TechRadar",
+        "rss_url": "https://www.techradar.com/rss",
+        "url": "https://www.techradar.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Gizmodo",
+        "rss_url": "https://gizmodo.com/rss",
+        "url": "https://gizmodo.com",
+        "category": "it_news"
+    },
+    {
+        "name": "CNET",
+        "rss_url": "https://www.cnet.com/rss/all/",
+        "url": "https://www.cnet.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Bleeping Computer",
+        "rss_url": "https://www.bleepingcomputer.com/feed/",
+        "url": "https://www.bleepingcomputer.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Tech Republic",
+        "rss_url": "https://www.techrepublic.com/rssfeeds/articles/",
+        "url": "https://www.techrepublic.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Digital Trends",
+        "rss_url": "https://www.digitaltrends.com/feed/",
+        "url": "https://www.digitaltrends.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Hackaday",
+        "rss_url": "https://hackaday.com/blog/feed/",
+        "url": "https://hackaday.com",
+        "category": "it_news"
     }
 ]
 
@@ -65,9 +162,9 @@ BUSINESS_NEWS_SOURCES = [
         "category": "business_news"
     },
     {
-        "name": "Fast Company",
-        "rss_url": "https://www.fastcompany.com/latest/rss",
-        "url": "https://www.fastcompany.com",
+        "name": "Entrepreneur Magazine",
+        "rss_url": "https://www.entrepreneur.com/latest.rss",
+        "url": "https://www.entrepreneur.com",
         "category": "business_news"
     },
     {
@@ -75,10 +172,107 @@ BUSINESS_NEWS_SOURCES = [
         "rss_url": "https://www.inc.com/rss.xml",
         "url": "https://www.inc.com",
         "category": "business_news"
+    },
+    {
+        "name": "Harvard Business Review",
+        "rss_url": "https://hbr.org/feed",
+        "url": "https://hbr.org",
+        "category": "business_news"
+    },
+    {
+        "name": "Reuters Business",
+        "rss_url": "https://feeds.reuters.com/reuters/businessNews",
+        "url": "https://www.reuters.com/business/",
+        "category": "business_news"
+    },
+    {
+        "name": "CNBC",
+        "rss_url": "https://www.cnbc.com/id/10000664/device/rss/rss.html",
+        "url": "https://www.cnbc.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Financial Times",
+        "rss_url": "https://www.ft.com/rss/home",
+        "url": "https://www.ft.com",
+        "category": "business_news"
+    },
+    {
+        "name": "The Economist",
+        "rss_url": "https://www.economist.com/business/rss.xml",
+        "url": "https://www.economist.com/business",
+        "category": "business_news"
+    },
+    {
+        "name": "Wall Street Journal",
+        "rss_url": "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml",
+        "url": "https://www.wsj.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Fortune",
+        "rss_url": "https://fortune.com/feed/",
+        "url": "https://fortune.com",
+        "category": "business_news"
+    },
+    {
+        "name": "The Hustle",
+        "rss_url": "https://thehustle.co/feed/",
+        "url": "https://thehustle.co",
+        "category": "business_news"
+    },
+    {
+        "name": "Quartz",
+        "rss_url": "https://qz.com/feed/",
+        "url": "https://qz.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Yahoo Finance",
+        "rss_url": "https://finance.yahoo.com/news/rssindex",
+        "url": "https://finance.yahoo.com",
+        "category": "business_news"
+    },
+    {
+        "name": "McKinsey Insights",
+        "rss_url": "https://www.mckinsey.com/insights/rss.aspx",
+        "url": "https://www.mckinsey.com/insights",
+        "category": "business_news"
+    },
+    {
+        "name": "Moz Blog",
+        "rss_url": "https://moz.com/blog/feed",
+        "url": "https://moz.com/blog",
+        "category": "business_news"
+    },
+    # New replacements for blocked sources
+    {
+        "name": "Finextra",
+        "rss_url": "https://www.finextra.com/rss/headlines.aspx",
+        "url": "https://www.finextra.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Banking Dive",
+        "rss_url": "https://www.bankingdive.com/feeds/news/",
+        "url": "https://www.bankingdive.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Payments Dive",
+        "rss_url": "https://www.paymentsdive.com/feeds/news/",
+        "url": "https://www.paymentsdive.com",
+        "category": "business_news"
+    },
+    {
+        "name": "The Financial Brand",
+        "rss_url": "https://thefinancialbrand.com/feed/",
+        "url": "https://thefinancialbrand.com",
+        "category": "business_news"
     }
 ]
 
-# All news sources combined (no lifestyle category anymore)
+# All news sources combined
 ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES
 
 # Telegram configuration for TWO SEPARATE BOTS

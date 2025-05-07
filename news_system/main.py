@@ -1,26 +1,21 @@
 #!/usr/bin/env python3
-# main.py - Main script for the news scraping and posting system (two bots version)
+# main.py - Main script for the news scraping and posting system (with per-run logging)
 
 import asyncio
-import logging
 import argparse
 import json
 import os
 import sys
+import logging
 from pathlib import Path
 from datetime import datetime, timezone
 import time
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s",
-    handlers=[
-        logging.FileHandler("news_system.log"),
-        logging.StreamHandler(sys.stdout)
-    ]
-)
-logger = logging.getLogger("NewsSystem")
+# Import our logging setup
+from logging_setup import setup_logging
+
+# Initialize the logger with individual log files for each run
+logger = setup_logging()
 
 # Import modules
 from scrapers.tech_news import TechNewsScraper
@@ -40,7 +35,14 @@ class NewsSystem:
         self.tech_scraper = TechNewsScraper()
         self.business_scraper = BusinessNewsScraper()
         self.bot_manager = NewsBotManager()
-        self.channel_manager = ChannelManager()
+        
+        # Initialize channel manager with appropriate category
+        if len(config.TELEGRAM_BOT_TOKENS) > 0:
+            default_category = next(iter(config.TELEGRAM_BOT_TOKENS.keys()))
+            self.channel_manager = ChannelManager(category=default_category)
+        else:
+            self.channel_manager = ChannelManager()
+            
         self.content_generator = ContentGenerator()
         
     async def setup_channels(self):
@@ -119,13 +121,29 @@ class NewsSystem:
         
         for cat in categories:
             logger.info(f"Processing category: {cat}")
-            data_dir = config.DATA_DIR / cat
             
-            if not data_dir.exists():
-                logger.warning(f"Data directory does not exist: {data_dir}")
+            # Find the latest date directory
+            date_dirs = sorted(list(config.DATA_DIR.glob("*_*_*")), key=lambda d: d.stat().st_mtime, reverse=True)
+            
+            if not date_dirs:
+                logger.warning(f"No date directories found for category: {cat}")
                 continue
                 
-            # Get latest article files
+            # Find the latest time directory within the latest date directory
+            time_dirs = sorted(list(date_dirs[0].glob("*")), key=lambda d: d.stat().st_mtime, reverse=True)
+            
+            if not time_dirs:
+                logger.warning(f"No time directories found in {date_dirs[0]}")
+                continue
+                
+            # Check if the category directory exists in the latest time directory
+            data_dir = time_dirs[0] / cat
+            
+            if not data_dir.exists():
+                logger.warning(f"No directory for category {cat} in {time_dirs[0]}")
+                continue
+                
+            # Get all article files
             article_files = sorted(
                 [f for f in data_dir.glob("extracted_*.json")],
                 key=lambda f: f.stat().st_mtime,
@@ -170,7 +188,7 @@ class NewsSystem:
                         time.sleep(2)
                         
                 except Exception as e:
-                    logger.error(f"Error posting article {file}: {e}")
+                    logger.error(f"Error posting article {file}: {e}", exc_info=True)
                     
         logger.info(f"Posted {posted} articles")
         return posted
@@ -218,14 +236,18 @@ class NewsSystem:
         
         while True:
             try:
+                # Create a new log file for this run
+                new_logger = setup_logging()
+                
                 # Scrape news
+                new_logger.info(f"Starting scheduled scrape run (interval={interval_hours}h, posts={posts_per_category})")
                 await self.scrape_all(interval_hours)
                 
                 # Post latest
                 await self.post_latest(posts_per_category)
                 
                 # Wait for next run
-                logger.info(f"Sleeping for {interval_hours} hours...")
+                new_logger.info(f"Sleeping for {interval_hours} hours...")
                 await asyncio.sleep(interval_hours * 3600)
                 
             except Exception as e:
