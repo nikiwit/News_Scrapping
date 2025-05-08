@@ -1,0 +1,382 @@
+2025-05-08 20:26:45,872 INFO Logging started. Log file: logs/20250508/202645.log
+2025-05-08 20:26:46,167 INFO Initialized EntrepreneurshipNewsScraper
+2025-05-08 20:26:46,167 INFO Starting news scrape (past_hours=3)...
+2025-05-08 20:26:46,167 INFO Starting tech news scrape
+2025-05-08 20:26:46,168 INFO === Source: The Verge (since 2025-05-08T11:47:59+00:00) ===
+2025-05-08 20:26:46,168 INFO Parsing RSS for The Verge
+2025-05-08 20:26:46,290 INFO === Source: TechCrunch (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:26:46,290 INFO Parsing RSS for TechCrunch
+2025-05-08 20:26:46,377 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/asking-chatbots-for-short-answers-can-increase-hallucinations-study-finds/
+2025-05-08 20:26:46,377 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/vc-firm-insight-partners-confirms-personal-data-stolen-during-january-hack/
+2025-05-08 20:26:46,377 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/hims-hers-ceo-turned-to-the-autonomous-vehicle-industry-to-find-an-ai-savvy-exec/
+2025-05-08 20:26:46,377 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/apple-urges-court-to-suspend-ruling-that-bars-it-from-taking-a-cut-on-external-app-payments/
+2025-05-08 20:26:46,377 INFO Processing article 1/1 from TechCrunch
+2025-05-08 20:26:46,377 INFO Fetching article: https://techcrunch.com/2025/05/08/reddit-intros-new-profile-tools-for-business-customers/
+2025-05-08 20:26:46,625 INFO === Source: Ars Technica (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:26:46,625 INFO Parsing RSS for Ars Technica
+2025-05-08 20:26:47,454 INFO === Source: Hacker News (since 2025-05-08T12:01:17+00:00) ===
+2025-05-08 20:26:47,454 INFO Parsing RSS for Hacker News
+2025-05-08 20:26:48,310 INFO === Source: The Register (since 2025-05-08T11:34:46+00:00) ===
+2025-05-08 20:26:48,310 INFO Parsing RSS for The Register
+2025-05-08 20:26:48,939 INFO === Source: ZDNet (since 2025-05-08T12:06:00+00:00) ===
+2025-05-08 20:26:48,939 INFO Parsing RSS for ZDNet
+2025-05-08 20:26:49,222 INFO === Source: VentureBeat (since 2025-05-08T12:20:00+00:00) ===
+2025-05-08 20:26:49,222 INFO Parsing RSS for VentureBeat
+2025-05-08 20:26:50,012 INFO === Source: GitHub Blog (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:26:50,013 INFO Parsing RSS for GitHub Blog
+2025-05-08 20:26:50,191 INFO === Source: Wired (since 2025-05-08T12:03:00+00:00) ===
+2025-05-08 20:26:50,191 INFO Parsing RSS for Wired
+2025-05-08 20:26:50,299 INFO === Source: MIT Technology Review (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:26:50,300 INFO Parsing RSS for MIT Technology Review
+2025-05-08 20:26:50,430 INFO Processing article 1/1 from MIT Technology Review
+2025-05-08 20:26:50,430 INFO Fetching article: https://www.technologyreview.com/2025/05/08/1116202/the-download-ai-benchmarks-and-spains-grid-blackout/
+2025-05-08 20:26:51,038 INFO === Source: Mashable Tech (since 2025-05-08T11:10:10+00:00) ===
+2025-05-08 20:26:51,038 INFO Parsing RSS for Mashable Tech
+2025-05-08 20:26:51,359 INFO === Source: Engadget (since 2025-05-08T12:00:44+00:00) ===
+2025-05-08 20:26:51,359 INFO Parsing RSS for Engadget
+2025-05-08 20:26:53,540 INFO === Source: The Next Web (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:26:53,540 INFO Parsing RSS for The Next Web
+2025-05-08 20:26:54,409 INFO === Source: ReadWrite (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:26:54,409 INFO Parsing RSS for ReadWrite
+2025-05-08 20:26:54,500 INFO === Source: Slashdot (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:26:54,500 INFO Parsing RSS for Slashdot
+2025-05-08 20:26:54,694 INFO === Source: TechRadar (since 2025-05-08T12:20:31+00:00) ===
+2025-05-08 20:26:54,694 INFO Parsing RSS for TechRadar
+2025-05-08 20:26:54,898 INFO Processing article 1/2 from TechRadar
+2025-05-08 20:26:54,898 INFO Fetching article: https://www.techradar.com/computing/artificial-intelligence/ive-tried-the-new-gemini-app-for-ipad-and-it-fits-the-larger-screen-size-perfectly
+2025-05-08 20:26:55,388 INFO Processing article 2/2 from TechRadar
+2025-05-08 20:26:55,388 INFO Fetching article: https://www.techradar.com/pro/security/lockbit-ransomware-gang-gets-hacked-leak-exposes-negotiations-with-victims
+2025-05-08 20:26:57,468 INFO === Source: Gizmodo (since 2025-05-08T12:10:55+00:00) ===
+2025-05-08 20:26:57,468 INFO Parsing RSS for Gizmodo
+2025-05-08 20:26:59,745 INFO === Source: CNET (since 2025-05-08T11:00:06+00:00) ===
+2025-05-08 20:26:59,745 INFO Parsing RSS for CNET
+2025-05-08 20:27:00,165 INFO === Source: Bleeping Computer (since 2025-05-08T11:19:58+00:00) ===
+2025-05-08 20:27:00,165 INFO Parsing RSS for Bleeping Computer
+2025-05-08 20:27:00,432 INFO === Source: Tech Republic (since 2025-05-08T12:00:18+00:00) ===
+2025-05-08 20:27:00,433 INFO Parsing RSS for Tech Republic
+2025-05-08 20:27:00,573 INFO === Source: Digital Trends (since 2025-05-08T03:56:49-07:00) ===
+2025-05-08 20:27:00,573 INFO Parsing RSS for Digital Trends
+2025-05-08 20:27:00,677 INFO === Source: Hackaday (since 2025-05-08T09:26:46.167878+00:00) ===
+2025-05-08 20:27:00,677 INFO Parsing RSS for Hackaday
+2025-05-08 20:27:00,855 INFO Skipping already scraped article: https://hackaday.com/2025/05/08/a-constant-fraction-discriminator-for-sub-nanosecond-timing/
+2025-05-08 20:27:00,857 INFO Saved 4 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/08_05_2025/2026/it_news
+2025-05-08 20:27:00,857 INFO Tech news scrape complete, found 4 new articles
+2025-05-08 20:27:00,857 INFO Tech news scrape complete, found 4 new articles
+2025-05-08 20:27:00,857 INFO Starting business news scrape
+2025-05-08 20:27:00,857 INFO === Source: Forbes (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:00,857 INFO Parsing RSS for Forbes
+2025-05-08 20:27:01,393 INFO Processing article 1/15 from Forbes
+2025-05-08 20:27:01,393 INFO Fetching article: https://www.forbes.com/sites/joanmacdonald/2025/05/08/lee-soo-man-the-king-of-k-pop-explores-origins-of-k-pop-culture/
+2025-05-08 20:27:01,473 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-08 20:27:01,473 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/joanmacdonald/2025/05/08/lee-soo-man-the-king-of-k-pop-explores-origins-of-k-pop-culture/
+2025-05-08 20:27:01,473 INFO Processing article 2/15 from Forbes
+2025-05-08 20:27:01,473 INFO Fetching article: https://www.forbes.com/sites/hughmcintyre/2025/05/08/tina-turners-decades-old-classic-is-a-hit-again-during-a-busy-week-for-the-singers-legacy/
+2025-05-08 20:27:01,519 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-08 20:27:01,520 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/hughmcintyre/2025/05/08/tina-turners-decades-old-classic-is-a-hit-again-during-a-busy-week-for-the-singers-legacy/
+2025-05-08 20:27:01,520 INFO Processing article 3/15 from Forbes
+2025-05-08 20:27:01,520 INFO Fetching article: https://www.forbes.com/sites/tristanlavalette/2025/05/08/why-jasprit-bumrah-should-succeed-rohit-sharma-as-indias-test-captain/
+2025-05-08 20:27:01,577 ERROR Error reading robots.txt for https://www.forbes.com: 'utf-8' codec can't decode byte 0x8b in position 1: invalid start byte
+2025-05-08 20:27:01,578 WARNING Disallowed by robots.txt: https://www.forbes.com/sites/tristanlavalette/2025/05/08/why-jasprit-bumrah-should-succeed-rohit-sharma-as-indias-test-captain/
+2025-05-08 20:27:01,578 INFO Processing article 4/15 from Forbes
+2025-05-08 20:27:01,578 INFO Fetching article: https://www.forbes.com/sites/dianehamilton/2025/05/08/new-ucla-study-on-improving-curiosity-what-it-misses-for-workplace-growth/
+2025-05-08 20:27:04,524 INFO Processing article 5/15 from Forbes
+2025-05-08 20:27:04,524 INFO Fetching article: https://www.forbes.com/sites/lelalondon/2025/05/08/inside-yolks-47m-plan-to-fix-your-sad-desk-lunch/
+2025-05-08 20:27:06,464 INFO Processing article 6/15 from Forbes
+2025-05-08 20:27:06,464 INFO Fetching article: https://www.forbes.com/sites/kirimasters/2025/05/08/instacarts-turnaround-ceo-heads-to-the-ai-frontier/
+2025-05-08 20:27:08,200 INFO Processing article 7/15 from Forbes
+2025-05-08 20:27:08,200 INFO Fetching article: https://www.forbes.com/sites/manasipathak-1/2025/05/08/little-man-is-here-sam-kerr-kristie-mewis-welcome-baby-boy/
+2025-05-08 20:27:10,057 INFO Processing article 8/15 from Forbes
+2025-05-08 20:27:10,057 INFO Fetching article: https://www.forbes.com/sites/manasipathak-1/2025/05/08/womens-world-cup-2027-maracana-among-eight-stadiums-selected-by-fifa/
+2025-05-08 20:27:13,325 INFO Processing article 9/15 from Forbes
+2025-05-08 20:27:13,325 INFO Fetching article: https://www.forbes.com/sites/siladityaray/2025/05/08/india-and-pakistan-accuse-each-other-of-launching-drone-strikes-us-consulate-staff-in-lahore-asked-to-shelter-in-place/
+2025-05-08 20:27:14,810 INFO Processing article 10/15 from Forbes
+2025-05-08 20:27:14,810 INFO Fetching article: https://www.forbes.com/sites/vikrammittal/2025/05/08/russia-and-ukraine-are-using-one-time-use-drones-future-wars-may-not/
+2025-05-08 20:27:16,792 INFO Processing article 11/15 from Forbes
+2025-05-08 20:27:16,792 INFO Fetching article: https://www.forbes.com/sites/josephosullivan/2025/05/08/atltico-de-madrid-celebrates-five-years-of-fan-tokens/
+2025-05-08 20:27:18,646 INFO Processing article 12/15 from Forbes
+2025-05-08 20:27:18,646 INFO Fetching article: https://www.forbes.com/sites/rrapier/2025/05/08/why-california-drivers-could-soon-pay-8-a-gallon-for-gas/
+2025-05-08 20:27:20,573 INFO Processing article 13/15 from Forbes
+2025-05-08 20:27:20,573 INFO Fetching article: https://www.forbes.com/sites/yessarrosendar/2025/05/08/indonesian-billionaires-chandra-asri-expands-in-singapore-with-chevron-phillips-deal/
+2025-05-08 20:27:21,552 INFO Processing article 14/15 from Forbes
+2025-05-08 20:27:21,552 INFO Fetching article: https://www.forbes.com/sites/siladityaray/2025/05/08/us-stock-futures-up-as-trump-is-expected-to-unveil-trade-deal-with-uk/
+2025-05-08 20:27:24,871 INFO Processing article 15/15 from Forbes
+2025-05-08 20:27:24,871 INFO Fetching article: https://www.forbes.com/sites/swetakaushal/2025/05/08/two-indian-films-on-netflix-global-top-10-this-week/
+2025-05-08 20:27:27,469 INFO === Source: Business Insider (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:27,469 INFO Parsing RSS for Business Insider
+2025-05-08 20:27:28,760 INFO Processing article 1/13 from Business Insider
+2025-05-08 20:27:28,760 INFO Fetching article: https://www.businessinsider.com/doechii-met-gala-controversy-drama-explained-2025-5
+2025-05-08 20:27:29,634 INFO Processing article 2/13 from Business Insider
+2025-05-08 20:27:29,634 INFO Fetching article: https://www.businessinsider.com/apple-iphone-upgrade-cycle-tariffs-not-ai-why-2025-5
+2025-05-08 20:27:32,452 INFO Processing article 3/13 from Business Insider
+2025-05-08 20:27:32,452 INFO Fetching article: https://www.businessinsider.com/ai-engines-google-search-dominance-openai-chatgpt-2025-5
+2025-05-08 20:27:33,675 INFO Processing article 4/13 from Business Insider
+2025-05-08 20:27:33,676 INFO Fetching article: https://www.businessinsider.com/france-making-more-assm-hammers-ukraine-bombs-russia-safran-2025-5
+2025-05-08 20:27:35,801 INFO Processing article 5/13 from Business Insider
+2025-05-08 20:27:35,801 INFO Fetching article: https://www.businessinsider.com/worker-darth-vader-star-wars-employment-tribunal-award-compensation-2025-5
+2025-05-08 20:27:37,678 INFO Processing article 6/13 from Business Insider
+2025-05-08 20:27:37,678 INFO Fetching article: https://www.businessinsider.com/elon-musk-openai-sabotage-filing-lawsuit-sam-altman-counterclaim-2025-5
+2025-05-08 20:27:39,800 INFO Processing article 7/13 from Business Insider
+2025-05-08 20:27:39,800 INFO Fetching article: https://www.businessinsider.com/moved-5-times-for-career-but-last-was-for-love-2025-5
+2025-05-08 20:27:41,939 INFO Processing article 8/13 from Business Insider
+2025-05-08 20:27:41,939 INFO Fetching article: https://www.businessinsider.com/trump-trade-deal-tariffs-uk-announcement-2025-5
+2025-05-08 20:27:43,991 INFO Processing article 9/13 from Business Insider
+2025-05-08 20:27:43,991 INFO Fetching article: https://www.businessinsider.com/how-to-improve-v02-max-norwegian-method-training-elite-coach-2025-5
+2025-05-08 20:27:45,794 INFO Processing article 10/13 from Business Insider
+2025-05-08 20:27:45,794 INFO Fetching article: https://www.businessinsider.com/meet-fidji-simo-openai-ceo-applications-meta-instacart-2025-5
+2025-05-08 20:27:47,632 INFO Processing article 11/13 from Business Insider
+2025-05-08 20:27:47,632 INFO Fetching article: https://www.businessinsider.com/trump-trade-deals-list-status-talks-tariffs-2025-5
+2025-05-08 20:27:49,775 INFO Processing article 12/13 from Business Insider
+2025-05-08 20:27:49,775 INFO Fetching article: https://www.businessinsider.com/value-older-friends-generational-differences-perspectives-2025-5
+2025-05-08 20:27:52,181 INFO Processing article 13/13 from Business Insider
+2025-05-08 20:27:52,181 INFO Fetching article: https://www.businessinsider.com/warren-buffett-tim-cook-berkshire-hathaway-annual-meeting-omaha-2025-5
+2025-05-08 20:27:54,041 INFO === Source: Entrepreneur Magazine (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:54,041 INFO Parsing RSS for Entrepreneur Magazine
+2025-05-08 20:27:54,286 INFO Processing article 1/1 from Entrepreneur Magazine
+2025-05-08 20:27:54,286 INFO Fetching article: https://www.entrepreneur.com/leadership/how-top-leaders-turn-pain-and-pressure-into-clarity-and/489588
+2025-05-08 20:27:54,937 INFO === Source: Inc. (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:54,937 INFO Parsing RSS for Inc.
+2025-05-08 20:27:56,028 INFO === Source: Harvard Business Review (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:56,028 INFO Parsing RSS for Harvard Business Review
+2025-05-08 20:27:57,166 INFO === Source: Reuters Business (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:57,166 INFO Parsing RSS for Reuters Business
+2025-05-08 20:27:57,205 INFO === Source: CNBC (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:57,205 INFO Parsing RSS for CNBC
+2025-05-08 20:27:57,724 INFO Processing article 1/1 from CNBC
+2025-05-08 20:27:57,724 INFO Fetching article: https://www.cnbc.com/2025/05/08/how-to-land-a-job-in-a-low-firing-low-hiring-market-economist.html
+2025-05-08 20:27:57,777 WARNING Robots.txt disallows: https://www.cnbc.com/2025/05/08/how-to-land-a-job-in-a-low-firing-low-hiring-market-economist.html
+2025-05-08 20:27:57,777 WARNING Disallowed by robots.txt: https://www.cnbc.com/2025/05/08/how-to-land-a-job-in-a-low-firing-low-hiring-market-economist.html
+2025-05-08 20:27:57,777 INFO === Source: Financial Times (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:27:57,777 INFO Parsing RSS for Financial Times
+2025-05-08 20:27:58,663 INFO Processing article 1/6 from Financial Times
+2025-05-08 20:27:58,663 INFO Fetching article: https://www.ft.com/content/81151da7-0b2d-4d4b-a315-a995a7fc5e2d
+2025-05-08 20:27:59,922 INFO Processing article 2/6 from Financial Times
+2025-05-08 20:27:59,922 INFO Fetching article: https://www.ft.com/content/d43d2b3d-1b3e-4496-96db-aa407ff17306
+2025-05-08 20:28:01,668 INFO Processing article 3/6 from Financial Times
+2025-05-08 20:28:01,668 INFO Fetching article: https://www.ft.com/content/1517513c-492b-44fe-97ba-f34597e6216d
+2025-05-08 20:28:03,768 INFO Processing article 4/6 from Financial Times
+2025-05-08 20:28:03,768 INFO Fetching article: https://www.ft.com/content/9e1abc2f-1584-4ffa-85d5-ddc5e6c1271e
+2025-05-08 20:28:05,821 INFO Processing article 5/6 from Financial Times
+2025-05-08 20:28:05,821 INFO Fetching article: https://www.ft.com/content/bdd9bb89-ac3c-4043-9ca4-bc7efbd41fed
+2025-05-08 20:28:07,719 INFO Processing article 6/6 from Financial Times
+2025-05-08 20:28:07,719 INFO Fetching article: https://www.ft.com/content/a18ed1bd-3546-453a-bf11-72b5ac6a56f5
+2025-05-08 20:28:09,970 INFO === Source: The Economist (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:28:09,970 INFO Parsing RSS for The Economist
+2025-05-08 20:28:10,305 INFO === Source: Wall Street Journal (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:28:10,305 INFO Parsing RSS for Wall Street Journal
+2025-05-08 20:28:10,937 INFO === Source: Fortune (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:28:10,937 INFO Parsing RSS for Fortune
+2025-05-08 20:28:11,533 INFO Processing article 1/8 from Fortune
+2025-05-08 20:28:11,533 INFO Fetching article: https://fortune.com/2025/05/08/cfos-need-new-playbook-for-tariff-fueled-uncertainty/
+2025-05-08 20:28:11,981 INFO Processing article 2/8 from Fortune
+2025-05-08 20:28:11,981 INFO Fetching article: https://fortune.com/2025/05/08/elon-musk-tesla-sales-crisis-spreads-to-china-shanghai-plant-volumes-shrink/
+2025-05-08 20:28:13,951 INFO Processing article 3/8 from Fortune
+2025-05-08 20:28:13,951 INFO Fetching article: https://fortune.com/2025/05/08/gates-foundation-public-education-reform-algebra/
+2025-05-08 20:28:16,034 INFO Processing article 4/8 from Fortune
+2025-05-08 20:28:16,034 INFO Fetching article: https://fortune.com/2025/05/08/bill-gates-foundation-future-of-philanthropy-government-aid-spend-down/
+2025-05-08 20:28:17,981 INFO Processing article 5/8 from Fortune
+2025-05-08 20:28:17,981 INFO Fetching article: https://fortune.com/2025/05/08/lead-edge-capital-nimay-mehta-venture-capital-term-sheet/
+2025-05-08 20:28:20,022 INFO Processing article 6/8 from Fortune
+2025-05-08 20:28:20,022 INFO Fetching article: https://fortune.com/europe/2025/05/08/trump-comprehensive-trade-deal-uk-likely-fall-short-full-free-trade-agreement/
+2025-05-08 20:28:22,222 INFO Processing article 7/8 from Fortune
+2025-05-08 20:28:22,222 INFO Fetching article: https://fortune.com/2025/05/08/air-traffic-controllers-faa-federal-aviation-administration-united-newark-airport-ross-aimer/
+2025-05-08 20:28:24,276 INFO Processing article 8/8 from Fortune
+2025-05-08 20:28:24,276 INFO Fetching article: https://fortune.com/article/uber-ceo-dara-khosrowshahi-remote-work-return-to-office/
+2025-05-08 20:28:26,028 INFO === Source: The Hustle (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:28:26,028 INFO Parsing RSS for The Hustle
+2025-05-08 20:28:27,966 INFO === Source: Quartz (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:28:27,966 INFO Parsing RSS for Quartz
+2025-05-08 20:28:29,332 INFO Processing article 1/2 from Quartz
+2025-05-08 20:28:29,332 INFO Fetching article: https://qz.com/goog-googl-aapl-bud-nasdaq-dow-s-p-500-1851779675
+2025-05-08 20:28:30,108 INFO Processing article 2/2 from Quartz
+2025-05-08 20:28:30,108 INFO Fetching article: https://qz.com/student-debt-most-least-by-city-2025-1851779616
+2025-05-08 20:28:32,046 INFO === Source: Yahoo Finance (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:28:32,046 INFO Parsing RSS for Yahoo Finance
+2025-05-08 20:28:33,177 INFO Processing article 1/29 from Yahoo Finance
+2025-05-08 20:28:33,178 INFO Fetching article: https://finance.yahoo.com/news/santander-shutter-18-branches-us-121407410.html
+2025-05-08 20:28:33,958 INFO Processing article 2/29 from Yahoo Finance
+2025-05-08 20:28:33,958 INFO Fetching article: https://www.investors.com/news/technology/sharkninja-stock-sn-q1-2025-earnings/?src=A00220&yptr=yahoo
+2025-05-08 20:28:34,052 WARNING Robots.txt disallows: https://www.investors.com/news/technology/sharkninja-stock-sn-q1-2025-earnings/?src=A00220&yptr=yahoo
+2025-05-08 20:28:34,052 WARNING Disallowed by robots.txt: https://www.investors.com/news/technology/sharkninja-stock-sn-q1-2025-earnings/?src=A00220&yptr=yahoo
+2025-05-08 20:28:34,052 INFO Processing article 3/29 from Yahoo Finance
+2025-05-08 20:28:34,052 INFO Fetching article: https://finance.yahoo.com/news/eu-seeks-feedback-merger-rules-121050084.html
+2025-05-08 20:28:36,028 INFO Processing article 4/29 from Yahoo Finance
+2025-05-08 20:28:36,028 INFO Fetching article: https://www.investors.com/news/axon-stock-earnings-q1-taser-dart-doge-tariffs-ai/?src=A00220&yptr=yahoo
+2025-05-08 20:28:36,028 WARNING Disallowed by robots.txt: https://www.investors.com/news/axon-stock-earnings-q1-taser-dart-doge-tariffs-ai/?src=A00220&yptr=yahoo
+2025-05-08 20:28:36,028 INFO Processing article 5/29 from Yahoo Finance
+2025-05-08 20:28:36,028 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_43469_MarketOutlook_1746703541000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:28:37,908 INFO Processing article 6/29 from Yahoo Finance
+2025-05-08 20:28:37,908 INFO Fetching article: https://finance.yahoo.com/news/paypal-dlocal-expand-payments-services-121258561.html
+2025-05-08 20:28:39,938 INFO Processing article 7/29 from Yahoo Finance
+2025-05-08 20:28:39,938 INFO Fetching article: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-trump-trade-deal-nvidia-partner-arm-stock/?src=A00220&yptr=yahoo
+2025-05-08 20:28:39,938 WARNING Disallowed by robots.txt: https://www.investors.com/market-trend/stock-market-today/dow-jones-sp500-nasdaq-trump-trade-deal-nvidia-partner-arm-stock/?src=A00220&yptr=yahoo
+2025-05-08 20:28:39,938 INFO Processing article 8/29 from Yahoo Finance
+2025-05-08 20:28:39,938 INFO Fetching article: https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-trump-chip-move-fed-powell-mercadolibre-applovin/?src=A00220&yptr=yahoo
+2025-05-08 20:28:39,938 WARNING Disallowed by robots.txt: https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-trump-chip-move-fed-powell-mercadolibre-applovin/?src=A00220&yptr=yahoo
+2025-05-08 20:28:39,938 INFO Processing article 9/29 from Yahoo Finance
+2025-05-08 20:28:39,938 INFO Fetching article: https://www.investors.com/news/technology/quantum-computing-stocks-qbts-dwave-stock-dwave-earnings/?src=A00220&yptr=yahoo
+2025-05-08 20:28:39,938 WARNING Disallowed by robots.txt: https://www.investors.com/news/technology/quantum-computing-stocks-qbts-dwave-stock-dwave-earnings/?src=A00220&yptr=yahoo
+2025-05-08 20:28:39,938 INFO Processing article 10/29 from Yahoo Finance
+2025-05-08 20:28:39,938 INFO Fetching article: https://finance.yahoo.com/news/m-39-struggling-pay-off-120400068.html
+2025-05-08 20:28:42,404 INFO Processing article 11/29 from Yahoo Finance
+2025-05-08 20:28:42,404 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_6102_AnalystReport_1746702447000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:28:43,916 INFO Processing article 12/29 from Yahoo Finance
+2025-05-08 20:28:43,916 INFO Fetching article: https://finance.yahoo.com/news/cetera-integrates-jump-ai-solution-121137560.html
+2025-05-08 20:28:46,210 INFO Processing article 13/29 from Yahoo Finance
+2025-05-08 20:28:46,210 INFO Fetching article: https://finance.yahoo.com/news/cryptoverse-markets-us-exceptionalism-bitcoin-120038280.html
+2025-05-08 20:28:48,649 INFO Processing article 14/29 from Yahoo Finance
+2025-05-08 20:28:48,649 INFO Fetching article: https://www.investors.com/research/ibd-stock-analysis/ge-vernova-gev-stock-general-electric-spinoff-ge-gehc/?src=A00220&yptr=yahoo
+2025-05-08 20:28:48,649 WARNING Disallowed by robots.txt: https://www.investors.com/research/ibd-stock-analysis/ge-vernova-gev-stock-general-electric-spinoff-ge-gehc/?src=A00220&yptr=yahoo
+2025-05-08 20:28:48,649 INFO Processing article 15/29 from Yahoo Finance
+2025-05-08 20:28:48,649 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_3303_AnalystReport_1746702447000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:28:50,076 INFO Processing article 16/29 from Yahoo Finance
+2025-05-08 20:28:50,076 INFO Fetching article: https://finance.yahoo.com/news/msig-usa-hires-chief-actuary-121039198.html
+2025-05-08 20:28:52,012 INFO Processing article 17/29 from Yahoo Finance
+2025-05-08 20:28:52,012 INFO Fetching article: https://finance.yahoo.com/news/factbox-china-exempts-us-imports-115236565.html
+2025-05-08 20:28:54,578 INFO Processing article 18/29 from Yahoo Finance
+2025-05-08 20:28:54,578 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_3085_AnalystReport_1746702447000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:28:55,919 INFO Processing article 19/29 from Yahoo Finance
+2025-05-08 20:28:55,919 INFO Fetching article: https://finance.yahoo.com/news/mood-boosting-rate-cut-fillip-120845261.html
+2025-05-08 20:28:58,508 INFO Processing article 20/29 from Yahoo Finance
+2025-05-08 20:28:58,508 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_3821_AnalystReport_1746702447000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:29:00,479 INFO Processing article 21/29 from Yahoo Finance
+2025-05-08 20:29:00,479 INFO Fetching article: https://finance.yahoo.com/news/icaew-warns-iht-reforms-could-120633831.html
+2025-05-08 20:29:02,097 INFO Processing article 22/29 from Yahoo Finance
+2025-05-08 20:29:02,097 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_3398_AnalystReport_1746702447000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:29:04,041 INFO Processing article 23/29 from Yahoo Finance
+2025-05-08 20:29:04,041 INFO Fetching article: https://finance.yahoo.com/news/expensive-american-dream-7-major-120149274.html
+2025-05-08 20:29:06,444 INFO Processing article 24/29 from Yahoo Finance
+2025-05-08 20:29:06,445 INFO Fetching article: https://finance.yahoo.com/news/ai-and-ad-tech-are-safe-from-trumps-tariffs-so-far-115053609.html
+2025-05-08 20:29:08,231 INFO Processing article 25/29 from Yahoo Finance
+2025-05-08 20:29:08,231 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_4072_AnalystReport_1746702447000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:29:10,170 INFO Processing article 26/29 from Yahoo Finance
+2025-05-08 20:29:10,170 INFO Fetching article: https://finance.yahoo.com/news/us-cfpb-spurns-bnpl-rule-120016520.html
+2025-05-08 20:29:12,225 INFO Processing article 27/29 from Yahoo Finance
+2025-05-08 20:29:12,225 INFO Fetching article: https://finance.yahoo.com/news/ferraris-luxury-game-plan-takes-on-trumps-auto-tariffs-114631925.html
+2025-05-08 20:29:15,131 INFO Processing article 28/29 from Yahoo Finance
+2025-05-08 20:29:15,131 INFO Fetching article: https://finance.yahoo.com/research/reports/ARGUS_43468_TechnicalAnalysis_1746702420000?yptr=yahoo&ncid=yahooproperties_plusresear_nm5q6ze1cei
+2025-05-08 20:29:15,948 INFO Processing article 29/29 from Yahoo Finance
+2025-05-08 20:29:15,948 INFO Fetching article: https://finance.yahoo.com/news/shelter-insurance-adopts-shift-technology-115405562.html
+2025-05-08 20:29:18,245 INFO === Source: McKinsey Insights (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:29:18,245 INFO Parsing RSS for McKinsey Insights
+2025-05-08 20:29:18,937 INFO === Source: Moz Blog (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:29:18,937 INFO Parsing RSS for Moz Blog
+2025-05-08 20:29:20,257 INFO === Source: Finextra (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:29:20,257 INFO Parsing RSS for Finextra
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/550/a-new-era-of-kyc---why-its-time-to-redefine-client-onboarding?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/551/solving-procurement-challenges-with-embedded-payments?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/554/weathering-macroeconomic-headwinds-how-should-cfos-invest-in-tech?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/553/ai-in-the-wrong-hands-exploring-modern-cybersecurity-concerns?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/559/the-next-fintech-frontier-a-path-to-enhanced-cross-border-solutions-amidst-economic-uncertainty?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/555/protecting-wealth-tackling-faster-payments-fraud-and-ai-driven-scams?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/557/paas-cloud-and-instant-payments-in-the-spotlight-overcoming-outsourcing-challenges?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/556/the-final-countdown-whats-next-for-verification-of-payee?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/558/why-verticalisation-matters-unlocking-success-through-tailored-smb-propositions-?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/561/can-you-have-it-all-integrating-new-channels-in-a-new-world-of-payments-?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Skipping already scraped article: https://www.finextra.com/event-info/560/payments-modernisation-in-emea--2025-priorities-and-challenges-?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:21,845 INFO Processing article 1/6 from Finextra
+2025-05-08 20:29:21,845 INFO Fetching article: https://www.finextra.com/newsarticle/45953/citi-and-sdx-announce-digital-assets-plan-for-private-markets?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:23,733 INFO Processing article 2/6 from Finextra
+2025-05-08 20:29:23,733 INFO Fetching article: https://www.finextra.com/newsarticle/45952/robinhood-to-bring-tokenisation-to-europe?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:25,544 INFO Processing article 3/6 from Finextra
+2025-05-08 20:29:25,545 INFO Fetching article: https://www.finextra.com/pressarticle/105507/wealthsimple-taps-eventus-for-compliance?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:27,702 INFO Processing article 4/6 from Finextra
+2025-05-08 20:29:27,702 INFO Fetching article: https://www.finextra.com/pressarticle/105506/finova-and-castle-trust-bank-team-on-broker-portal?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:31,455 INFO Processing article 5/6 from Finextra
+2025-05-08 20:29:31,456 INFO Fetching article: https://www.finextra.com/pressarticle/105502/uk-regtech-cube-opens-london-office?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:33,519 INFO Processing article 6/6 from Finextra
+2025-05-08 20:29:33,520 INFO Fetching article: https://www.finextra.com/event-info/562/navigating-the-macro-economy-opportunities-in-multi-currency-settlement?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-08 20:29:36,623 INFO === Source: Banking Dive (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:29:36,623 INFO Parsing RSS for Banking Dive
+2025-05-08 20:29:37,325 INFO === Source: Payments Dive (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:29:37,325 INFO Parsing RSS for Payments Dive
+2025-05-08 20:29:38,131 INFO === Source: The Financial Brand (since 2025-05-08T09:27:00.857394+00:00) ===
+2025-05-08 20:29:38,132 INFO Parsing RSS for The Financial Brand
+2025-05-08 20:29:39,917 INFO Saved 81 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/08_05_2025/2027/business_news
+2025-05-08 20:29:39,917 INFO Business news scrape complete, found 81 new articles
+2025-05-08 20:29:39,917 INFO Business news scrape complete, found 81 new articles
+2025-05-08 20:29:39,917 INFO Starting entrepreneurship news scrape (past_hours=3)...
+2025-05-08 20:29:39,917 INFO === Source: Entrepreneur Magazine (since 2025-05-08T12:00:00+00:00) ===
+2025-05-08 20:29:39,917 INFO Parsing RSS for Entrepreneur Magazine
+2025-05-08 20:29:39,986 INFO === Source: Inc. (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:39,986 INFO Parsing RSS for Inc.
+2025-05-08 20:29:41,109 INFO === Source: Y Combinator Blog (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:41,109 INFO Parsing RSS for Y Combinator Blog
+2025-05-08 20:29:43,682 INFO === Source: Foundr (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:43,682 INFO Parsing RSS for Foundr
+2025-05-08 20:29:44,236 INFO === Source: Indie Hackers (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:44,236 INFO Parsing RSS for Indie Hackers
+2025-05-08 20:29:45,937 INFO === Source: SaaStr (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:45,937 INFO Parsing RSS for SaaStr
+2025-05-08 20:29:46,083 INFO === Source: A16Z Blog (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:46,083 INFO Parsing RSS for A16Z Blog
+2025-05-08 20:29:46,905 INFO === Source: First Round Review (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:46,906 INFO Parsing RSS for First Round Review
+2025-05-08 20:29:48,866 INFO === Source: TechCrunch Startups (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:48,866 INFO Parsing RSS for TechCrunch Startups
+2025-05-08 20:29:49,963 INFO === Source: Entrepreneur Asia Pacific (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:49,963 INFO Parsing RSS for Entrepreneur Asia Pacific
+2025-05-08 20:29:50,531 INFO === Source: Neuroleadership Institute (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:50,531 INFO Parsing RSS for Neuroleadership Institute
+2025-05-08 20:29:52,245 INFO === Source: Mindful (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:52,245 INFO Parsing RSS for Mindful
+2025-05-08 20:29:54,718 INFO === Source: Brain Pickings (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:54,718 INFO Parsing RSS for Brain Pickings
+2025-05-08 20:29:56,565 INFO === Source: Farnam Street (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:56,565 INFO Parsing RSS for Farnam Street
+2025-05-08 20:29:56,744 INFO === Source: TechCrunch (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:56,744 INFO Parsing RSS for TechCrunch
+2025-05-08 20:29:56,815 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/asking-chatbots-for-short-answers-can-increase-hallucinations-study-finds/
+2025-05-08 20:29:56,815 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/vc-firm-insight-partners-confirms-personal-data-stolen-during-january-hack/
+2025-05-08 20:29:56,815 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/hims-hers-ceo-turned-to-the-autonomous-vehicle-industry-to-find-an-ai-savvy-exec/
+2025-05-08 20:29:56,816 INFO Skipping already scraped article: https://techcrunch.com/2025/05/08/apple-urges-court-to-suspend-ruling-that-bars-it-from-taking-a-cut-on-external-app-payments/
+2025-05-08 20:29:56,816 INFO Processing article 1/1 from TechCrunch
+2025-05-08 20:29:56,816 INFO Fetching article: https://techcrunch.com/2025/05/08/reddit-intros-new-profile-tools-for-business-customers/
+2025-05-08 20:29:57,079 INFO === Source: VentureBeat (since 2025-05-08T09:40:00+00:00) ===
+2025-05-08 20:29:57,079 INFO Parsing RSS for VentureBeat
+2025-05-08 20:29:57,157 INFO Processing article 1/1 from VentureBeat
+2025-05-08 20:29:57,157 INFO Fetching article: https://venturebeat.com/game-development/breaking-down-accessibility-barriers-how-the-industry-is-redefining-how-we-play/
+2025-05-08 20:29:58,775 INFO === Source: MIT Technology Review (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:29:58,775 INFO Parsing RSS for MIT Technology Review
+2025-05-08 20:29:59,922 INFO Processing article 1/1 from MIT Technology Review
+2025-05-08 20:29:59,922 INFO Fetching article: https://www.technologyreview.com/2025/05/08/1116202/the-download-ai-benchmarks-and-spains-grid-blackout/
+2025-05-08 20:30:00,215 INFO === Source: The Next Web (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:00,215 INFO Parsing RSS for The Next Web
+2025-05-08 20:30:01,255 INFO === Source: Wired (since 2025-05-08T12:03:00+00:00) ===
+2025-05-08 20:30:01,255 INFO Parsing RSS for Wired
+2025-05-08 20:30:01,374 INFO === Source: The Verge (since 2025-05-08T11:47:59+00:00) ===
+2025-05-08 20:30:01,374 INFO Parsing RSS for The Verge
+2025-05-08 20:30:01,573 INFO === Source: Forbes Entrepreneurs (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:01,573 INFO Parsing RSS for Forbes Entrepreneurs
+2025-05-08 20:30:02,768 INFO === Source: Harvard Business Review (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:02,768 INFO Parsing RSS for Harvard Business Review
+2025-05-08 20:30:04,071 INFO === Source: The Hustle (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:04,071 INFO Parsing RSS for The Hustle
+2025-05-08 20:30:04,763 INFO === Source: McKinsey Insights (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:04,763 INFO Parsing RSS for McKinsey Insights
+2025-05-08 20:30:05,628 INFO === Source: Bloomberg Entrepreneurs (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:05,628 INFO Parsing RSS for Bloomberg Entrepreneurs
+2025-05-08 20:30:05,648 INFO === Source: Fast Company (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:05,649 INFO Parsing RSS for Fast Company
+2025-05-08 20:30:05,747 INFO === Source: Forbes Under 30 (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:05,747 INFO Parsing RSS for Forbes Under 30
+2025-05-08 20:30:06,248 INFO === Source: Success Magazine (since 2025-05-08T10:44:00+00:00) ===
+2025-05-08 20:30:06,248 INFO Parsing RSS for Success Magazine
+2025-05-08 20:30:07,962 INFO Processing article 1/1 from Success Magazine
+2025-05-08 20:30:07,962 INFO Fetching article: https://www.success.com/venu-jw-roth-live-concerts/
+2025-05-08 20:30:08,127 WARNING Robots.txt disallows: https://www.success.com/venu-jw-roth-live-concerts/
+2025-05-08 20:30:08,127 WARNING Disallowed by robots.txt: https://www.success.com/venu-jw-roth-live-concerts/
+2025-05-08 20:30:08,127 INFO === Source: Tech Meme (since 2025-05-08T12:15:02+00:00) ===
+2025-05-08 20:30:08,127 INFO Parsing RSS for Tech Meme
+2025-05-08 20:30:09,178 INFO === Source: GeekWire (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:09,178 INFO Parsing RSS for GeekWire
+2025-05-08 20:30:09,408 INFO === Source: AI Boom (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:09,409 INFO Parsing RSS for AI Boom
+2025-05-08 20:30:11,338 INFO === Source: Mashable Startups (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:11,339 INFO Parsing RSS for Mashable Startups
+2025-05-08 20:30:11,830 INFO === Source: Morning Brew (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:11,830 INFO Parsing RSS for Morning Brew
+2025-05-08 20:30:11,985 INFO === Source: Product Hunt Daily (since 2025-05-08T09:29:39.917514+00:00) ===
+2025-05-08 20:30:11,985 INFO Parsing RSS for Product Hunt Daily
+2025-05-08 20:30:12,142 INFO Saved 4 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/08_05_2025/2029/entrepreneurship_news
+2025-05-08 20:30:12,142 INFO Entrepreneurship news scrape complete, found 4 new articles
+2025-05-08 20:30:12,142 INFO Entrepreneurship news scrape complete, found 4 new articles

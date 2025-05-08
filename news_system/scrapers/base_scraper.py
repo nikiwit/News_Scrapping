@@ -24,12 +24,8 @@ from utils.rate_limiter import RateLimiter
 from utils.robots_checker import RobotsChecker
 import config
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s %(levelname)s %(message)s"
-)
-logger = logging.getLogger("NewsScraper")
+# Configure module logger
+logger = logging.getLogger("NewsSystem.Scraper.Base")
 
 class NewsScraperBase:
     """
@@ -51,6 +47,10 @@ class NewsScraperBase:
         self.user_agent = user_agent or config.USER_AGENT
         self.rate_limit = rate_limit or config.RATE_LIMIT_SECONDS
         
+        # Set up category-specific logger
+        self.logger = logging.getLogger(f"NewsSystem.Scraper.{category.capitalize()}")
+        self.logger.info(f"Initialized {category} scraper")
+        
         # Initialize utilities
         self.rate_limiter = RateLimiter(self.rate_limit)
         self.robots_checker = RobotsChecker(self.user_agent)
@@ -66,25 +66,43 @@ class NewsScraperBase:
         # Setup tracking for already scraped articles
         self.tracking_file = config.STATE_DIR / f"{category}_articles_tracking.json"
         
+        # Make sure STATE_DIR exists
+        config.STATE_DIR.mkdir(parents=True, exist_ok=True)
+        
         # Load tracking data if it exists
         if self.tracking_file.exists():
-            with open(self.tracking_file, "r") as f:
-                self.tracked_articles = json.load(f)
+            try:
+                with open(self.tracking_file, "r") as f:
+                    self.tracked_articles = json.load(f)
+                self.logger.info(f"Loaded tracking data with {len(self.tracked_articles['urls'])} tracked articles")
+            except json.JSONDecodeError:
+                self.logger.warning(f"Invalid tracking file {self.tracking_file}, creating new one")
+                self.tracked_articles = {
+                    "urls": [],
+                    "ids": []
+                }
         else:
             self.tracked_articles = {
                 "urls": [],
                 "ids": []
             }
+            self.logger.info("No tracking file found, starting fresh")
         
         # Load state for last run timestamps
         self.state_file = config.STATE_DIR / f"{category}_last_run.json"
         
         # Load state if it exists
         if self.state_file.exists():
-            with open(self.state_file, "r") as f:
-                self.last_run = json.load(f)
+            try:
+                with open(self.state_file, "r") as f:
+                    self.last_run = json.load(f)
+                self.logger.info(f"Loaded last run state with {len(self.last_run)} sources")
+            except json.JSONDecodeError:
+                self.logger.warning(f"Invalid state file {self.state_file}, creating new one")
+                self.last_run = {}
         else:
             self.last_run = {}
+            self.logger.info("No state file found, starting fresh")
             
     def get_date_based_folder(self):
         """
@@ -120,7 +138,7 @@ class NewsScraperBase:
             str or None: HTML content if successful, None otherwise
         """
         if not self.robots_checker.allowed(url):
-            logger.warning(f"Disallowed by robots.txt: {url}")
+            self.logger.warning(f"Disallowed by robots.txt: {url}")
             return None
             
         self.rate_limiter.wait(url)
@@ -135,10 +153,10 @@ class NewsScraperBase:
             if resp.status_code == 200:
                 return resp.text
                 
-            logger.warning(f"HTTP {resp.status_code} for {url}")
+            self.logger.warning(f"HTTP {resp.status_code} for {url}")
             
         except Exception as e:
-            logger.error(f"Error fetching {url}: {e}")
+            self.logger.error(f"Error fetching {url}: {e}")
             
         return None
         
@@ -153,13 +171,20 @@ class NewsScraperBase:
         Yields:
             dict: Article information
         """
-        logger.info(f"Parsing RSS for {source['name']}")
+        self.logger.info(f"Parsing RSS for {source['name']}")
         
         try:
             feed = feedparser.parse(source["rss_url"])
             
+            if not feed.entries:
+                self.logger.warning(f"No entries found in RSS feed for {source['name']}")
+                return
+                
+            self.logger.info(f"Found {len(feed.entries)} entries in RSS feed for {source['name']}")
+            
             for entry in feed.entries:
                 if not hasattr(entry, "published_parsed"):
+                    self.logger.warning(f"Entry has no published date, skipping: {entry.get('title', 'Unknown title')}")
                     continue
                     
                 # Convert time tuple to datetime
@@ -167,6 +192,7 @@ class NewsScraperBase:
                 
                 # Skip if too old
                 if pub_dt <= cutoff_dt:
+                    self.logger.debug(f"Article too old (published {pub_dt.isoformat()}), skipping: {entry.get('title', 'Unknown title')}")
                     continue
                 
                 # Generate URL hash for duplicate detection
@@ -174,7 +200,7 @@ class NewsScraperBase:
                 
                 # Skip if already scraped
                 if entry.link in self.tracked_articles["urls"] or url_hash in self.tracked_articles["ids"]:
-                    logger.info(f"Skipping already scraped article: {entry.link}")
+                    self.logger.info(f"Skipping already scraped article: {entry.link}")
                     continue
                     
                 # Generate unique ID for article
@@ -201,6 +227,8 @@ class NewsScraperBase:
                     if media.get("medium") == "image":
                         image_url = media.get("url")
                 
+                self.logger.info(f"New article found: {entry.get('title', 'Unknown title')}")
+                
                 yield {
                     "id": article_id,
                     "title": entry.get("title", "").strip(),
@@ -214,7 +242,7 @@ class NewsScraperBase:
                 }
                 
         except Exception as e:
-            logger.error(f"Error parsing RSS for {source['name']}: {e}")
+            self.logger.error(f"Error parsing RSS for {source['name']}: {e}")
     
     def _parse_article(self, article_info):
         """
@@ -227,7 +255,7 @@ class NewsScraperBase:
             dict: Updated article information with full content
         """
         url = article_info["url"]
-        logger.info(f"Fetching article: {url}")
+        self.logger.info(f"Fetching article: {url}")
         
         html = self._fetch_url(url)
         if not html:
@@ -255,7 +283,7 @@ class NewsScraperBase:
             return article_info
             
         except Exception as e:
-            logger.error(f"Error parsing article {url}: {e}")
+            self.logger.error(f"Error parsing article {url}: {e}")
             return article_info
     
     def scrape(self, past_hours=None):
@@ -272,19 +300,33 @@ class NewsScraperBase:
         base_cutoff = datetime.now(timezone.utc) - timedelta(hours=past_hours)
         all_results = []
         
+        self.logger.info(f"Starting scrape for {self.category} (looking back {past_hours} hours)")
+        
         # Refresh the data directory for this run
         self.data_dir = self.get_date_based_folder()
         self.data_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Check if news sources exist
+        if not self.news_sources:
+            self.logger.warning(f"No news sources configured for {self.category}")
+            return []
+            
+        self.logger.info(f"Processing {len(self.news_sources)} news sources")
         
         for src in self.news_sources:
             # Determine this source's cutoff
             last_ts = self.last_run.get(src["name"])
             if last_ts:
-                src_cutoff = max(base_cutoff, date_parser.parse(last_ts))
+                try:
+                    src_cutoff = max(base_cutoff, date_parser.parse(last_ts))
+                    self.logger.info(f"Using last run timestamp for {src['name']}: {last_ts}")
+                except (ValueError, TypeError):
+                    self.logger.warning(f"Invalid timestamp in last_run for {src['name']}: {last_ts}")
+                    src_cutoff = base_cutoff
             else:
                 src_cutoff = base_cutoff
                 
-            logger.info(f"=== Source: {src['name']} (since {src_cutoff.isoformat()}) ===")
+            self.logger.info(f"=== Source: {src['name']} (since {src_cutoff.isoformat()}) ===")
             new_items = []
             
             # Get articles from RSS
@@ -304,16 +346,22 @@ class NewsScraperBase:
                         
                         # Skip if already scraped
                         if link in self.tracked_articles["urls"]:
-                            logger.info(f"Skipping already scraped article: {link}")
+                            self.logger.info(f"Skipping already scraped article: {link}")
                             continue
                         
                         art = self._process_html_article(link, src, src_cutoff)
                         if art:
                             new_items.append(art)
             
+            if not new_items:
+                self.logger.info(f"No new articles found for {src['name']}")
+                continue
+                
+            self.logger.info(f"Found {len(new_items)} new articles from {src['name']}")
+            
             # Fetch full content for each article
             for i, article in enumerate(new_items):
-                logger.info(f"Processing article {i+1}/{len(new_items)} from {src['name']}")
+                self.logger.info(f"Processing article {i+1}/{len(new_items)} from {src['name']}")
                 new_items[i] = self._parse_article(article)
                 
                 # Add to tracking list
@@ -326,12 +374,15 @@ class NewsScraperBase:
                 # Update last_run to the newest timestamp we just saw
                 latest_ts = max(item["timestamp"] for item in new_items)
                 self.last_run[src["name"]] = latest_ts
+                self.logger.info(f"Updated last run timestamp for {src['name']} to {latest_ts}")
                 
         # Persist state
+        self.logger.info(f"Saving state to {self.state_file}")
         with open(self.state_file, "w") as f:
             json.dump(self.last_run, f, indent=2)
             
         # Persist tracking data
+        self.logger.info(f"Saving tracking data to {self.tracking_file}")
         self._limit_tracking_data()
         with open(self.tracking_file, "w") as f:
             json.dump(self.tracked_articles, f, indent=2)
@@ -350,9 +401,9 @@ class NewsScraperBase:
             with open(batch_file, "w", encoding="utf-8") as f:
                 json.dump(all_results, f, ensure_ascii=False, indent=2)
                 
-            logger.info(f"Saved {len(all_results)} articles to {self.data_dir}")
+            self.logger.info(f"Saved {len(all_results)} articles to {self.data_dir}")
         else:
-            logger.info("No new articles found.")
+            self.logger.info("No new articles found.")
             
         return all_results
     
@@ -413,5 +464,5 @@ class NewsScraperBase:
             }
             
         except Exception as e:
-            logger.error(f"Error processing HTML article {link}: {e}")
+            self.logger.error(f"Error processing HTML article {link}: {e}")
             return None

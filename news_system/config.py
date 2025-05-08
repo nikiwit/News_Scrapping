@@ -283,6 +283,7 @@ BUSINESS_NEWS_SOURCES = [
 ]
 
 ENTREPRENEURSHIP_NEWS_SOURCES = [
+    # === Core Entrepreneurship Sources ===
     {
         "name": "Entrepreneur Magazine",
         "rss_url": "https://www.entrepreneur.com/latest.rss",
@@ -296,21 +297,9 @@ ENTREPRENEURSHIP_NEWS_SOURCES = [
         "category": "entrepreneurship_news"
     },
     {
-        "name": "StartupNation",
-        "rss_url": "https://startupnation.com/feed/",
-        "url": "https://startupnation.com",
-        "category": "entrepreneurship_news"
-    },
-    {
         "name": "Y Combinator Blog",
         "rss_url": "https://blog.ycombinator.com/feed/",
         "url": "https://blog.ycombinator.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "TechStars Blog",
-        "rss_url": "https://www.techstars.com/feed",
-        "url": "https://www.techstars.com",
         "category": "entrepreneurship_news"
     },
     {
@@ -320,57 +309,15 @@ ENTREPRENEURSHIP_NEWS_SOURCES = [
         "category": "entrepreneurship_news"
     },
     {
-        "name": "StartUp Mindset",
-        "rss_url": "https://startupmindset.com/feed/",
-        "url": "https://startupmindset.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "AllBusiness",
-        "rss_url": "https://www.allbusiness.com/feed",
-        "url": "https://www.allbusiness.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "Under30CEO",
-        "rss_url": "https://under30ceo.com/feed/",
-        "url": "https://under30ceo.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "OnStartups",
-        "rss_url": "https://onstartups.com/rss.xml",
-        "url": "https://onstartups.com",
-        "category": "entrepreneurship_news"
-    },
-    {
         "name": "Indie Hackers",
         "rss_url": "https://www.indiehackers.com/feed.xml",
         "url": "https://www.indiehackers.com",
         "category": "entrepreneurship_news"
     },
     {
-        "name": "Startup Grind",
-        "rss_url": "https://www.startupgrind.com/feed/",
-        "url": "https://www.startupgrind.com",
-        "category": "entrepreneurship_news"
-    },
-    {
         "name": "SaaStr",
         "rss_url": "https://www.saastr.com/feed/",
         "url": "https://www.saastr.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "Startup Lessons Learned",
-        "rss_url": "https://www.startuplessonslearned.com/feeds/posts/default",
-        "url": "https://www.startuplessonslearned.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "Seedcamp",
-        "rss_url": "https://seedcamp.com/feed/",
-        "url": "https://seedcamp.com",
         "category": "entrepreneurship_news"
     },
     {
@@ -386,45 +333,171 @@ ENTREPRENEURSHIP_NEWS_SOURCES = [
         "category": "entrepreneurship_news"
     },
     {
-        "name": "Both Sides of the Table",
-        "rss_url": "https://bothsidesofthetable.com/feed",
-        "url": "https://bothsidesofthetable.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "Startups.com",
-        "rss_url": "https://www.startups.com/feed",
-        "url": "https://www.startups.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-        "name": "Product Hunt Blog",
-        "rss_url": "https://blog.producthunt.com/feed",
-        "url": "https://blog.producthunt.com",
-        "category": "entrepreneurship_news"
-    },
-    {
-    "name": "Entrepreneur Asia Pacific",
-    "rss_url": "https://www.entrepreneur.com/asiapacific/rss",
-    "url": "https://www.entrepreneur.com/asiapacific",
-    "category": "entrepreneurship_news"
-    },
-    {
         "name": "TechCrunch Startups",
         "rss_url": "https://techcrunch.com/category/startups/feed/",
         "url": "https://techcrunch.com/category/startups/",
         "category": "entrepreneurship_news"
     },
     {
-        "name": "Noobpreneur",
-        "rss_url": "https://www.noobpreneur.com/feed/",
-        "url": "https://www.noobpreneur.com",
+        "name": "Entrepreneur Asia Pacific",
+        "rss_url": "https://www.entrepreneur.com/asiapacific/rss",
+        "url": "https://www.entrepreneur.com/asiapacific",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Neuroscience & Cognitive Science for Self-Improvement ===
+    {
+        "name": "Neuroleadership Institute",
+        "rss_url": "https://neuroleadership.com/your-brain-at-work/feed/",
+        "url": "https://neuroleadership.com/your-brain-at-work",
         "category": "entrepreneurship_news"
     },
     {
-        "name": "Addicted2Success",
-        "rss_url": "https://addicted2success.com/feed/",
-        "url": "https://addicted2success.com",
+        "name": "Mindful",
+        "rss_url": "https://www.mindful.org/feed/",
+        "url": "https://www.mindful.org",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Brain Pickings",
+        "rss_url": "https://www.brainpickings.org/feed/",
+        "url": "https://www.brainpickings.org",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Farnam Street",
+        "rss_url": "https://fs.blog/feed/",
+        "url": "https://fs.blog",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Selected Tech News Sources ===
+    {
+        "name": "TechCrunch",
+        "rss_url": "https://techcrunch.com/feed/",
+        "url": "https://techcrunch.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "VentureBeat",
+        "rss_url": "https://venturebeat.com/feed/",
+        "url": "https://venturebeat.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "MIT Technology Review",
+        "rss_url": "https://www.technologyreview.com/feed/",
+        "url": "https://www.technologyreview.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "The Next Web",
+        "rss_url": "https://thenextweb.com/feed/",
+        "url": "https://thenextweb.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Wired",
+        "rss_url": "https://www.wired.com/feed/rss",
+        "url": "https://www.wired.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "The Verge",
+        "rss_url": "https://www.theverge.com/rss/index.xml",
+        "url": "https://www.theverge.com",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Selected Business News Sources ===
+    {
+        "name": "Forbes Entrepreneurs",
+        "rss_url": "https://www.forbes.com/entrepreneurs/feed/",
+        "url": "https://www.forbes.com/entrepreneurs/",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Harvard Business Review",
+        "rss_url": "https://hbr.org/feed",
+        "url": "https://hbr.org",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "The Hustle",
+        "rss_url": "https://thehustle.co/feed/",
+        "url": "https://thehustle.co",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "McKinsey Insights",
+        "rss_url": "https://www.mckinsey.com/insights/rss.aspx",
+        "url": "https://www.mckinsey.com/insights",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Bloomberg Entrepreneurs",
+        "rss_url": "https://feed.bloomberg.com/feed/entrepreneurs",
+        "url": "https://www.bloomberg.com/entrepreneurs",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Lifestyle News for Young Entrepreneurs ===
+    {
+        "name": "Fast Company",
+        "rss_url": "https://www.fastcompany.com/feed",
+        "url": "https://www.fastcompany.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Forbes Under 30",
+        "rss_url": "https://www.forbes.com/30-under-30/feed/",
+        "url": "https://www.forbes.com/30-under-30/",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Success Magazine",
+        "rss_url": "https://www.success.com/feed/",
+        "url": "https://www.success.com",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Tech & Business Celebrities/Popular People ===
+    {
+        "name": "Tech Meme",
+        "rss_url": "https://www.techmeme.com/feed.xml",
+        "url": "https://www.techmeme.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "GeekWire",
+        "rss_url": "https://www.geekwire.com/feed/",
+        "url": "https://www.geekwire.com",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Social Media & Funny Tech/Startup Content ===
+    {
+        "name": "AI Boom",
+        "rss_url": "https://ai-data-base.com/feed",
+        "url": "https://ai-data-base.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Mashable Startups",
+        "rss_url": "https://mashable.com/feeds/rss/startups",
+        "url": "https://mashable.com/startups",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Morning Brew",
+        "rss_url": "https://www.morningbrew.com/feed",
+        "url": "https://www.morningbrew.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Product Hunt Daily",
+        "rss_url": "https://www.producthunt.com/feed",
+        "url": "https://www.producthunt.com",
         "category": "entrepreneurship_news"
     }
 ]

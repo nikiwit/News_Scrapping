@@ -1,0 +1,42 @@
+Objective: Craft 10 concise, high‑impact articles for a Telegram audience of IT professionals and casual readers interested in startups, self-improvement, science and technology. Make sure they include variety of themes, not just about business or entrepreneurship.
+
+Structure for each post:
+
+Hook (1 sentence): A headline‑style opener that sparks curiosity.
+
+Body (2–3 paragraphs):
+
+Paragraph 1: Contextualize the news—what happened and why it matters.
+
+Paragraph 2 (optional): Broader implications or a quick tip for entrepreneurs.
+
+Formatting:
+
+Use bold for metrics or numbers.
+
+Use italics for buzzwords or names.
+
+Visual: Propose an image (URL or search term) that complements the story (directly from source also acceptable).
+
+Quote: Select a one‑line quote from the news or key figure (can be inside or outside main paragraphs).
+
+Source Link: Provide a clickable URL (you may research it if needed).
+
+Tone & Style:
+
+Informal but authoritative—like a friendly mentor.
+
+Keep paragraphs short (2–4 lines), concise and easy-to-read(consume/process).
+
+Optionally, add a lighthearted joke if it fits naturally.
+
+Do not use clickbait, misleading information, or exaggeration.
+
+Do not make posts look like I am trying to advertise/sell something.
+
+Inputs attached: Two model posts and the raw news feed to craft posts. Please format your output as separate posts, numbered.
+
+Use special text symbols that telegram uses to format text (eg. You can make text bold by surrounding it with asterisks (**), italic by enclosing it with underscores (), underlined by using double underscores (_), strikethrough with tildes (~), and hide text under a spoiler by using double vertical bars (||). Code snippets are formatted using three backticks (```) at the beginning and end. Telegram uses the > symbol to indicate a quote, similar to how it's used in other messaging and text formatting systems. Enclosing a text within > will display it as a quote. )
+
+
+
