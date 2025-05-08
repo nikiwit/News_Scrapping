@@ -509,65 +509,13 @@ ENTREPRENEURSHIP_NEWS_SOURCES = [
 ]
 
 LIFESTYLE_NEWS_SOURCES = [
-    # Professional Health Sources
+    # Popular and Active Lifestyle Blogs
     {
-        "name": "Mayo Clinic",
-        "rss_url": "https://www.mayoclinic.org/rss/all-health-information-topics",
-        "url": "https://www.mayoclinic.org",
+        "name": "Cup of Jo",
+        "rss_url": "https://feeds.feedburner.com/blogspot/bboSV",
+        "url": "https://cupofjo.com",
         "category": "manual_news_system"
     },
-    {
-        "name": "Harvard Health Blog",
-        "rss_url": "https://www.health.harvard.edu/blog/feed",
-        "url": "https://www.health.harvard.edu/blog",
-        "category": "manual_news_system"
-    },
-    
-    # Popular Health & Wellness
-    {
-        "name": "Well+Good",
-        "rss_url": "https://www.wellandgood.com/feed/",
-        "url": "https://www.wellandgood.com",
-        "category": "manual_news_system"
-    },
-    
-    # Professional Science Sources
-    {
-        "name": "Scientific American",
-        "rss_url": "https://www.scientificamerican.com/rss/feed.php?type=main",
-        "url": "https://www.scientificamerican.com",
-        "category": "manual_news_system"
-    },
-    {
-        "name": "Science Daily",
-        "rss_url": "https://www.sciencedaily.com/rss/all.xml",
-        "url": "https://www.sciencedaily.com",
-        "category": "manual_news_system"
-    },
-    
-    # Fun Science & Tech
-    {
-        "name": "IFLScience",
-        "rss_url": "https://www.iflscience.com/feed",
-        "url": "https://www.iflscience.com",
-        "category": "manual_news_system"
-    },
-    
-    # Self-Improvement
-    {
-        "name": "Zen Habits",
-        "rss_url": "https://zenhabits.net/feed/",
-        "url": "https://zenhabits.net",
-        "category": "manual_news_system"
-    },
-    {
-        "name": "James Clear",
-        "rss_url": "https://jamesclear.com/feed",
-        "url": "https://jamesclear.com",
-        "category": "manual_news_system"
-    },
-    
-    # General Lifestyle
     {
         "name": "Lifehacker",
         "rss_url": "https://lifehacker.com/rss",
@@ -575,7 +523,59 @@ LIFESTYLE_NEWS_SOURCES = [
         "category": "manual_news_system"
     },
     
-    # Fun Lifestyle Content
+    # Health & Wellness
+    {
+        "name": "MindBodyGreen",
+        "rss_url": "https://www.mindbodygreen.com/rss/feed.xml",
+        "url": "https://www.mindbodygreen.com/health",
+        "category": "manual_news_system"
+    },
+    {
+        "name": "Health eHealth Square",
+        "rss_url": "https://ehealthsquare.com/feed",
+        "url": "https://ehealthsquare.com",
+        "category": "manual_news_system"
+    },
+    
+    # Self-Improvement
+    {
+        "name": "Tiny Buddha",
+        "rss_url": "https://tinybuddha.com/feed/",
+        "url": "https://tinybuddha.com",
+        "category": "manual_news_system"
+    },
+    {
+        "name": "BrainFlow",
+        "rss_url": "https://brainflow.co/feed",
+        "url": "https://brainflow.co",
+        "category": "manual_news_system"
+    },
+    
+    # Science & Knowledge
+    {
+        "name": "Science Daily",
+        "rss_url": "https://www.sciencedaily.com/rss/top/health.xml",
+        "url": "https://www.sciencedaily.com",
+        "category": "manual_news_system"
+    },
+    
+    # Fitness & Nutrition
+    {
+        "name": "The Betty Rocker",
+        "rss_url": "https://thebettyrocker.com/feed",
+        "url": "https://thebettyrocker.com",
+        "category": "manual_news_system"
+    },
+    
+    # Home & Design
+    {
+        "name": "Apartment Therapy",
+        "rss_url": "https://www.apartmenttherapy.com/main.rss",
+        "url": "https://www.apartmenttherapy.com",
+        "category": "manual_news_system"
+    },
+    
+    # Entertaining Content
     {
         "name": "The Onion",
         "rss_url": "https://www.theonion.com/rss",
