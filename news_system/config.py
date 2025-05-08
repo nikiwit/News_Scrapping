@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# config.py - Updated for two bots and two channels
+# config.py - Updated to include entrepreneurship news
 
 import os
 from pathlib import Path
@@ -13,8 +13,8 @@ STATE_DIR = BASE_DIR / "state"
 for dir_path in [DATA_DIR, STATE_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
-# Create category directories - only two categories for this setup
-CATEGORIES = ["business_news", "it_news"]
+# Create category directories - now with three categories
+CATEGORIES = ["business_news", "it_news", "entrepreneurship_news"]
 for category in CATEGORIES:
     (DATA_DIR / category).mkdir(exist_ok=True)
 
@@ -24,14 +24,7 @@ RATE_LIMIT_SECONDS = 2  # Time to wait between requests to the same domain
 DEFAULT_SCRAPE_INTERVAL_HOURS = 3  # Default time to look back for new articles
 
 # News sources configuration
-# News sources configuration
 TECH_NEWS_SOURCES = [
-    {
-        "name": "TechCrunch",
-        "rss_url": "https://techcrunch.com/feed/",
-        "url": "https://techcrunch.com",
-        "category": "it_news"
-    },
     {
         "name": "The Verge",
         "rss_url": "https://www.theverge.com/rss/index.xml",
@@ -39,9 +32,9 @@ TECH_NEWS_SOURCES = [
         "category": "it_news"
     },
     {
-        "name": "Wired",
-        "rss_url": "https://www.wired.com/feed/rss",
-        "url": "https://www.wired.com",
+        "name": "TechCrunch",
+        "rss_url": "https://techcrunch.com/feed/",
+        "url": "https://techcrunch.com",
         "category": "it_news"
     },
     {
@@ -57,15 +50,39 @@ TECH_NEWS_SOURCES = [
         "category": "it_news"
     },
     {
-        "name": "MIT Technology Review",
-        "rss_url": "https://www.technologyreview.com/feed/",
-        "url": "https://www.technologyreview.com",
+        "name": "The Register",
+        "rss_url": "https://www.theregister.com/headlines.atom",
+        "url": "https://www.theregister.com/security/",
         "category": "it_news"
     },
     {
         "name": "ZDNet",
         "rss_url": "https://www.zdnet.com/news/rss.xml",
         "url": "https://www.zdnet.com",
+        "category": "it_news"
+    },
+    {
+        "name": "VentureBeat",
+        "rss_url": "https://venturebeat.com/feed/",
+        "url": "https://venturebeat.com",
+        "category": "it_news"
+    },
+    {
+        "name": "GitHub Blog",
+        "rss_url": "https://github.blog/feed/",
+        "url": "https://github.blog/category/engineering/",
+        "category": "it_news"
+    },
+    {
+        "name": "Wired",
+        "rss_url": "https://www.wired.com/feed/rss",
+        "url": "https://www.wired.com",
+        "category": "it_news"
+    },
+    {
+        "name": "MIT Technology Review",
+        "rss_url": "https://www.technologyreview.com/feed/",
+        "url": "https://www.technologyreview.com",
         "category": "it_news"
     },
     {
@@ -96,12 +113,6 @@ TECH_NEWS_SOURCES = [
         "name": "Slashdot",
         "rss_url": "https://rss.slashdot.org/Slashdot/slashdotMain",
         "url": "https://slashdot.org",
-        "category": "it_news"
-    },
-    {
-        "name": "VentureBeat",
-        "rss_url": "https://venturebeat.com/feed/",
-        "url": "https://venturebeat.com",
         "category": "it_news"
     },
     {
@@ -245,7 +256,6 @@ BUSINESS_NEWS_SOURCES = [
         "url": "https://moz.com/blog",
         "category": "business_news"
     },
-    # New replacements for blocked sources
     {
         "name": "Finextra",
         "rss_url": "https://www.finextra.com/rss/headlines.aspx",
@@ -272,25 +282,175 @@ BUSINESS_NEWS_SOURCES = [
     }
 ]
 
-# All news sources combined
-ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES
+ENTREPRENEURSHIP_NEWS_SOURCES = [
+    {
+        "name": "Entrepreneur Magazine",
+        "rss_url": "https://www.entrepreneur.com/latest.rss",
+        "url": "https://www.entrepreneur.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Inc.",
+        "rss_url": "https://www.inc.com/rss.xml",
+        "url": "https://www.inc.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "StartupNation",
+        "rss_url": "https://startupnation.com/feed/",
+        "url": "https://startupnation.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Y Combinator Blog",
+        "rss_url": "https://blog.ycombinator.com/feed/",
+        "url": "https://blog.ycombinator.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "TechStars Blog",
+        "rss_url": "https://www.techstars.com/feed",
+        "url": "https://www.techstars.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Foundr",
+        "rss_url": "https://foundr.com/feed",
+        "url": "https://foundr.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "StartUp Mindset",
+        "rss_url": "https://startupmindset.com/feed/",
+        "url": "https://startupmindset.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "AllBusiness",
+        "rss_url": "https://www.allbusiness.com/feed",
+        "url": "https://www.allbusiness.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Under30CEO",
+        "rss_url": "https://under30ceo.com/feed/",
+        "url": "https://under30ceo.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "OnStartups",
+        "rss_url": "https://onstartups.com/rss.xml",
+        "url": "https://onstartups.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Indie Hackers",
+        "rss_url": "https://www.indiehackers.com/feed.xml",
+        "url": "https://www.indiehackers.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Startup Grind",
+        "rss_url": "https://www.startupgrind.com/feed/",
+        "url": "https://www.startupgrind.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "SaaStr",
+        "rss_url": "https://www.saastr.com/feed/",
+        "url": "https://www.saastr.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Startup Lessons Learned",
+        "rss_url": "https://www.startuplessonslearned.com/feeds/posts/default",
+        "url": "https://www.startuplessonslearned.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Seedcamp",
+        "rss_url": "https://seedcamp.com/feed/",
+        "url": "https://seedcamp.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "A16Z Blog",
+        "rss_url": "https://a16z.com/feed/",
+        "url": "https://a16z.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "First Round Review",
+        "rss_url": "https://review.firstround.com/feed.xml",
+        "url": "https://review.firstround.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Both Sides of the Table",
+        "rss_url": "https://bothsidesofthetable.com/feed",
+        "url": "https://bothsidesofthetable.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Startups.com",
+        "rss_url": "https://www.startups.com/feed",
+        "url": "https://www.startups.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Product Hunt Blog",
+        "rss_url": "https://blog.producthunt.com/feed",
+        "url": "https://blog.producthunt.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+    "name": "Entrepreneur Asia Pacific",
+    "rss_url": "https://www.entrepreneur.com/asiapacific/rss",
+    "url": "https://www.entrepreneur.com/asiapacific",
+    "category": "entrepreneurship_news"
+    },
+    {
+        "name": "TechCrunch Startups",
+        "rss_url": "https://techcrunch.com/category/startups/feed/",
+        "url": "https://techcrunch.com/category/startups/",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Noobpreneur",
+        "rss_url": "https://www.noobpreneur.com/feed/",
+        "url": "https://www.noobpreneur.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Addicted2Success",
+        "rss_url": "https://addicted2success.com/feed/",
+        "url": "https://addicted2success.com",
+        "category": "entrepreneurship_news"
+    }
+]
 
-# Telegram configuration for TWO SEPARATE BOTS
+# All news sources combined
+ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES + ENTREPRENEURSHIP_NEWS_SOURCES
+
+# Telegram configuration
 TELEGRAM_BOT_TOKENS = {
     "business_news": os.environ.get("BUSINESS_BOT_TOKEN", "7753587635:AAGG8-qTogDPtCSL83mr7FBRgIKdijvz89Q"),
-    "it_news": os.environ.get("IT_BOT_TOKEN", "7797865654:AAHIBliz3W_GrOy9ruD6vXwoW5OcLgbhifw")
+    "it_news": os.environ.get("IT_BOT_TOKEN", "7797865654:AAHIBliz3W_GrOy9ruD6vXwoW5OcLgbhifw"),
+    "entrepreneurship_news": os.environ.get("ENTREPRENEUR_BOT_TOKEN", "7763104070:AAE2RPRGcB7neO1Y8AWt5MVzP9GmVtxUf6g")
 }
 
 # Telegram channels
 TELEGRAM_CHANNELS = {
     "business_news": "@business_news_hub",
-    "it_news": "@it_geeks_hub"
+    "it_news": "@it_geeks_hub",
+    "entrepreneurship_news": "@entrepreneurship_hub"
 }
 
 # Bot-to-channel mapping
 BOT_CHANNEL_MAPPING = {
-    "business_news": "business_news",  # Business bot posts to business channel
-    "it_news": "it_news"               # IT bot posts to IT channel
+    "business_news": "business_news",
+    "it_news": "it_news",
+    "entrepreneurship_news": "entrepreneurship_news"
 }
 
 # LLM configuration

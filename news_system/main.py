@@ -20,6 +20,7 @@ logger = setup_logging()
 # Import modules
 from scrapers.tech_news import TechNewsScraper
 from scrapers.business_news import BusinessNewsScraper
+from scrapers.entrepreneurship_news import EntrepreneurshipNewsScraper
 from telegram_client.bot import NewsBot, NewsBotManager
 from telegram_client.channel_manager import ChannelManager
 from llm.formatter import ContentGenerator
@@ -34,6 +35,7 @@ class NewsSystem:
         """Initialize the news system."""
         self.tech_scraper = TechNewsScraper()
         self.business_scraper = BusinessNewsScraper()
+        self.entrepreneurship_scraper = EntrepreneurshipNewsScraper()
         self.bot_manager = NewsBotManager()
         
         # Initialize channel manager with appropriate category
@@ -92,9 +94,13 @@ class NewsSystem:
         business_results = self.business_scraper.scrape(past_hours)
         logger.info(f"Business news scrape complete, found {len(business_results)} new articles")
         
+        entrepreneurship_results = self.entrepreneurship_scraper.scrape(past_hours)
+        logger.info(f"Entrepreneurship news scrape complete, found {len(entrepreneurship_results)} new articles")
+        
         return {
             "it_news": tech_results,
-            "business_news": business_results
+            "business_news": business_results,
+            "entrepreneurship_news": entrepreneurship_results
         }
         
     async def post_latest(self, count=1, category=None, style=None):

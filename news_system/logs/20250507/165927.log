@@ -1,0 +1,170 @@
+2025-05-07 16:59:27,147 INFO Logging started. Log file: logs/20250507/165927.log
+2025-05-07 16:59:27,364 INFO Initialized EntrepreneurshipNewsScraper
+2025-05-07 16:59:27,364 INFO Starting news scrape (past_hours=3)...
+2025-05-07 16:59:27,364 INFO Starting tech news scrape
+2025-05-07 16:59:27,364 INFO === Source: The Verge (since 2025-05-07T08:20:57+00:00) ===
+2025-05-07 16:59:27,365 INFO Parsing RSS for The Verge
+2025-05-07 16:59:27,562 INFO Processing article 1/1 from The Verge
+2025-05-07 16:59:27,562 INFO Fetching article: https://www.theverge.com/news/662440/xbox-handheld-photos-microsoft-asus-rog-ally-2-fcc-listing
+2025-05-07 16:59:27,835 INFO === Source: TechCrunch (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:27,835 INFO Parsing RSS for TechCrunch
+2025-05-07 16:59:28,791 INFO Skipping already scraped article: https://techcrunch.com/2025/05/07/openai-expects-to-cut-share-of-revenue-it-pays-microsoft-by-2030/
+2025-05-07 16:59:28,791 INFO Skipping already scraped article: https://techcrunch.com/2025/05/06/amid-greek-tech-boom-a-prominent-seed-stage-firm-locks-down-e75-million/
+2025-05-07 16:59:28,791 INFO === Source: Ars Technica (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:28,791 INFO Parsing RSS for Ars Technica
+2025-05-07 16:59:29,519 INFO === Source: Hacker News (since 2025-05-07T07:00:04+00:00) ===
+2025-05-07 16:59:29,519 INFO Parsing RSS for Hacker News
+2025-05-07 16:59:30,399 INFO === Source: The Register (since 2025-05-07T08:30:11+00:00) ===
+2025-05-07 16:59:30,399 INFO Parsing RSS for The Register
+2025-05-07 16:59:31,151 INFO === Source: ZDNet (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:31,151 INFO Parsing RSS for ZDNet
+2025-05-07 16:59:31,597 INFO === Source: VentureBeat (since 2025-05-07T08:03:00+00:00) ===
+2025-05-07 16:59:31,597 INFO Parsing RSS for VentureBeat
+2025-05-07 16:59:31,708 INFO === Source: GitHub Blog (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:31,708 INFO Parsing RSS for GitHub Blog
+2025-05-07 16:59:31,858 INFO === Source: Wired (since 2025-05-07T08:00:00+00:00) ===
+2025-05-07 16:59:31,858 INFO Parsing RSS for Wired
+2025-05-07 16:59:31,956 INFO === Source: MIT Technology Review (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:31,956 INFO Parsing RSS for MIT Technology Review
+2025-05-07 16:59:32,079 INFO === Source: Mashable Tech (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:32,079 INFO Parsing RSS for Mashable Tech
+2025-05-07 16:59:32,366 INFO === Source: Engadget (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:32,366 INFO Parsing RSS for Engadget
+2025-05-07 16:59:34,232 INFO === Source: The Next Web (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:34,232 INFO Parsing RSS for The Next Web
+2025-05-07 16:59:35,066 INFO === Source: ReadWrite (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:35,066 INFO Parsing RSS for ReadWrite
+2025-05-07 16:59:35,175 INFO === Source: Slashdot (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:35,175 INFO Parsing RSS for Slashdot
+2025-05-07 16:59:35,365 INFO === Source: TechRadar (since 2025-05-07T08:16:07+00:00) ===
+2025-05-07 16:59:35,365 INFO Parsing RSS for TechRadar
+2025-05-07 16:59:35,582 INFO Processing article 1/1 from TechRadar
+2025-05-07 16:59:35,582 INFO Fetching article: https://www.techradar.com/pro/how-onboarding-delays-are-limiting-the-impact-of-software-development-contractors
+2025-05-07 16:59:36,117 INFO === Source: Gizmodo (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:36,117 INFO Parsing RSS for Gizmodo
+2025-05-07 16:59:37,761 INFO === Source: CNET (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:37,762 INFO Parsing RSS for CNET
+2025-05-07 16:59:38,071 INFO === Source: Bleeping Computer (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:38,071 INFO Parsing RSS for Bleeping Computer
+2025-05-07 16:59:38,190 INFO === Source: Tech Republic (since 2025-05-07T07:00:24+00:00) ===
+2025-05-07 16:59:38,190 INFO Parsing RSS for Tech Republic
+2025-05-07 16:59:38,340 INFO === Source: Digital Trends (since 2025-05-06T23:55:25-07:00) ===
+2025-05-07 16:59:38,340 INFO Parsing RSS for Digital Trends
+2025-05-07 16:59:38,437 INFO === Source: Hackaday (since 2025-05-07T05:59:27.364633+00:00) ===
+2025-05-07 16:59:38,437 INFO Parsing RSS for Hackaday
+2025-05-07 16:59:38,532 INFO Skipping already scraped article: https://hackaday.com/2025/05/07/tracking-the-sun-nah/
+2025-05-07 16:59:38,534 INFO Saved 2 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/07_05_2025/1659/it_news
+2025-05-07 16:59:38,534 INFO Tech news scrape complete, found 2 new articles
+2025-05-07 16:59:38,534 INFO Tech news scrape complete, found 2 new articles
+2025-05-07 16:59:38,534 INFO Starting business news scrape
+2025-05-07 16:59:38,534 INFO === Source: Forbes (since 2025-05-07T08:15:34+00:00) ===
+2025-05-07 16:59:38,534 INFO Parsing RSS for Forbes
+2025-05-07 16:59:38,644 INFO === Source: Business Insider (since 2025-05-07T08:46:01+00:00) ===
+2025-05-07 16:59:38,644 INFO Parsing RSS for Business Insider
+2025-05-07 16:59:39,758 INFO === Source: Entrepreneur Magazine (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:39,758 INFO Parsing RSS for Entrepreneur Magazine
+2025-05-07 16:59:39,814 INFO === Source: Inc. (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:39,814 INFO Parsing RSS for Inc.
+2025-05-07 16:59:40,659 INFO === Source: Harvard Business Review (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:40,660 INFO Parsing RSS for Harvard Business Review
+2025-05-07 16:59:41,800 INFO === Source: Reuters Business (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:41,800 INFO Parsing RSS for Reuters Business
+2025-05-07 16:59:41,836 INFO === Source: CNBC (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:41,836 INFO Parsing RSS for CNBC
+2025-05-07 16:59:42,199 INFO === Source: Financial Times (since 2025-05-07T06:06:26+00:00) ===
+2025-05-07 16:59:42,199 INFO Parsing RSS for Financial Times
+2025-05-07 16:59:43,100 INFO Skipping already scraped article: https://www.ft.com/content/c03e03ba-fd94-4538-a32b-246d59ecaf0c
+2025-05-07 16:59:43,100 INFO === Source: The Economist (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:43,100 INFO Parsing RSS for The Economist
+2025-05-07 16:59:43,336 INFO === Source: Wall Street Journal (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:43,336 INFO Parsing RSS for Wall Street Journal
+2025-05-07 16:59:43,880 INFO === Source: Fortune (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:43,880 INFO Parsing RSS for Fortune
+2025-05-07 16:59:44,249 INFO Skipping already scraped article: https://fortune.com/2025/05/07/fed-politics-independence-markets-cut-hint-trump/
+2025-05-07 16:59:44,249 INFO Skipping already scraped article: https://fortune.com/asia/2025/05/07/us-china-trade-talks-trump-tariffs-bessent/
+2025-05-07 16:59:44,249 INFO Processing article 1/1 from Fortune
+2025-05-07 16:59:44,249 INFO Fetching article: https://fortune.com/article/canada-mark-carney-president-donald-trump-canada-51st-state-not-for-sale/
+2025-05-07 16:59:44,423 INFO === Source: The Hustle (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:44,423 INFO Parsing RSS for The Hustle
+2025-05-07 16:59:45,106 INFO === Source: Quartz (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:45,107 INFO Parsing RSS for Quartz
+2025-05-07 16:59:46,058 INFO === Source: Yahoo Finance (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:46,058 INFO Parsing RSS for Yahoo Finance
+2025-05-07 16:59:46,174 INFO === Source: McKinsey Insights (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:46,175 INFO Parsing RSS for McKinsey Insights
+2025-05-07 16:59:47,441 INFO === Source: Moz Blog (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:47,441 INFO Parsing RSS for Moz Blog
+2025-05-07 16:59:48,556 INFO === Source: Finextra (since 2025-05-07T09:35:00+00:00) ===
+2025-05-07 16:59:48,556 INFO Parsing RSS for Finextra
+2025-05-07 16:59:49,673 INFO Skipping already scraped article: https://www.finextra.com/event-info/550/a-new-era-of-kyc---why-its-time-to-redefine-client-onboarding?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/551/solving-procurement-challenges-with-embedded-payments?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/554/weathering-macroeconomic-headwinds-how-should-cfos-invest-in-tech?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/553/ai-in-the-wrong-hands-exploring-modern-cybersecurity-concerns?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/559/the-next-fintech-frontier-a-path-to-enhanced-cross-border-solutions-amidst-economic-uncertainty?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/555/protecting-wealth-tackling-faster-payments-fraud-and-ai-driven-scams?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/557/paas-cloud-and-instant-payments-in-the-spotlight-overcoming-outsourcing-challenges?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/556/the-final-countdown-whats-next-for-verification-of-payee?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/558/why-verticalisation-matters-unlocking-success-through-tailored-smb-propositions-?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/561/can-you-have-it-all-integrating-new-channels-in-a-new-world-of-payments-?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO Skipping already scraped article: https://www.finextra.com/event-info/560/payments-modernisation-in-emea--2025-priorities-and-challenges-?utm_medium=rssfinextra&utm_source=finextrafeed
+2025-05-07 16:59:49,674 INFO === Source: Banking Dive (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:49,674 INFO Parsing RSS for Banking Dive
+2025-05-07 16:59:50,262 INFO === Source: Payments Dive (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:50,262 INFO Parsing RSS for Payments Dive
+2025-05-07 16:59:50,850 INFO === Source: The Financial Brand (since 2025-05-07T05:59:38.534181+00:00) ===
+2025-05-07 16:59:50,850 INFO Parsing RSS for The Financial Brand
+2025-05-07 16:59:51,600 INFO Saved 1 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/07_05_2025/1659/business_news
+2025-05-07 16:59:51,600 INFO Business news scrape complete, found 1 new articles
+2025-05-07 16:59:51,600 INFO Business news scrape complete, found 1 new articles
+2025-05-07 16:59:51,600 INFO Starting entrepreneurship news scrape (past_hours=3)...
+2025-05-07 16:59:51,601 INFO === Source: Entrepreneur Magazine (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:51,601 INFO Parsing RSS for Entrepreneur Magazine
+2025-05-07 16:59:51,695 INFO === Source: Inc. (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:51,695 INFO Parsing RSS for Inc.
+2025-05-07 16:59:51,775 INFO === Source: StartupNation (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:51,775 INFO Parsing RSS for StartupNation
+2025-05-07 16:59:52,917 INFO === Source: Y Combinator Blog (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:52,917 INFO Parsing RSS for Y Combinator Blog
+2025-05-07 16:59:54,282 INFO === Source: TechStars Blog (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:54,282 INFO Parsing RSS for TechStars Blog
+2025-05-07 16:59:55,774 INFO === Source: Foundr (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:55,775 INFO Parsing RSS for Foundr
+2025-05-07 16:59:56,261 INFO === Source: StartUp Mindset (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:56,261 INFO Parsing RSS for StartUp Mindset
+2025-05-07 16:59:58,572 INFO === Source: AllBusiness (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:58,572 INFO Parsing RSS for AllBusiness
+2025-05-07 16:59:58,986 INFO === Source: Under30CEO (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 16:59:58,986 INFO Parsing RSS for Under30CEO
+2025-05-07 17:00:18,400 INFO === Source: OnStartups (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:00:18,400 INFO Parsing RSS for OnStartups
+2025-05-07 17:00:58,878 INFO === Source: Indie Hackers (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:00:58,878 INFO Parsing RSS for Indie Hackers
+2025-05-07 17:01:00,881 INFO === Source: Startup Grind (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:00,881 INFO Parsing RSS for Startup Grind
+2025-05-07 17:01:02,829 INFO === Source: SaaStr (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:02,830 INFO Parsing RSS for SaaStr
+2025-05-07 17:01:02,950 INFO === Source: Startup Lessons Learned (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:02,950 INFO Parsing RSS for Startup Lessons Learned
+2025-05-07 17:01:04,103 INFO === Source: Seedcamp (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:04,103 INFO Parsing RSS for Seedcamp
+2025-05-07 17:01:05,202 INFO === Source: A16Z Blog (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:05,202 INFO Parsing RSS for A16Z Blog
+2025-05-07 17:01:05,583 INFO === Source: First Round Review (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:05,583 INFO Parsing RSS for First Round Review
+2025-05-07 17:01:05,997 INFO === Source: Both Sides of the Table (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:05,997 INFO Parsing RSS for Both Sides of the Table
+2025-05-07 17:01:07,708 INFO === Source: Startups.com (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:07,708 INFO Parsing RSS for Startups.com
+2025-05-07 17:01:07,818 INFO === Source: Product Hunt Blog (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:07,819 INFO Parsing RSS for Product Hunt Blog
+2025-05-07 17:01:10,194 INFO === Source: Entrepreneur Asia Pacific (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:10,195 INFO Parsing RSS for Entrepreneur Asia Pacific
+2025-05-07 17:01:10,727 INFO === Source: TechCrunch Startups (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:10,728 INFO Parsing RSS for TechCrunch Startups
+2025-05-07 17:01:11,661 INFO === Source: Noobpreneur (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:11,661 INFO Parsing RSS for Noobpreneur
+2025-05-07 17:01:14,371 INFO === Source: Addicted2Success (since 2025-05-07T05:59:51.601005+00:00) ===
+2025-05-07 17:01:14,371 INFO Parsing RSS for Addicted2Success
+2025-05-07 17:01:16,033 INFO No new articles found.
+2025-05-07 17:01:16,033 INFO Entrepreneurship news scrape complete, found 0 new articles
+2025-05-07 17:01:16,033 INFO Entrepreneurship news scrape complete, found 0 new articles
