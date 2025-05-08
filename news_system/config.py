@@ -508,8 +508,84 @@ ENTREPRENEURSHIP_NEWS_SOURCES = [
     }
 ]
 
+LIFESTYLE_NEWS_SOURCES = [
+    # Professional Health Sources
+    {
+        "name": "Mayo Clinic",
+        "rss_url": "https://www.mayoclinic.org/rss/all-health-information-topics",
+        "url": "https://www.mayoclinic.org",
+        "category": "manual_news_system"
+    },
+    {
+        "name": "Harvard Health Blog",
+        "rss_url": "https://www.health.harvard.edu/blog/feed",
+        "url": "https://www.health.harvard.edu/blog",
+        "category": "manual_news_system"
+    },
+    
+    # Popular Health & Wellness
+    {
+        "name": "Well+Good",
+        "rss_url": "https://www.wellandgood.com/feed/",
+        "url": "https://www.wellandgood.com",
+        "category": "manual_news_system"
+    },
+    
+    # Professional Science Sources
+    {
+        "name": "Scientific American",
+        "rss_url": "https://www.scientificamerican.com/rss/feed.php?type=main",
+        "url": "https://www.scientificamerican.com",
+        "category": "manual_news_system"
+    },
+    {
+        "name": "Science Daily",
+        "rss_url": "https://www.sciencedaily.com/rss/all.xml",
+        "url": "https://www.sciencedaily.com",
+        "category": "manual_news_system"
+    },
+    
+    # Fun Science & Tech
+    {
+        "name": "IFLScience",
+        "rss_url": "https://www.iflscience.com/feed",
+        "url": "https://www.iflscience.com",
+        "category": "manual_news_system"
+    },
+    
+    # Self-Improvement
+    {
+        "name": "Zen Habits",
+        "rss_url": "https://zenhabits.net/feed/",
+        "url": "https://zenhabits.net",
+        "category": "manual_news_system"
+    },
+    {
+        "name": "James Clear",
+        "rss_url": "https://jamesclear.com/feed",
+        "url": "https://jamesclear.com",
+        "category": "manual_news_system"
+    },
+    
+    # General Lifestyle
+    {
+        "name": "Lifehacker",
+        "rss_url": "https://lifehacker.com/rss",
+        "url": "https://lifehacker.com",
+        "category": "manual_news_system"
+    },
+    
+    # Fun Lifestyle Content
+    {
+        "name": "The Onion",
+        "rss_url": "https://www.theonion.com/rss",
+        "url": "https://www.theonion.com",
+        "category": "manual_news_system"
+    }
+]
+
 # All news sources combined
-ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES + ENTREPRENEURSHIP_NEWS_SOURCES
+ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES + ENTREPRENEURSHIP_NEWS_SOURCES + LIFESTYLE_NEWS_SOURCES
 
 # Telegram configuration
 TELEGRAM_BOT_TOKENS = {
