@@ -15,7 +15,7 @@ import time
 from logging_setup import setup_logging
 
 # Initialize the logger with individual log files for each run
-logger = setup_logging()
+logger, log_file = setup_logging(module_name="NewsSystem")
 
 # Import modules
 from scrapers.tech_news import TechNewsScraper
@@ -243,7 +243,7 @@ class NewsSystem:
         while True:
             try:
                 # Create a new log file for this run
-                new_logger = setup_logging()
+                new_logger, new_log_file = setup_logging(module_name="NewsSystem")
                 
                 # Scrape news
                 new_logger.info(f"Starting scheduled scrape run (interval={interval_hours}h, posts={posts_per_category})")
