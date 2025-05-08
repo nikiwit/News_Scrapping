@@ -440,6 +440,12 @@ ENTREPRENEURSHIP_NEWS_SOURCES = [
         "url": "https://www.bloomberg.com/entrepreneurs",
         "category": "entrepreneurship_news"
     },
+    {
+        "name": "Business Insider",
+        "rss_url": "https://www.businessinsider.com/rss",
+        "url": "https://www.businessinsider.com",
+        "category": "business_news"
+    },
     
     # === Lifestyle News for Young Entrepreneurs ===
     {
