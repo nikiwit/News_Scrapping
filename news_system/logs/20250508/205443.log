@@ -1,0 +1,60 @@
+2025-05-08 20:54:43,398 INFO NewsSystem.Scraper.Lifestyle: Logging started. Log file: logs/20250508/205443.log
+2025-05-08 20:54:43,399 INFO NewsSystem.Scraper.Lifestyle: Starting lifestyle news scraper with past_hours=5
+2025-05-08 20:54:43,399 INFO NewsSystem.Scraper.Lifestyle: Initializing LifestyleNewsScraper
+2025-05-08 20:54:43,399 INFO NewsSystem.Scraper.Manual_news_system: Initialized manual_news_system scraper
+2025-05-08 20:54:43,399 INFO NewsSystem.Scraper.Manual_news_system: No tracking file found, starting fresh
+2025-05-08 20:54:43,399 INFO NewsSystem.Scraper.Manual_news_system: No state file found, starting fresh
+2025-05-08 20:54:43,400 INFO NewsSystem.Scraper.Lifestyle: Starting lifestyle news scrape (past_hours=5)
+2025-05-08 20:54:43,400 INFO NewsSystem.Scraper.Manual_news_system: Starting scrape for manual_news_system (looking back 5 hours)
+2025-05-08 20:54:43,400 INFO NewsSystem.Scraper.Manual_news_system: Processing 10 news sources
+2025-05-08 20:54:43,400 INFO NewsSystem.Scraper.Manual_news_system: === Source: Mayo Clinic (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:54:43,400 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Mayo Clinic
+2025-05-08 20:54:45,164 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for Mayo Clinic
+2025-05-08 20:54:45,164 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Mayo Clinic
+2025-05-08 20:54:45,164 INFO NewsSystem.Scraper.Manual_news_system: === Source: Harvard Health Blog (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:54:45,164 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Harvard Health Blog
+2025-05-08 20:54:47,718 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for Harvard Health Blog
+2025-05-08 20:54:47,719 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Harvard Health Blog
+2025-05-08 20:54:47,719 INFO NewsSystem.Scraper.Manual_news_system: === Source: Well+Good (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:54:47,719 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Well+Good
+2025-05-08 20:55:01,489 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for Well+Good
+2025-05-08 20:55:01,489 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Well+Good
+2025-05-08 20:55:01,489 INFO NewsSystem.Scraper.Manual_news_system: === Source: Scientific American (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:55:01,489 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Scientific American
+2025-05-08 20:55:02,004 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for Scientific American
+2025-05-08 20:55:02,004 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Scientific American
+2025-05-08 20:55:02,004 INFO NewsSystem.Scraper.Manual_news_system: === Source: Science Daily (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:55:02,005 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Science Daily
+2025-05-08 20:55:02,095 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for Science Daily
+2025-05-08 20:55:02,095 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Science Daily
+2025-05-08 20:55:02,095 INFO NewsSystem.Scraper.Manual_news_system: === Source: IFLScience (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:55:02,095 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for IFLScience
+2025-05-08 20:55:02,931 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for IFLScience
+2025-05-08 20:55:02,931 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for IFLScience
+2025-05-08 20:55:02,931 INFO NewsSystem.Scraper.Manual_news_system: === Source: Zen Habits (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:55:02,931 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Zen Habits
+2025-05-08 20:55:03,112 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for Zen Habits
+2025-05-08 20:55:03,112 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Zen Habits
+2025-05-08 20:55:03,112 INFO NewsSystem.Scraper.Manual_news_system: === Source: James Clear (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:55:03,112 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for James Clear
+2025-05-08 20:55:03,339 INFO NewsSystem.Scraper.Manual_news_system: Found 10 entries in RSS feed for James Clear
+2025-05-08 20:55:03,339 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for James Clear
+2025-05-08 20:55:03,339 INFO NewsSystem.Scraper.Manual_news_system: === Source: Lifehacker (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:55:03,339 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Lifehacker
+2025-05-08 20:55:03,798 INFO NewsSystem.Scraper.Manual_news_system: Found 100 entries in RSS feed for Lifehacker
+2025-05-08 20:55:03,802 INFO NewsSystem.Scraper.Manual_news_system: New article found: 40 of the Scariest Horror Movies on Netflix Right Now
+2025-05-08 20:55:03,803 INFO NewsSystem.Scraper.Manual_news_system: Found 1 new articles from Lifehacker
+2025-05-08 20:55:03,803 INFO NewsSystem.Scraper.Manual_news_system: Processing article 1/1 from Lifehacker
+2025-05-08 20:55:03,803 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://lifehacker.com/best-netflix-horror-movies?utm_medium=RSS
+2025-05-08 20:55:03,870 WARNING robots_checker: Robots.txt disallows: https://lifehacker.com/best-netflix-horror-movies?utm_medium=RSS
+2025-05-08 20:55:03,870 WARNING NewsSystem.Scraper.Manual_news_system: Disallowed by robots.txt: https://lifehacker.com/best-netflix-horror-movies?utm_medium=RSS
+2025-05-08 20:55:03,870 INFO NewsSystem.Scraper.Manual_news_system: Updated last run timestamp for Lifehacker to 2025-05-08T12:00:00+00:00
+2025-05-08 20:55:03,870 INFO NewsSystem.Scraper.Manual_news_system: === Source: The Onion (since 2025-05-08T07:54:43.400077+00:00) ===
+2025-05-08 20:55:03,870 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for The Onion
+2025-05-08 20:55:04,131 INFO NewsSystem.Scraper.Manual_news_system: Found 12 entries in RSS feed for The Onion
+2025-05-08 20:55:04,131 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for The Onion
+2025-05-08 20:55:04,131 INFO NewsSystem.Scraper.Manual_news_system: Saving state to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/state/manual_news_system_last_run.json
+2025-05-08 20:55:04,131 INFO NewsSystem.Scraper.Manual_news_system: Saving tracking data to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/state/manual_news_system_articles_tracking.json
+2025-05-08 20:55:04,132 INFO NewsSystem.Scraper.Manual_news_system: Saved 1 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/08_05_2025/2054/manual_news_system
+2025-05-08 20:55:04,132 INFO NewsSystem.Scraper.Lifestyle: Lifestyle news scrape complete, found 1 new articles
+2025-05-08 20:55:04,132 INFO NewsSystem.Scraper.Lifestyle: Lifestyle news scrape found 1 articles

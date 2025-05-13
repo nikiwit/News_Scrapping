@@ -1,0 +1,13 @@
+2025-05-08 21:30:54,799 INFO NewsSystem: Logging started. Log file: logs/20250508/213054.log
+2025-05-08 21:30:55,122 INFO NewsSystem.Scraper.Tech: Initializing TechNewsScraper
+2025-05-08 21:30:55,122 INFO NewsSystem.Scraper.It_news: Initialized it_news scraper
+2025-05-08 21:30:55,122 INFO NewsSystem.Scraper.It_news: Loaded tracking data with 127 tracked articles
+2025-05-08 21:30:55,122 INFO NewsSystem.Scraper.It_news: Loaded last run state with 17 sources
+2025-05-08 21:30:55,122 INFO NewsSystem.Scraper.Business: Initializing BusinessNewsScraper
+2025-05-08 21:30:55,122 INFO NewsSystem.Scraper.Business_news: Initialized business_news scraper
+2025-05-08 21:30:55,123 INFO NewsSystem.Scraper.Business_news: Loaded tracking data with 183 tracked articles
+2025-05-08 21:30:55,123 INFO NewsSystem.Scraper.Business_news: Loaded last run state with 14 sources
+2025-05-08 21:30:55,123 INFO NewsSystem.Scraper.Entrepreneurship: Initializing EntrepreneurshipNewsScraper
+2025-05-08 21:30:55,123 INFO NewsSystem.Scraper.Entrepreneurship_news: Initialized entrepreneurship_news scraper
+2025-05-08 21:30:55,124 INFO NewsSystem.Scraper.Entrepreneurship_news: Loaded tracking data with 206 tracked articles
+2025-05-08 21:30:55,124 INFO NewsSystem.Scraper.Entrepreneurship_news: Loaded last run state with 18 sources

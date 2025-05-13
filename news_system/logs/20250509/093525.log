@@ -1,0 +1,322 @@
+2025-05-09 09:35:25,435 INFO NewsSystem.Scraper.Entrepreneurship: Logging started. Log file: logs/20250509/093525.log
+2025-05-09 09:35:25,436 INFO NewsSystem.Scraper.Entrepreneurship: Starting entrepreneurship news scraper with past_hours=12
+2025-05-09 09:35:25,436 INFO NewsSystem.Scraper.Entrepreneurship: Initializing EntrepreneurshipNewsScraper
+2025-05-09 09:35:25,436 INFO NewsSystem.Scraper.Entrepreneurship_news: Initialized entrepreneurship_news scraper
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship_news: Loaded tracking data with 238 tracked articles
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship_news: Loaded last run state with 21 sources
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship: Starting entrepreneurship news scrape (past_hours=12)...
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship_news: Starting scrape for entrepreneurship_news (looking back 12 hours)
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing 18 news sources
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship_news: Using last run timestamp for Entrepreneur Magazine: 2025-05-08T13:00:00+00:00
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Entrepreneur Magazine (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:35:25,437 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Entrepreneur Magazine
+2025-05-09 09:35:27,565 WARNING NewsSystem.Scraper.Entrepreneurship_news: No entries found in RSS feed for Entrepreneur Magazine
+2025-05-09 09:35:27,565 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Entrepreneur Magazine
+2025-05-09 09:35:27,565 INFO NewsSystem.Scraper.Entrepreneurship_news: Using last run timestamp for Business Insider: 2025-05-08T13:29:09+00:00
+2025-05-09 09:35:27,565 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Business Insider (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:35:27,565 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Business Insider
+2025-05-09 09:35:28,873 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 20 entries in RSS feed for Business Insider
+2025-05-09 09:35:28,874 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: I started backpacking in Southeast Asia 30 years ago. It was better before smartphones and social media.
+2025-05-09 09:35:28,875 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: I'm a good mom, even when my kids aren't. Their behavior doesn't reflect my parenting skills.
+2025-05-09 09:35:28,875 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Trump's deal with Paul Weiss is throwing a wrench into his war on Big Law
+2025-05-09 09:35:28,876 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: What we learned from Instagram boss Adam Mosseri's testimony at the Meta antitrust trial
+2025-05-09 09:35:28,877 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Labor judge says Costco's confidentiality agreement for handling employee complaints is unlawful
+2025-05-09 09:35:28,877 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: First American pope elected
+2025-05-09 09:35:28,877 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Instagram's top executive says the company has spent 'hundreds of millions' of dollars wooing creators
+2025-05-09 09:35:28,878 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: 'Poker Face' creator Rian Johnson on perfecting the murder mystery and why his next movie after 'Knives Out' isn't 'Star Wars'
+2025-05-09 09:35:28,879 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Apple's comments on Search gave investors one reason to worry about Google's future. Here's another.
+2025-05-09 09:35:28,879 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: I saw 'Conclave' in theaters 5 times. Here's why Gen Z was so obsessed with it &mdash; and the real thing.
+2025-05-09 09:35:28,881 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: I made Ina Garten's easy breakfast cake for Mother's Day. My mom gives it a 10/10 &mdash; and so will yours.
+2025-05-09 09:35:28,881 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Donald Trump announces a 'major trade deal' with the UK
+2025-05-09 09:35:28,882 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Amazon's cloud business prepares for 'Buy Canada' questions and other Trump tariff fears
+2025-05-09 09:35:28,883 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Apple says AI is cutting into Google search. Google says that's not true. Who's right?
+2025-05-09 09:35:28,885 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: 12 mistakes you're making when visiting national parks, according to a former park ranger of 37 years
+2025-05-09 09:35:28,886 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Meet Robert Prevost, the first-ever pope born in the US
+2025-05-09 09:35:28,886 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: I loved life in Bozeman, Montana, but I got priced out. Luckily, moving 100 miles away felt like an upgrade.
+2025-05-09 09:35:28,887 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: How a luxury cruise line decides where to go on a 145-day, 34,000-mile journey  around the world
+2025-05-09 09:35:28,890 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Kylie Jenner and Timothée Chalamet finally made their red carpet debut. Here's their complete relationship timeline.
+2025-05-09 09:35:28,892 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Jeff Bezos just sold one of his many Seattle mansions for $63 million. Take a look at the lavish US properties he's bought over the years.
+2025-05-09 09:35:28,892 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 20 new articles from Business Insider
+2025-05-09 09:35:28,892 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/20 from Business Insider
+2025-05-09 09:35:28,892 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/backpacking-southeast-asia-better-before-smartphones-social-media-2025-5
+2025-05-09 09:35:29,996 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 2/20 from Business Insider
+2025-05-09 09:35:29,996 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/my-kids-behavior-doesnt-reflect-on-my-parenting-2025-5
+2025-05-09 09:35:31,820 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 3/20 from Business Insider
+2025-05-09 09:35:31,820 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/trump-big-law-war-paul-weiss-deal-backfires-court-arguments-2025-5
+2025-05-09 09:35:34,206 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 4/20 from Business Insider
+2025-05-09 09:35:34,207 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/instagram-head-adam-mosseri-testifies-in-meta-ftc-antitrust-trial-2025-5
+2025-05-09 09:35:35,696 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 5/20 from Business Insider
+2025-05-09 09:35:35,696 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/costco-confidentiality-agreement-worker-complaints-2025-5
+2025-05-09 09:35:38,152 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 6/20 from Business Insider
+2025-05-09 09:35:38,152 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/first-american-pope-elected-2025-5
+2025-05-09 09:35:39,902 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 7/20 from Business Insider
+2025-05-09 09:35:39,902 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/instagram-spent-hundreds-of-millions-dollars-creators-ftc-adam-mosseri-2025-5
+2025-05-09 09:35:41,665 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 8/20 from Business Insider
+2025-05-09 09:35:41,665 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/rian-johnson-poker-face-knives-out-star-wars-return-2025-5
+2025-05-09 09:35:43,761 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 9/20 from Business Insider
+2025-05-09 09:35:43,761 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/google-search-apple-paid-clicks-eddy-cue-2025-5
+2025-05-09 09:35:46,067 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 10/20 from Business Insider
+2025-05-09 09:35:46,067 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/gen-z-obsessed-with-conclave-film-new-pope-heres-why-2025-5
+2025-05-09 09:35:47,940 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 11/20 from Business Insider
+2025-05-09 09:35:47,940 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/ina-garten-blueberry-ricotta-breakfast-cake-recipe-2023-5
+2025-05-09 09:35:49,948 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 12/20 from Business Insider
+2025-05-09 09:35:49,948 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/donald-trump-announces-a-major-trade-deal-deal-with-uk-2025-5
+2025-05-09 09:35:51,800 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 13/20 from Business Insider
+2025-05-09 09:35:51,800 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/aws-preps-staff-customer-questions-tariffs-trump-cloud-restrictions-2025-4
+2025-05-09 09:35:53,864 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 14/20 from Business Insider
+2025-05-09 09:35:53,864 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/apple-google-disagree-ai-cutting-into-search-2025-5
+2025-05-09 09:35:55,913 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 15/20 from Business Insider
+2025-05-09 09:35:55,913 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/mistakes-national-park-visitors-make-former-park-ranger-2022-8
+2025-05-09 09:35:57,857 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 16/20 from Business Insider
+2025-05-09 09:35:57,857 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/pope-leo-xiv-robert-prevost-first-us-pope-2025-5
+2025-05-09 09:36:00,097 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 17/20 from Business Insider
+2025-05-09 09:36:00,097 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/loved-bozeman-had-to-leave-too-expensive-moved-rural-montana-2025-5
+2025-05-09 09:36:01,715 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 18/20 from Business Insider
+2025-05-09 09:36:01,715 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/how-luxury-carnival-cruise-line-seabourn-plans-world-cruises-2025-5
+2025-05-09 09:36:03,899 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 19/20 from Business Insider
+2025-05-09 09:36:03,899 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/kylie-jenner-timothee-chalamet-relationship-timeline-rumors
+2025-05-09 09:36:06,163 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 20/20 from Business Insider
+2025-05-09 09:36:06,163 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.businessinsider.com/jeff-bezos-houses
+2025-05-09 09:36:08,349 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for Business Insider to 2025-05-09T00:37:01+00:00
+2025-05-09 09:36:08,349 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Y Combinator Blog (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:36:08,349 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Y Combinator Blog
+2025-05-09 09:36:09,914 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 15 entries in RSS feed for Y Combinator Blog
+2025-05-09 09:36:09,914 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Y Combinator Blog
+2025-05-09 09:36:09,914 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Foundr (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:36:09,914 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Foundr
+2025-05-09 09:36:11,563 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 45 entries in RSS feed for Foundr
+2025-05-09 09:36:11,563 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Foundr
+2025-05-09 09:36:11,563 INFO NewsSystem.Scraper.Entrepreneurship_news: Using last run timestamp for Success Magazine: 2025-05-08T12:28:00+00:00
+2025-05-09 09:36:11,563 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Success Magazine (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:36:11,563 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Success Magazine
+2025-05-09 09:36:12,354 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 10 entries in RSS feed for Success Magazine
+2025-05-09 09:36:12,355 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: 10 Leadership Values that Shape Exceptional Leaders
+2025-05-09 09:36:12,355 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 1 new articles from Success Magazine
+2025-05-09 09:36:12,355 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/1 from Success Magazine
+2025-05-09 09:36:12,355 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.success.com/values-of-a-good-leader/
+2025-05-09 09:36:12,447 WARNING robots_checker: Robots.txt disallows: https://www.success.com/values-of-a-good-leader/
+2025-05-09 09:36:12,447 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://www.success.com/values-of-a-good-leader/
+2025-05-09 09:36:12,447 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for Success Magazine to 2025-05-08T17:58:15+00:00
+2025-05-09 09:36:12,447 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: TechMeme (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:36:12,448 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for TechMeme
+2025-05-09 09:36:13,579 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 15 entries in RSS feed for TechMeme
+2025-05-09 09:36:13,580 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Meta rolls out its Account Status feature to Threads, letting users see when the company has removed or demoted posts or handed out other penalties (Karissa Bell/Engadget)
+2025-05-09 09:36:13,580 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Alibaba researchers detail ZeroSearch, a technique allowing LLMs to develop advanced search capabilities via simulation, claiming it cuts costs by up to 88% (Michael Nuñez/VentureBeat)
+2025-05-09 09:36:13,581 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Trump threatens to end the Digital Equity Act, a Biden-era law aimed at expanding high-speed internet access, calling it "racist" and "totally unconstitutional" (Chris Cameron/New York Times)
+2025-05-09 09:36:13,581 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Cloudflare reports Q1 revenue up 27% YoY to $479.1M, vs. $469.3M est., and forecasts Q2 revenue of $500M to $501M, vs. $500.4M est.; NET jumps 8%+ after hours (Reinhardt Krause/Investor's Business ...)
+2025-05-09 09:36:13,581 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Senate hearing: Sam Altman says that requiring government approval to release AI would be "disastrous" for the US' lead in AI, a reversal from his 2023 comments (Washington Post)
+2025-05-09 09:36:13,581 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: SEC filing: Sterling Anderson, CPO and co-founder of self-driving truck startup Aurora, is resigning effective June 1, and will leave the board on August 31 (Kirsten Korosec/TechCrunch)
+2025-05-09 09:36:13,582 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Coinbase reports Q1 revenue up 24% YoY to $2B, vs. $2.1B est., trading volume up 26% YoY to $393B, and earnings per share of $0.24, vs. $1.93 est. (Helene Braun/CoinDesk)
+2025-05-09 09:36:13,582 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Affirm reports Q3 revenue up 36% YoY to $783M, vs. $783M est., GMV up 36% to $8.6B, above est., and forecasts Q4 revenue below est.; AFRM drops 8%+ after hours (MacKenzie Sigalos/CNBC)
+2025-05-09 09:36:13,582 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Lyft reports Q1 revenue up 14% YoY to $1.45B, vs. $1.47B est., increases its share buyback program to $750M after activist pressure; LYFT jumps 7%+ after hours (Akash Sriram/Reuters)
+2025-05-09 09:36:13,583 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Palantir's valuation rises to $281B after its shares close up 7.85%, surpassing Salesforce and joining the top 10 largest US tech companies by market cap (Samantha Subin/CNBC)
+2025-05-09 09:36:13,583 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Pinterest reports Q1 revenue up 16% YoY to $855M, vs. $847M est., MAUs up 10% to 570M, and forecasts Q2 revenue above estimates; PINS jumps 15%+ after hours (Jonathan Vanian/CNBC)
+2025-05-09 09:36:13,583 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Celsius Network founder and former CEO Alex Mashinsky is sentenced to 12 years in prison after pleading guilty to commodities fraud and misleading investors (Chris Dolmetsch/Bloomberg)
+2025-05-09 09:36:13,584 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Memo: the US CFPB discontinues its order designating the supervision of Google Payment, saying the Biden-era decision is an "unwarranted use" of CFPB's powers (Paige Smith/Bloomberg)
+2025-05-09 09:36:13,585 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Sources: Meta is in discussions with crypto firms to introduce stablecoins as a means to manage payouts, and has hired a VP of product with crypto experience (Fortune)
+2025-05-09 09:36:13,585 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Senate Democrats block the Genius Act after Republicans rebuffed a provision to bar Trump and others from profiting off of crypto ventures while in office (Steven T. Dennis/Bloomberg)
+2025-05-09 09:36:13,585 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 15 new articles from TechMeme
+2025-05-09 09:36:13,585 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/15 from TechMeme
+2025-05-09 09:36:13,585 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p54#a250508p54
+2025-05-09 09:36:17,278 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 2/15 from TechMeme
+2025-05-09 09:36:17,278 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p53#a250508p53
+2025-05-09 09:36:20,661 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 3/15 from TechMeme
+2025-05-09 09:36:20,662 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p52#a250508p52
+2025-05-09 09:36:24,021 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 4/15 from TechMeme
+2025-05-09 09:36:24,021 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p51#a250508p51
+2025-05-09 09:36:27,319 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 5/15 from TechMeme
+2025-05-09 09:36:27,319 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p50#a250508p50
+2025-05-09 09:36:30,583 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 6/15 from TechMeme
+2025-05-09 09:36:30,583 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p49#a250508p49
+2025-05-09 09:36:33,914 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 7/15 from TechMeme
+2025-05-09 09:36:33,914 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p48#a250508p48
+2025-05-09 09:36:37,171 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 8/15 from TechMeme
+2025-05-09 09:36:37,171 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p47#a250508p47
+2025-05-09 09:36:40,912 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 9/15 from TechMeme
+2025-05-09 09:36:40,912 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p46#a250508p46
+2025-05-09 09:36:44,194 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 10/15 from TechMeme
+2025-05-09 09:36:44,194 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p45#a250508p45
+2025-05-09 09:36:47,595 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 11/15 from TechMeme
+2025-05-09 09:36:47,595 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p44#a250508p44
+2025-05-09 09:36:50,785 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 12/15 from TechMeme
+2025-05-09 09:36:50,785 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p43#a250508p43
+2025-05-09 09:36:54,055 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 13/15 from TechMeme
+2025-05-09 09:36:54,055 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p42#a250508p42
+2025-05-09 09:36:57,274 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 14/15 from TechMeme
+2025-05-09 09:36:57,274 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p41#a250508p41
+2025-05-09 09:37:00,470 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 15/15 from TechMeme
+2025-05-09 09:37:00,470 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: http://www.techmeme.com/250508/p40#a250508p40
+2025-05-09 09:37:03,812 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for TechMeme to 2025-05-09T01:30:00+00:00
+2025-05-09 09:37:03,812 INFO NewsSystem.Scraper.Entrepreneurship_news: Using last run timestamp for TechCrunch Startups: 2025-05-07T00:00:00+00:00
+2025-05-09 09:37:03,812 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: TechCrunch Startups (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:03,812 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for TechCrunch Startups
+2025-05-09 09:37:03,938 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 20 entries in RSS feed for TechCrunch Startups
+2025-05-09 09:37:03,940 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Ex-Synapse CEO reportedly trying to raise $100M for his new humanoid robotics venture
+2025-05-09 09:37:03,940 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Social media startup Fizz sues Instacart and Partiful for trademark infringement over new Fizz app
+2025-05-09 09:37:03,940 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Sequoia leads $1.5B tender offer for sales automation startup Clay
+2025-05-09 09:37:03,940 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 3 new articles from TechCrunch Startups
+2025-05-09 09:37:03,940 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/3 from TechCrunch Startups
+2025-05-09 09:37:03,940 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://techcrunch.com/2025/05/08/ex-synapse-ceo-reportedly-trying-to-raise-100m-for-his-new-humanoid-robotics-venture/
+2025-05-09 09:37:04,126 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 2/3 from TechCrunch Startups
+2025-05-09 09:37:04,126 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://techcrunch.com/2025/05/08/social-media-startup-fizz-sues-instacart-and-partiful-for-trademark-infringement-over-new-fizz-app/
+2025-05-09 09:37:06,152 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 3/3 from TechCrunch Startups
+2025-05-09 09:37:06,152 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://techcrunch.com/2025/05/08/clay-authorizes-employee-tender-at-a-1-5b-valuation-led-by-sequoia/
+2025-05-09 09:37:08,162 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for TechCrunch Startups to 2025-05-08T00:00:00+00:00
+2025-05-09 09:37:08,162 INFO NewsSystem.Scraper.Entrepreneurship_news: Using last run timestamp for AI Boom: 2025-05-07T19:05:00+00:00
+2025-05-09 09:37:08,162 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: AI Boom (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:08,162 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for AI Boom
+2025-05-09 09:37:08,391 WARNING NewsSystem.Scraper.Entrepreneurship_news: No entries found in RSS feed for AI Boom
+2025-05-09 09:37:08,391 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for AI Boom
+2025-05-09 09:37:08,391 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Crunchbase News (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:08,392 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Crunchbase News
+2025-05-09 09:37:09,430 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 10 entries in RSS feed for Crunchbase News
+2025-05-09 09:37:09,431 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Coinbase Buys Deribit In Biggest Crypto Deal To Date
+2025-05-09 09:37:09,431 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 1 new articles from Crunchbase News
+2025-05-09 09:37:09,431 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/1 from Crunchbase News
+2025-05-09 09:37:09,431 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://news.crunchbase.com/web3/biggest-crypto-deal-coinbase-buys-deribit/
+2025-05-09 09:37:09,488 WARNING robots_checker: Robots.txt disallows: https://news.crunchbase.com/web3/biggest-crypto-deal-coinbase-buys-deribit/
+2025-05-09 09:37:09,488 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://news.crunchbase.com/web3/biggest-crypto-deal-coinbase-buys-deribit/
+2025-05-09 09:37:09,488 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for Crunchbase News to 2025-05-08T17:01:20+00:00
+2025-05-09 09:37:09,488 INFO NewsSystem.Scraper.Entrepreneurship_news: Using last run timestamp for Product Hunt Daily: 2025-05-08T03:49:02+00:00
+2025-05-09 09:37:09,488 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Product Hunt Daily (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:09,488 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Product Hunt Daily
+2025-05-09 09:37:10,558 WARNING NewsSystem.Scraper.Entrepreneurship_news: No entries found in RSS feed for Product Hunt Daily
+2025-05-09 09:37:10,558 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Product Hunt Daily
+2025-05-09 09:37:10,558 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: BetaKit (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:10,558 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for BetaKit
+2025-05-09 09:37:11,606 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 150 entries in RSS feed for BetaKit
+2025-05-09 09:37:11,606 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: D-Wave remains in the red even as revenue jumps 500 percent in Q1
+2025-05-09 09:37:11,607 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Amilia raises $35 million led by Vertu Capital to help more community centres manage operations
+2025-05-09 09:37:11,607 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 2 new articles from BetaKit
+2025-05-09 09:37:11,607 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/2 from BetaKit
+2025-05-09 09:37:11,607 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://betakit.com/d-wave-remains-in-the-red-even-as-revenue-jumps-500-percent-in-q1/
+2025-05-09 09:37:12,112 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 2/2 from BetaKit
+2025-05-09 09:37:12,113 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://betakit.com/amilia-raises-35-million-led-by-vertu-capital-to-help-more-community-centres-manage-operations/
+2025-05-09 09:37:14,130 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for BetaKit to 2025-05-08T19:13:17+00:00
+2025-05-09 09:37:14,131 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Springwise (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:14,131 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Springwise
+2025-05-09 09:37:16,924 WARNING NewsSystem.Scraper.Entrepreneurship_news: No entries found in RSS feed for Springwise
+2025-05-09 09:37:16,925 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Springwise
+2025-05-09 09:37:16,925 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Techstars News (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:16,925 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Techstars News
+2025-05-09 09:37:17,782 WARNING NewsSystem.Scraper.Entrepreneurship_news: No entries found in RSS feed for Techstars News
+2025-05-09 09:37:17,783 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Techstars News
+2025-05-09 09:37:17,783 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: HackerNoon (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:17,783 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for HackerNoon
+2025-05-09 09:37:17,991 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 20 entries in RSS feed for HackerNoon
+2025-05-09 09:37:17,992 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: My First Steps With Crossplane: Crossplane 101
+2025-05-09 09:37:17,993 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: My Remote Reboot on Upwork and Freelancer.com: 96 Months Later
+2025-05-09 09:37:17,993 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Tesseral Raises $3.3M Seed to Bring Open Source Auth to B2B Software
+2025-05-09 09:37:17,994 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: The HackerNoon Newsletter: Speechify, ElevenLabs, Hume: Which AI Voice Can Actually Feel Something? (5/8/2025)
+2025-05-09 09:37:17,995 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: IPinfo Launches IPinfo Lite: Unlimited Country-Level Geolocation API & Database Download
+2025-05-09 09:37:17,996 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: The ESPRIT Algorithm and Central Limit Error Scaling
+2025-05-09 09:37:17,996 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Optimal Error Scaling of ESPRIT Algorithm Demonstrated
+2025-05-09 09:37:17,997 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: BingX Unveils ChainSpot: A CeDeFi Innovation for Simpler and Safer On-Chain Trading
+2025-05-09 09:37:17,998 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Uncovering Hidden Bias in Blockchain Transaction Ordering
+2025-05-09 09:37:18,000 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Meet YellowLyfe HQ, Sufle, and Green Cross United Kingdom: HackerNoon Startups of The Week
+2025-05-09 09:37:18,002 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Power Concentration and Voting Dynamics in Compound Governance
+2025-05-09 09:37:18,002 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 11 new articles from HackerNoon
+2025-05-09 09:37:18,002 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/11 from HackerNoon
+2025-05-09 09:37:18,002 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/my-first-steps-with-crossplane-crossplane-101?source=rss
+2025-05-09 09:37:18,061 WARNING robots_checker: Robots.txt disallows: https://hackernoon.com/my-first-steps-with-crossplane-crossplane-101?source=rss
+2025-05-09 09:37:18,061 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/my-first-steps-with-crossplane-crossplane-101?source=rss
+2025-05-09 09:37:18,061 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 2/11 from HackerNoon
+2025-05-09 09:37:18,061 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/my-remote-reboot-on-upwork-and-freelancercom-96-months-later?source=rss
+2025-05-09 09:37:18,061 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/my-remote-reboot-on-upwork-and-freelancercom-96-months-later?source=rss
+2025-05-09 09:37:18,061 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 3/11 from HackerNoon
+2025-05-09 09:37:18,061 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/tesseral-raises-$33m-seed-to-bring-open-source-auth-to-b2b-software?source=rss
+2025-05-09 09:37:18,061 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/tesseral-raises-$33m-seed-to-bring-open-source-auth-to-b2b-software?source=rss
+2025-05-09 09:37:18,061 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 4/11 from HackerNoon
+2025-05-09 09:37:18,061 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/5-8-2025-newsletter?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/5-8-2025-newsletter?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 5/11 from HackerNoon
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/ipinfo-launches-ipinfo-lite-unlimited-country-level-geolocation-api-and-database-download?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/ipinfo-launches-ipinfo-lite-unlimited-country-level-geolocation-api-and-database-download?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 6/11 from HackerNoon
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/the-esprit-algorithm-and-central-limit-error-scaling?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/the-esprit-algorithm-and-central-limit-error-scaling?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 7/11 from HackerNoon
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/optimal-error-scaling-of-esprit-algorithm-demonstrated?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/optimal-error-scaling-of-esprit-algorithm-demonstrated?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 8/11 from HackerNoon
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/bingx-unveils-chainspot-a-cedefi-innovation-for-simpler-and-safer-on-chain-trading?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/bingx-unveils-chainspot-a-cedefi-innovation-for-simpler-and-safer-on-chain-trading?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 9/11 from HackerNoon
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/uncovering-hidden-bias-in-blockchain-transaction-ordering?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/uncovering-hidden-bias-in-blockchain-transaction-ordering?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 10/11 from HackerNoon
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/meet-yellowlyfe-hq-sufle-and-green-cross-united-kingdom-hackernoon-startups-of-the-week?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/meet-yellowlyfe-hq-sufle-and-green-cross-united-kingdom-hackernoon-startups-of-the-week?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 11/11 from HackerNoon
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://hackernoon.com/power-concentration-and-voting-dynamics-in-compound-governance?source=rss
+2025-05-09 09:37:18,062 WARNING NewsSystem.Scraper.Entrepreneurship_news: Disallowed by robots.txt: https://hackernoon.com/power-concentration-and-voting-dynamics-in-compound-governance?source=rss
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for HackerNoon to 2025-05-08T20:35:19+00:00
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: SiliconRepublic (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:18,062 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for SiliconRepublic
+2025-05-09 09:37:19,958 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 20 entries in RSS feed for SiliconRepublic
+2025-05-09 09:37:19,958 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: One-third of women reluctant to discuss health issues in the workplace
+2025-05-09 09:37:19,958 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 1 new articles from SiliconRepublic
+2025-05-09 09:37:19,959 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/1 from SiliconRepublic
+2025-05-09 09:37:19,959 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://www.siliconrepublic.com/careers/women-health-issues-workplace-irish-life-equality
+2025-05-09 09:37:21,327 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for SiliconRepublic to 2025-05-08T14:58:35+00:00
+2025-05-09 09:37:21,327 INFO NewsSystem.Scraper.Entrepreneurship_news: Using last run timestamp for VentureBeat: 2025-05-08T13:00:00+00:00
+2025-05-09 09:37:21,327 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: VentureBeat (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:21,327 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for VentureBeat
+2025-05-09 09:37:22,216 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 23 entries in RSS feed for VentureBeat
+2025-05-09 09:37:22,216 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: OpenAI, Microsoft tell Senate ‘no one country can win AI’
+2025-05-09 09:37:22,216 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: You can now fine-tune your enterprise’s own version of OpenAI’s o4-mini reasoning model with reinforcement learning
+2025-05-09 09:37:22,216 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: How The Ottawa Hospital uses AI ambient voice capture to reduce physician burnout by 70%, achieve 97% patient satisfaction
+2025-05-09 09:37:22,217 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: IGDA adds three new board members
+2025-05-09 09:37:22,217 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: 5 strategies that separate AI leaders from the 92% still stuck in pilot mode
+2025-05-09 09:37:22,217 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: GB Summit 2025’s Women in Gaming Breakfast discusses post-growth strategy
+2025-05-09 09:37:22,217 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Resurgens Gaming raises funds to launch Ghost Launchpad game accelerator
+2025-05-09 09:37:22,218 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: The walled garden cracks: Nadella bets Microsoft’s Copilots—and Azure’s next act—on A2A/MCP interoperability
+2025-05-09 09:37:22,218 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Alibaba’s ‘ZeroSearch’ lets AI learn to google itself — slashing training costs by 88 percent
+2025-05-09 09:37:22,218 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Mem0’s scalable memory promises more reliable AI agents that remembers context across lengthy conversations
+2025-05-09 09:37:22,218 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: GamesBeat Summit 2025 agenda: Lotsa talks on getting back to growth
+2025-05-09 09:37:22,218 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: OpenAI names Instacart leader Fidji Simo as new CEO of Applications
+2025-05-09 09:37:22,218 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: Q1’s $7.8B in game investments and M&A marks largest quarter since 2023 | DDM
+2025-05-09 09:37:22,218 INFO NewsSystem.Scraper.Entrepreneurship_news: New article found: World Video Game Hall of Fame announces 2025 inductees
+2025-05-09 09:37:22,219 INFO NewsSystem.Scraper.Entrepreneurship_news: Found 14 new articles from VentureBeat
+2025-05-09 09:37:22,219 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 1/14 from VentureBeat
+2025-05-09 09:37:22,219 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/openai-microsoft-tell-senate-no-one-country-can-win-ai/
+2025-05-09 09:37:23,418 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 2/14 from VentureBeat
+2025-05-09 09:37:23,418 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/you-can-now-fine-tune-your-enterprises-own-version-of-openais-o4-mini-reasoning-model-with-reinforcement-learning/
+2025-05-09 09:37:25,407 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 3/14 from VentureBeat
+2025-05-09 09:37:25,407 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/how-the-ottawa-hospital-uses-ai-ambient-voice-capture-to-reduce-physician-burnout-by-70-achieve-97-patient-satisfaction/
+2025-05-09 09:37:27,407 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 4/14 from VentureBeat
+2025-05-09 09:37:27,407 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/games/igda-adds-three-new-board-members/
+2025-05-09 09:37:30,397 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 5/14 from VentureBeat
+2025-05-09 09:37:30,397 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/5-strategies-that-separate-ai-leaders-from-the-92-still-stuck-in-pilot-mode/
+2025-05-09 09:37:31,417 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 6/14 from VentureBeat
+2025-05-09 09:37:31,418 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/games/gb-summit-2025s-women-in-gaming-breakfast-discusses-post-growth-strategy/
+2025-05-09 09:37:33,815 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 7/14 from VentureBeat
+2025-05-09 09:37:33,815 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/games/resurgens-gaming-raises-funds-to-launch-ghost-launchpad-game-accelerator/
+2025-05-09 09:37:35,427 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 8/14 from VentureBeat
+2025-05-09 09:37:35,427 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/the-walled-garden-cracks-nadella-bets-microsofts-copilots-and-azures-next-act-on-a2a-mcp-interoperability/
+2025-05-09 09:37:37,421 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 9/14 from VentureBeat
+2025-05-09 09:37:37,421 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/alibabas-zerosearch-lets-ai-learn-to-google-itself-slashing-training-costs-by-88-percent/
+2025-05-09 09:37:39,567 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 10/14 from VentureBeat
+2025-05-09 09:37:39,567 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/mem0s-scalable-memory-promises-more-reliable-ai-agents-that-remembers-context-across-lengthy-conversations/
+2025-05-09 09:37:41,456 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 11/14 from VentureBeat
+2025-05-09 09:37:41,456 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/games/gamesbeat-summit-2025-agenda-lotsa-talks-on-getting-back-to-growth/
+2025-05-09 09:37:45,104 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 12/14 from VentureBeat
+2025-05-09 09:37:45,104 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/ai/openai-names-instacart-leader-fidji-simo-as-new-ceo-of-applications/
+2025-05-09 09:37:45,447 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 13/14 from VentureBeat
+2025-05-09 09:37:45,448 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/games/q1s-7-8b-in-game-investments-and-ma-marks-largest-quarter-since-2023-ddm/
+2025-05-09 09:37:47,459 INFO NewsSystem.Scraper.Entrepreneurship_news: Processing article 14/14 from VentureBeat
+2025-05-09 09:37:47,459 INFO NewsSystem.Scraper.Entrepreneurship_news: Fetching article: https://venturebeat.com/games/world-video-game-hall-of-fame-announces-2025-inductees/
+2025-05-09 09:37:49,429 INFO NewsSystem.Scraper.Entrepreneurship_news: Updated last run timestamp for VentureBeat to 2025-05-09T01:02:24+00:00
+2025-05-09 09:37:49,429 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Entrepreneurship.org (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:49,429 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Entrepreneurship.org
+2025-05-09 09:37:50,041 WARNING NewsSystem.Scraper.Entrepreneurship_news: No entries found in RSS feed for Entrepreneurship.org
+2025-05-09 09:37:50,041 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Entrepreneurship.org
+2025-05-09 09:37:50,041 INFO NewsSystem.Scraper.Entrepreneurship_news: === Source: Startup Grind (since 2025-05-08T13:35:25.437569+00:00) ===
+2025-05-09 09:37:50,041 INFO NewsSystem.Scraper.Entrepreneurship_news: Parsing RSS for Startup Grind
+2025-05-09 09:37:51,780 WARNING NewsSystem.Scraper.Entrepreneurship_news: No entries found in RSS feed for Startup Grind
+2025-05-09 09:37:51,781 INFO NewsSystem.Scraper.Entrepreneurship_news: No new articles found for Startup Grind
+2025-05-09 09:37:51,781 INFO NewsSystem.Scraper.Entrepreneurship_news: Saving state to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/state/entrepreneurship_news_last_run.json
+2025-05-09 09:37:51,782 INFO NewsSystem.Scraper.Entrepreneurship_news: Saving tracking data to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/state/entrepreneurship_news_articles_tracking.json
+2025-05-09 09:37:51,814 INFO NewsSystem.Scraper.Entrepreneurship_news: Saved 68 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/09_05_2025/0935/entrepreneurship_news
+2025-05-09 09:37:51,814 INFO NewsSystem.Scraper.Entrepreneurship: Entrepreneurship news scrape complete, found 68 new articles
+2025-05-09 09:37:51,814 INFO NewsSystem.Scraper.Entrepreneurship: Entrepreneurship news scrape found 68 articles

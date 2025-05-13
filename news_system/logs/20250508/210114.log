@@ -1,0 +1,175 @@
+2025-05-08 21:01:14,383 INFO NewsSystem.Scraper.Lifestyle: Logging started. Log file: logs/20250508/210114.log
+2025-05-08 21:01:14,384 INFO NewsSystem.Scraper.Lifestyle: Starting lifestyle news scraper with past_hours=24
+2025-05-08 21:01:14,384 INFO NewsSystem.Scraper.Lifestyle: Initializing LifestyleNewsScraper
+2025-05-08 21:01:14,384 INFO NewsSystem.Scraper.Manual_news_system: Initialized manual_news_system scraper
+2025-05-08 21:01:14,385 INFO NewsSystem.Scraper.Manual_news_system: Loaded tracking data with 7 tracked articles
+2025-05-08 21:01:14,385 INFO NewsSystem.Scraper.Manual_news_system: Loaded last run state with 2 sources
+2025-05-08 21:01:14,385 INFO NewsSystem.Scraper.Lifestyle: Starting lifestyle news scrape (past_hours=24)
+2025-05-08 21:01:14,385 INFO NewsSystem.Scraper.Manual_news_system: Starting scrape for manual_news_system (looking back 24 hours)
+2025-05-08 21:01:14,385 INFO NewsSystem.Scraper.Manual_news_system: Processing 10 news sources
+2025-05-08 21:01:14,385 INFO NewsSystem.Scraper.Manual_news_system: === Source: Cup of Jo (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:14,385 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Cup of Jo
+2025-05-08 21:01:15,139 INFO NewsSystem.Scraper.Manual_news_system: Found 6 entries in RSS feed for Cup of Jo
+2025-05-08 21:01:15,140 INFO NewsSystem.Scraper.Manual_news_system: New article found: 10 Readers Share Their Gorgeous Gardens
+2025-05-08 21:01:15,140 INFO NewsSystem.Scraper.Manual_news_system: New article found: A Really Good Five-Minute Dinner
+2025-05-08 21:01:15,140 INFO NewsSystem.Scraper.Manual_news_system: Found 2 new articles from Cup of Jo
+2025-05-08 21:01:15,140 INFO NewsSystem.Scraper.Manual_news_system: Processing article 1/2 from Cup of Jo
+2025-05-08 21:01:15,140 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://cupofjo.com/2025/05/08/photos-peoples-gardens/
+2025-05-08 21:01:15,316 WARNING robots_checker: Robots.txt disallows: https://cupofjo.com/2025/05/08/photos-peoples-gardens/
+2025-05-08 21:01:15,316 WARNING NewsSystem.Scraper.Manual_news_system: Disallowed by robots.txt: https://cupofjo.com/2025/05/08/photos-peoples-gardens/
+2025-05-08 21:01:15,316 INFO NewsSystem.Scraper.Manual_news_system: Processing article 2/2 from Cup of Jo
+2025-05-08 21:01:15,316 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://cupofjo.com/2025/05/07/easy-beans-dinner-recipe/
+2025-05-08 21:01:15,316 WARNING NewsSystem.Scraper.Manual_news_system: Disallowed by robots.txt: https://cupofjo.com/2025/05/07/easy-beans-dinner-recipe/
+2025-05-08 21:01:15,316 INFO NewsSystem.Scraper.Manual_news_system: Updated last run timestamp for Cup of Jo to 2025-05-08T08:48:16+00:00
+2025-05-08 21:01:15,316 INFO NewsSystem.Scraper.Manual_news_system: Using last run timestamp for Lifehacker: 2025-05-08T12:00:00+00:00
+2025-05-08 21:01:15,316 INFO NewsSystem.Scraper.Manual_news_system: === Source: Lifehacker (since 2025-05-08T12:00:00+00:00) ===
+2025-05-08 21:01:15,317 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Lifehacker
+2025-05-08 21:01:15,728 INFO NewsSystem.Scraper.Manual_news_system: Found 100 entries in RSS feed for Lifehacker
+2025-05-08 21:01:15,729 INFO NewsSystem.Scraper.Manual_news_system: New article found: What's the Difference Between LED and Mini-LED?
+2025-05-08 21:01:15,729 INFO NewsSystem.Scraper.Manual_news_system: Found 1 new articles from Lifehacker
+2025-05-08 21:01:15,729 INFO NewsSystem.Scraper.Manual_news_system: Processing article 1/1 from Lifehacker
+2025-05-08 21:01:15,729 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://lifehacker.com/tech/whats-the-difference-between-led-and-mini-led?utm_medium=RSS
+2025-05-08 21:01:15,781 WARNING robots_checker: Robots.txt disallows: https://lifehacker.com/tech/whats-the-difference-between-led-and-mini-led?utm_medium=RSS
+2025-05-08 21:01:15,781 WARNING NewsSystem.Scraper.Manual_news_system: Disallowed by robots.txt: https://lifehacker.com/tech/whats-the-difference-between-led-and-mini-led?utm_medium=RSS
+2025-05-08 21:01:15,782 INFO NewsSystem.Scraper.Manual_news_system: Updated last run timestamp for Lifehacker to 2025-05-08T12:30:00+00:00
+2025-05-08 21:01:15,782 INFO NewsSystem.Scraper.Manual_news_system: === Source: MindBodyGreen (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:15,782 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for MindBodyGreen
+2025-05-08 21:01:16,859 INFO NewsSystem.Scraper.Manual_news_system: Found 29 entries in RSS feed for MindBodyGreen
+2025-05-08 21:01:16,859 INFO NewsSystem.Scraper.Manual_news_system: New article found: The 3 Habits You Need To Start Doing Immediately For Healthier, Brighter Skin
+2025-05-08 21:01:16,859 INFO NewsSystem.Scraper.Manual_news_system: New article found: Reviewers Are Ditching Melatonin For This Gentle Sleep Supplement
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: Study Shows This Is The Best Way To Exercise Your Way To Perfect Poops
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: PSA: Both Collagen & Hyaluronic Acid Drop Dramatically By Your 50s
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: I've Taken This Sleep Supplement For Over A Year & It Still Works Like A Charm*
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: Dealing With Hair Loss? Stick To This  Expert Grocery List To Support Hair Health
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: Doing This For 3 Minutes A Day May Help You Live Longer
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: This 12-Minute Treatment Sparked New Growth Along My Hairline
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: 5 Smart $$$ Tips That’ll Save You Stress In This Economy
+2025-05-08 21:01:16,860 INFO NewsSystem.Scraper.Manual_news_system: New article found: The Hidden Toxins In Your Cleaning Routine (& What To Use Instead)
+2025-05-08 21:01:16,861 INFO NewsSystem.Scraper.Manual_news_system: Found 10 new articles from MindBodyGreen
+2025-05-08 21:01:16,861 INFO NewsSystem.Scraper.Manual_news_system: Processing article 1/10 from MindBodyGreen
+2025-05-08 21:01:16,861 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/3-beauty-habits-to-start-now-for-brighter-skin-try-using-retinol-enlist-an-antioxidant-serum-commit-to-daily-face-massage
+2025-05-08 21:01:18,196 INFO NewsSystem.Scraper.Manual_news_system: Processing article 2/10 from MindBodyGreen
+2025-05-08 21:01:18,196 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/this-sleep-supplement-is-more-effective-and-safer-than-melatonin-know-about-the-benefits
+2025-05-08 21:01:20,345 INFO NewsSystem.Scraper.Manual_news_system: Processing article 3/10 from MindBodyGreen
+2025-05-08 21:01:20,345 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/this-is-how-your-workouts-impact-your-poop-schedule-could-experience-stomach-cramps
+2025-05-08 21:01:22,797 INFO NewsSystem.Scraper.Manual_news_system: Processing article 4/10 from MindBodyGreen
+2025-05-08 21:01:22,797 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/collagen-and-hyaluronic-acid-declines-by-your-50s-what-to-do-how-to-deal-with-it
+2025-05-08 21:01:24,326 INFO NewsSystem.Scraper.Manual_news_system: Processing article 5/10 from MindBodyGreen
+2025-05-08 21:01:24,326 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/how-mbgs-sleep-support-helps-me-sleep-well-and-wake-up-energized-or-support
+2025-05-08 21:01:26,485 INFO NewsSystem.Scraper.Manual_news_system: Processing article 6/10 from MindBodyGreen
+2025-05-08 21:01:26,485 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/physician-approved-grocery-list-for-hair-loss-and-regrowth-complicated-issue
+2025-05-08 21:01:28,952 INFO NewsSystem.Scraper.Manual_news_system: Processing article 7/10 from MindBodyGreen
+2025-05-08 21:01:28,953 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/doing-this-for-3-minutes-day-can-help-you-live-longer-growing-body-of-evidence
+2025-05-08 21:01:30,411 INFO NewsSystem.Scraper.Manual_news_system: Processing article 8/10 from MindBodyGreen
+2025-05-08 21:01:30,411 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/irestore-elite-hair-growth-hat-review-after-six-weeks
+2025-05-08 21:01:32,377 INFO NewsSystem.Scraper.Manual_news_system: Processing article 9/10 from MindBodyGreen
+2025-05-08 21:01:32,377 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/personal-finance-tips-thatll-save-you-stress-in-this-economy
+2025-05-08 21:01:34,371 INFO NewsSystem.Scraper.Manual_news_system: Processing article 10/10 from MindBodyGreen
+2025-05-08 21:01:34,371 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.mindbodygreen.com/articles/how-to-clean-your-home-without-compromising-your-air-quality
+2025-05-08 21:01:37,000 INFO NewsSystem.Scraper.Manual_news_system: Updated last run timestamp for MindBodyGreen to 2025-05-08T11:09:00+00:00
+2025-05-08 21:01:37,000 INFO NewsSystem.Scraper.Manual_news_system: === Source: Health eHealth Square (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:37,000 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Health eHealth Square
+2025-05-08 21:01:42,219 INFO NewsSystem.Scraper.Manual_news_system: Found 5 entries in RSS feed for Health eHealth Square
+2025-05-08 21:01:42,220 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Health eHealth Square
+2025-05-08 21:01:42,220 INFO NewsSystem.Scraper.Manual_news_system: === Source: Tiny Buddha (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:42,220 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Tiny Buddha
+2025-05-08 21:01:43,623 INFO NewsSystem.Scraper.Manual_news_system: Found 10 entries in RSS feed for Tiny Buddha
+2025-05-08 21:01:43,624 INFO NewsSystem.Scraper.Manual_news_system: New article found: Why Holding Space Is Better Than Gripping for Control
+2025-05-08 21:01:43,624 INFO NewsSystem.Scraper.Manual_news_system: Found 1 new articles from Tiny Buddha
+2025-05-08 21:01:43,624 INFO NewsSystem.Scraper.Manual_news_system: Processing article 1/1 from Tiny Buddha
+2025-05-08 21:01:43,624 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://tinybuddha.com/blog/why-holding-space-is-better-than-gripping-for-control/
+2025-05-08 21:01:44,155 INFO NewsSystem.Scraper.Manual_news_system: Updated last run timestamp for Tiny Buddha to 2025-05-07T15:10:01+00:00
+2025-05-08 21:01:44,155 INFO NewsSystem.Scraper.Manual_news_system: === Source: BrainFlow (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:44,155 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for BrainFlow
+2025-05-08 21:01:46,494 INFO NewsSystem.Scraper.Manual_news_system: Found 10 entries in RSS feed for BrainFlow
+2025-05-08 21:01:46,494 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for BrainFlow
+2025-05-08 21:01:46,494 INFO NewsSystem.Scraper.Manual_news_system: === Source: Science Daily (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:46,494 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Science Daily
+2025-05-08 21:01:46,598 WARNING NewsSystem.Scraper.Manual_news_system: No entries found in RSS feed for Science Daily
+2025-05-08 21:01:46,598 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for Science Daily
+2025-05-08 21:01:46,598 INFO NewsSystem.Scraper.Manual_news_system: === Source: The Betty Rocker (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:46,598 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for The Betty Rocker
+2025-05-08 21:01:48,077 INFO NewsSystem.Scraper.Manual_news_system: Found 30 entries in RSS feed for The Betty Rocker
+2025-05-08 21:01:48,078 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for The Betty Rocker
+2025-05-08 21:01:48,078 INFO NewsSystem.Scraper.Manual_news_system: === Source: Apartment Therapy (since 2025-05-07T13:01:14.385622+00:00) ===
+2025-05-08 21:01:48,078 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for Apartment Therapy
+2025-05-08 21:01:48,284 INFO NewsSystem.Scraper.Manual_news_system: Found 20 entries in RSS feed for Apartment Therapy
+2025-05-08 21:01:48,285 INFO NewsSystem.Scraper.Manual_news_system: New article found: Why You Should Use a Toilet Paper Holder in Your Kitchen
+2025-05-08 21:01:48,285 INFO NewsSystem.Scraper.Manual_news_system: New article found: This “Bland, Outdated” Kitchen Was Basically Entirely Vinyl-Wrapped (It’s So Bold!)
+2025-05-08 21:01:48,285 INFO NewsSystem.Scraper.Manual_news_system: New article found: The Century-Old Lamp That’s Making a Comeback in Homes Today
+2025-05-08 21:01:48,285 INFO NewsSystem.Scraper.Manual_news_system: New article found: The “Cardboard Rule” Is the Secret to Making Sure You’ll Love Your Next Reno
+2025-05-08 21:01:48,286 INFO NewsSystem.Scraper.Manual_news_system: New article found: The Dyson Vacuum You Can Score for $100 Off Ahead of Memorial Day
+2025-05-08 21:01:48,286 INFO NewsSystem.Scraper.Manual_news_system: New article found: How to Get Rid of Those Stains in Your Bath Tub
+2025-05-08 21:01:48,286 INFO NewsSystem.Scraper.Manual_news_system: New article found: This $54 Patio Set Is "Unbeatable" for the Price, According to Shoppers
+2025-05-08 21:01:48,286 INFO NewsSystem.Scraper.Manual_news_system: New article found: The Lighting Trick That’ll Instantly Make Your Home So Much Cozier
+2025-05-08 21:01:48,286 INFO NewsSystem.Scraper.Manual_news_system: New article found: This $16 Amazon Find Actually Makes My Toilet Look Cute (and Keeps It Clean!)
+2025-05-08 21:01:48,287 INFO NewsSystem.Scraper.Manual_news_system: New article found: The Home Depot's Decor Days Sale Has a Vintage-Inspired Rug for $46
+2025-05-08 21:01:48,287 INFO NewsSystem.Scraper.Manual_news_system: New article found: I Fell Hard for This Colorful Storage Staple with Middle Eastern Roots
+2025-05-08 21:01:48,287 INFO NewsSystem.Scraper.Manual_news_system: New article found: This Treasure Trove of Trendy Lighting Just Dropped the Chicest Outdoor Lamp Collab
+2025-05-08 21:01:48,287 INFO NewsSystem.Scraper.Manual_news_system: New article found: This Home's Gorgeous Cabinet Color Will Make You Rethink White Kitchens Forever
+2025-05-08 21:01:48,287 INFO NewsSystem.Scraper.Manual_news_system: New article found: HomeGoods Is Selling Gorgeous Storage Gems That Add a Touch of Whimsy
+2025-05-08 21:01:48,288 INFO NewsSystem.Scraper.Manual_news_system: New article found: This $13 Mother's Day Must-Have Is Way More Unique than Flowers
+2025-05-08 21:01:48,288 INFO NewsSystem.Scraper.Manual_news_system: New article found: People Are So Excited These $13 Trader Joe’s Peonies Are Finally Back
+2025-05-08 21:01:48,288 INFO NewsSystem.Scraper.Manual_news_system: New article found: Your Patio Is About to Get a Major 1920s Glow-Up with This New Collection
+2025-05-08 21:01:48,288 INFO NewsSystem.Scraper.Manual_news_system: New article found: The Unexpected Piece of Furniture That’s Transformed the Way I Work from Home
+2025-05-08 21:01:48,288 INFO NewsSystem.Scraper.Manual_news_system: New article found: I Asked a Stager for 4 Basically Free Hacks to Transform My Bedroom
+2025-05-08 21:01:48,289 INFO NewsSystem.Scraper.Manual_news_system: Found 19 new articles from Apartment Therapy
+2025-05-08 21:01:48,289 INFO NewsSystem.Scraper.Manual_news_system: Processing article 1/19 from Apartment Therapy
+2025-05-08 21:01:48,289 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/toilet-paper-holder-storage-trick-37482731?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:01:50,276 INFO NewsSystem.Scraper.Manual_news_system: Processing article 2/19 from Apartment Therapy
+2025-05-08 21:01:50,277 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/zebra-neon-kitchen-makeover-340-dollars-ba-37480803?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:01:50,850 INFO NewsSystem.Scraper.Manual_news_system: Processing article 3/19 from Apartment Therapy
+2025-05-08 21:01:50,850 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/tiffany-lamp-art-nouveau-trend-37483182?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:01:52,882 INFO NewsSystem.Scraper.Manual_news_system: Processing article 4/19 from Apartment Therapy
+2025-05-08 21:01:52,882 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/cardboard-prototyping-diy-projects-37483018?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:01:55,167 INFO NewsSystem.Scraper.Manual_news_system: Processing article 5/19 from Apartment Therapy
+2025-05-08 21:01:55,167 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/dyson-ball-animal-3-extra-vacuum-qvc-sale-may-2025-37483196?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:01:57,346 INFO NewsSystem.Scraper.Manual_news_system: Processing article 6/19 from Apartment Therapy
+2025-05-08 21:01:57,346 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/how-to-clean-bathtub-stains-37481858?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:01:59,198 INFO NewsSystem.Scraper.Manual_news_system: Processing article 7/19 from Apartment Therapy
+2025-05-08 21:01:59,198 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/paylesshere-wicker-outdoor-furniture-set-amazon-reviews-37482972?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:01,703 INFO NewsSystem.Scraper.Manual_news_system: Processing article 8/19 from Apartment Therapy
+2025-05-08 21:02:01,703 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/cozy-light-bulbs-37482753?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:03,742 INFO NewsSystem.Scraper.Manual_news_system: Processing article 9/19 from Apartment Therapy
+2025-05-08 21:02:03,742 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/amazon-kilostep-toilet-gel-stamp-kit-review-37483008?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:05,510 INFO NewsSystem.Scraper.Manual_news_system: Processing article 10/19 from Apartment Therapy
+2025-05-08 21:02:05,510 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/nuloom-marley-rug-home-depot-sale-may-2025-37482836?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:06,778 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/nuloom-marley-rug-home-depot-sale-may-2025-37482836?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:06,779 INFO NewsSystem.Scraper.Manual_news_system: Processing article 11/19 from Apartment Therapy
+2025-05-08 21:02:06,779 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/maison-825-trays-review-37481839?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:08,776 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/maison-825-trays-review-37481839?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:08,777 INFO NewsSystem.Scraper.Manual_news_system: Processing article 12/19 from Apartment Therapy
+2025-05-08 21:02:08,777 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/pooky-novogratz-outdoor-lighting-launch-may-2025-37483140?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:11,025 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/pooky-novogratz-outdoor-lighting-launch-may-2025-37483140?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:11,026 INFO NewsSystem.Scraper.Manual_news_system: Processing article 13/19 from Apartment Therapy
+2025-05-08 21:02:11,026 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/chic-brentwood-townhouse-photos-37482292?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:12,922 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/chic-brentwood-townhouse-photos-37482292?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:12,923 INFO NewsSystem.Scraper.Manual_news_system: Processing article 14/19 from Apartment Therapy
+2025-05-08 21:02:12,923 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/homegoods-whimsical-storage-bins-37482981?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:14,859 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/homegoods-whimsical-storage-bins-37482981?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:14,860 INFO NewsSystem.Scraper.Manual_news_system: Processing article 15/19 from Apartment Therapy
+2025-05-08 21:02:14,860 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/freshcut-paper-pop-up-cards-amazon-reviews-37482830?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:16,820 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/freshcut-paper-pop-up-cards-amazon-reviews-37482830?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:16,820 INFO NewsSystem.Scraper.Manual_news_system: Processing article 16/19 from Apartment Therapy
+2025-05-08 21:02:16,820 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/trader-joes-peonies-2025-37482837?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:18,802 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/trader-joes-peonies-2025-37482837?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:18,802 INFO NewsSystem.Scraper.Manual_news_system: Processing article 17/19 from Apartment Therapy
+2025-05-08 21:02:18,803 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/block-shop-sunbrella-launch-april-2025-37482700?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:20,923 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/block-shop-sunbrella-launch-april-2025-37482700?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:20,924 INFO NewsSystem.Scraper.Manual_news_system: Processing article 18/19 from Apartment Therapy
+2025-05-08 21:02:20,924 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/daisy-ivory-chaise-loung-gardner-white-review-37482924?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:23,956 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/daisy-ivory-chaise-loung-gardner-white-review-37482924?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:23,956 INFO NewsSystem.Scraper.Manual_news_system: Processing article 19/19 from Apartment Therapy
+2025-05-08 21:02:23,956 INFO NewsSystem.Scraper.Manual_news_system: Fetching article: https://www.apartmenttherapy.com/home-stager-entryway-free-hacks-37482894?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:24,798 WARNING NewsSystem.Scraper.Manual_news_system: HTTP 403 for https://www.apartmenttherapy.com/home-stager-entryway-free-hacks-37482894?utm_source=RSS&utm_medium=feed&utm_campaign=Category%2FChannel%3A+main
+2025-05-08 21:02:24,799 INFO NewsSystem.Scraper.Manual_news_system: Updated last run timestamp for Apartment Therapy to 2025-05-08T12:30:00+00:00
+2025-05-08 21:02:24,799 INFO NewsSystem.Scraper.Manual_news_system: Using last run timestamp for The Onion: 2025-05-07T20:21:35+00:00
+2025-05-08 21:02:24,799 INFO NewsSystem.Scraper.Manual_news_system: === Source: The Onion (since 2025-05-07T20:21:35+00:00) ===
+2025-05-08 21:02:24,799 INFO NewsSystem.Scraper.Manual_news_system: Parsing RSS for The Onion
+2025-05-08 21:02:24,976 INFO NewsSystem.Scraper.Manual_news_system: Found 12 entries in RSS feed for The Onion
+2025-05-08 21:02:24,977 INFO NewsSystem.Scraper.Manual_news_system: No new articles found for The Onion
+2025-05-08 21:02:24,977 INFO NewsSystem.Scraper.Manual_news_system: Saving state to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/state/manual_news_system_last_run.json
+2025-05-08 21:02:24,978 INFO NewsSystem.Scraper.Manual_news_system: Saving tracking data to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/state/manual_news_system_articles_tracking.json
+2025-05-08 21:02:24,986 INFO NewsSystem.Scraper.Manual_news_system: Saved 33 articles to /Users/kita/Telegram_News/Telegram_News_Automation/news_system/data/08_05_2025/2101/manual_news_system
+2025-05-08 21:02:24,986 INFO NewsSystem.Scraper.Lifestyle: Lifestyle news scrape complete, found 33 new articles
+2025-05-08 21:02:24,986 INFO NewsSystem.Scraper.Lifestyle: Lifestyle news scrape found 33 articles
