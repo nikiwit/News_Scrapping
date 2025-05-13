@@ -14,7 +14,7 @@ for dir_path in [DATA_DIR, STATE_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
 # Create category directories - now with three categories
-CATEGORIES = ["business_news", "it_news", "entrepreneurship_news"]
+CATEGORIES = ["business_news", "it_news", "entrepreneurship_news", "russian_news"]
 for category in CATEGORIES:
     (DATA_DIR / category).mkdir(exist_ok=True)
 
@@ -444,28 +444,82 @@ LIFESTYLE_NEWS_SOURCES = [
     }
 ]
 
+RUSSIAN_NEWS_SOURCES = [
+    {
+        "name": "RT News",
+        "rss_url": "https://www.rt.com/rss/",
+        "url": "https://www.rt.com",
+        "category": "russian_news"
+    },
+    {
+        "name": "TASS",
+        "rss_url": "https://tass.com/rss/v2.xml",
+        "url": "https://tass.com",
+        "category": "russian_news"
+    },
+    {
+        "name": "Sputnik News",
+        "rss_url": "https://sputniknews.com/export/rss2/archive/index.xml",
+        "url": "https://sputniknews.com",
+        "category": "russian_news"
+    },
+    {
+        "name": "Russia Beyond",
+        "rss_url": "https://www.rbth.com/xml/index.xml",
+        "url": "https://www.rbth.com",
+        "category": "russian_news"
+    },
+    {
+        "name": "The Moscow Times",
+        "rss_url": "https://www.themoscowtimes.com/rss/news",
+        "url": "https://www.themoscowtimes.com",
+        "category": "russian_news"
+    },
+    {
+        "name": "Meduza",
+        "rss_url": "https://meduza.io/rss/en/all",
+        "url": "https://meduza.io/en",
+        "category": "russian_news"
+    },
+    {
+        "name": "Kommersant",
+        "rss_url": "https://www.kommersant.ru/RSS/news.xml",
+        "url": "https://www.kommersant.ru",
+        "category": "russian_news"
+    },
+    {
+        "name": "RIA Novosti",
+        "rss_url": "https://ria.ru/export/rss2/archive/index.xml",
+        "url": "https://ria.ru",
+        "category": "russian_news"
+    }
+]
+
 # All news sources combined
-ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES + ENTREPRENEURSHIP_NEWS_SOURCES + LIFESTYLE_NEWS_SOURCES
+ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES + ENTREPRENEURSHIP_NEWS_SOURCES + LIFESTYLE_NEWS_SOURCES + RUSSIAN_NEWS_SOURCES
 
 # Telegram configuration
 TELEGRAM_BOT_TOKENS = {
     "business_news": os.environ.get("BUSINESS_BOT_TOKEN", "7753587635:AAGG8-qTogDPtCSL83mr7FBRgIKdijvz89Q"),
     "it_news": os.environ.get("IT_BOT_TOKEN", "7797865654:AAHIBliz3W_GrOy9ruD6vXwoW5OcLgbhifw"),
-    "entrepreneurship_news": os.environ.get("ENTREPRENEUR_BOT_TOKEN", "7763104070:AAE2RPRGcB7neO1Y8AWt5MVzP9GmVtxUf6g")
+    "entrepreneurship_news": os.environ.get("ENTREPRENEUR_BOT_TOKEN", "7763104070:AAE2RPRGcB7neO1Y8AWt5MVzP9GmVtxUf6g"),
+    "russian_news": os.environ.get("RUSSIAN_BOT_TOKEN", "your_russian_bot_token_here")
 }
 
 # Telegram channels
 TELEGRAM_CHANNELS = {
     "business_news": "@business_news_hub",
     "it_news": "@it_geeks_hub",
-    "entrepreneurship_news": "@entrepreneurship_hub"
+    "entrepreneurship_news": "@entrepreneurship_hub",
+    "russian_news": "@russian_news_hub"
 }
 
 # Bot-to-channel mapping
 BOT_CHANNEL_MAPPING = {
     "business_news": "business_news",
     "it_news": "it_news",
-    "entrepreneurship_news": "entrepreneurship_news"
+    "entrepreneurship_news": "entrepreneurship_news",
+    "russian_news": "russian_news"
 }
 
 # LLM configuration

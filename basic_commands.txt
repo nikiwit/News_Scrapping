@@ -1,6 +1,15 @@
 # Setup channels and check bot permissions
 python main.py --setup
 
+# Scrape all news categories for the past 12 hours
+python main.py --scrape --hours 12
+
+# Scrape only Russian news for the past 12 hours
+python main.py --scrape --category russian_news --hours 12
+
+# Scrape only tech news for the past 12 hours
+python main.py --scrape --category it_news --hours 12
+
 # Scrape IT news only
 python main.py --scrape --category it_news
 

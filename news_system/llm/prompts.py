@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 # llm/prompts.py - Prompt templates for LLM-based content generation
 
@@ -30,19 +31,17 @@ Craft a post that would perform well on a Telegram news channel.
 # Voice style templates for different categories
 VOICE_STYLES = {
     "it_news": "Knowledgeable but accessible; slightly techie but not overly jargon-heavy; occasionally witty and with an eye for the implications of technological changes",
-    
     "business_news": "Confident and insightful; balancing analysis with conversational tone; breaking down complex business concepts into clear takeaways; occasionally adding wry observations about business trends",
-    
-    "manual_news_system": "Curious and culturally aware; speaks like a well-informed friend; makes connections between trends and everyday life; occasionally playful but never frivolous when covering important topics"
+    "manual_news_system": "Curious and culturally aware; speaks like a well-informed friend; makes connections between trends and everyday life; occasionally playful but never frivolous when covering important topics",
+    "russian_news": "Conversational and culturally aware Russian-language voice; friendly yet informative; mix of seriousness and humor depending on topic"
 }
 
 # Category descriptions
 CATEGORY_DESCRIPTIONS = {
     "it_news": "technology, digital innovation, startups, and the future of tech",
-    
     "business_news": "business strategy, entrepreneurship, market trends, and economic developments",
-    
-    "manual_news_system": "culture, lifestyle, societal trends, and interesting phenomena"
+    "manual_news_system": "culture, lifestyle, societal trends, and interesting phenomena",
+    "russian_news": "Russian current affairs covering politics, culture, economics, sports, and education"
 }
 
 # Function to create a prompt for a specific article
@@ -83,7 +82,7 @@ Content: {article_data.get('content', '')[:1000]}{'...' if article_data.get('con
         voice_style=voice_style
     )
 
-# Tech news specific prompt templates
+# Specific prompt templates
 TECH_NEWS_PROMPT = """
 You are a tech news content creator specializing in making complex technological developments accessible and interesting to a broad audience. Create an engaging Telegram post about this tech news article.
 
@@ -98,7 +97,6 @@ Article: {article_summary}
 Your post should be casual but insightful, with a touch of tech enthusiasm. Include an emoji or two if appropriate, and end with a thought-provoking question to encourage discussion.
 """
 
-# Business news specific prompt templates
 BUSINESS_NEWS_PROMPT = """
 You are a business analyst creating content for professionals interested in market trends, business strategy and entrepreneurship. Create an engaging Telegram post about this business news article.
 
@@ -113,7 +111,6 @@ Article: {article_summary}
 Your tone should be confident and analytical but conversational. Include a surprising fact or implication if possible, and end with a thought that encourages readers to consider the broader implications.
 """
 
-# Lifestyle news specific prompt templates
 LIFESTYLE_NEWS_PROMPT = """
 You are a cultural commentator creating content about lifestyle trends, cultural phenomena, and interesting developments that impact everyday life. Create an engaging Telegram post about this article.
 
@@ -126,6 +123,18 @@ Focus on:
 Article: {article_summary}
 
 Your tone should be curious, relatable and conversational - like a well-informed friend sharing an interesting discovery. Include a personal touch or reflection if appropriate, and end with an open question that invites readers to share their thoughts.
+"""
+
+RUSSIAN_NEWS_PROMPT = """
+You are a content creator for a Russian-language news channel covering various topics from politics to culture, economics, sports, and education. Create an engaging Telegram post about this article.
+
+Focus on:
+- Key highlights relevant to the Russian audience
+- Context or background that matters locally
+- A mix of informative and conversational tone
+- End with a question or call-to-action to encourage engagement
+
+Article: {article_summary}
 """
 
 # Get a category-specific prompt
@@ -143,7 +152,8 @@ def get_category_prompt(category, article_summary):
     prompts = {
         "it_news": TECH_NEWS_PROMPT,
         "business_news": BUSINESS_NEWS_PROMPT,
-        "manual_news_system": LIFESTYLE_NEWS_PROMPT
+        "manual_news_system": LIFESTYLE_NEWS_PROMPT,
+        "russian_news": RUSSIAN_NEWS_PROMPT
     }
     
     template = prompts.get(category, TECH_NEWS_PROMPT)
@@ -166,7 +176,6 @@ Make this post particularly shareable by:
 The post should be concise (2-4 paragraphs) and compelling enough to make someone stop scrolling.
 """
 
-# Informative, educational post prompt
 EDUCATIONAL_POST_PROMPT = """
 Create an informative, educational Telegram post about this news that positions the channel as a valuable source of insights. The post should be clear, well-structured, and provide context that helps readers understand why this news matters.
 
@@ -183,7 +192,6 @@ Make this post valuable to readers by:
 The post should be substantive yet concise (3-4 paragraphs) and leave readers feeling more informed.
 """
 
-# Short, news-flash style post
 QUICK_NEWS_PROMPT = """
 Create a very concise, news-flash style Telegram post about this article. The post should quickly deliver the essential information in an engaging way for busy readers.
 

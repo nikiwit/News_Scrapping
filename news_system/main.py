@@ -21,6 +21,7 @@ logger, log_file = setup_logging(module_name="NewsSystem")
 from scrapers.tech_news import TechNewsScraper
 from scrapers.business_news import BusinessNewsScraper
 from scrapers.entrepreneurship_news import EntrepreneurshipNewsScraper
+from scrapers.russian_news import RussianNewsScraper
 from telegram_client.bot import NewsBot, NewsBotManager
 from telegram_client.channel_manager import ChannelManager
 from llm.formatter import ContentGenerator
@@ -36,6 +37,7 @@ class NewsSystem:
         self.tech_scraper = TechNewsScraper()
         self.business_scraper = BusinessNewsScraper()
         self.entrepreneurship_scraper = EntrepreneurshipNewsScraper()
+        self.russian_scraper = RussianNewsScraper()
         self.bot_manager = NewsBotManager()
         
         # Initialize channel manager with appropriate category
@@ -82,7 +84,7 @@ class NewsSystem:
         
         Args:
             past_hours (int, optional): Hours to look back for new articles
-            
+        
         Returns:
             dict: Scraped articles by category
         """
@@ -97,10 +99,14 @@ class NewsSystem:
         entrepreneurship_results = self.entrepreneurship_scraper.scrape(past_hours)
         logger.info(f"Entrepreneurship news scrape complete, found {len(entrepreneurship_results)} new articles")
         
+        russian_results = self.russian_scraper.scrape(past_hours)
+        logger.info(f"Russian news scrape complete, found {len(russian_results)} new articles")
+        
         return {
             "it_news": tech_results,
             "business_news": business_results,
-            "entrepreneurship_news": entrepreneurship_results
+            "entrepreneurship_news": entrepreneurship_results,
+            "russian_news": russian_results
         }
         
     async def post_latest(self, count=1, category=None, style=None):
@@ -111,7 +117,7 @@ class NewsSystem:
             count (int): Number of articles to post
             category (str, optional): Category to post from
             style (str, optional): Posting style
-            
+        
         Returns:
             int: Number of articles posted
         """
@@ -122,7 +128,7 @@ class NewsSystem:
             categories = [category]
         else:
             categories = config.CATEGORIES
-            
+        
         posted = 0
         
         for cat in categories:
@@ -206,7 +212,7 @@ class NewsSystem:
         Args:
             file_path (str or Path): Path to article JSON file
             style (str, optional): Posting style
-            
+        
         Returns:
             bool: True if posted successfully
         """
@@ -330,8 +336,24 @@ async def main():
         await system.setup_channels()
         
     if args.scrape:
-        await system.scrape_all(args.hours)
-        
+        # Scrape either a specific category or all
+        if args.category:
+            logger.info(f"Scraping category: {args.category}")
+            scraper_map = {
+                "it_news": system.tech_scraper,
+                "business_news": system.business_scraper,
+                "entrepreneurship_news": system.entrepreneurship_scraper,
+                "russian_news": system.russian_scraper
+            }
+            scraper = scraper_map.get(args.category)
+            if scraper:
+                results = scraper.scrape(args.hours)
+                logger.info(f"{args.category} scrape complete, found {len(results)} new articles")
+            else:
+                logger.error(f"No scraper found for category: {args.category}")
+        else:
+            await system.scrape_all(args.hours)
+
     if args.post:
         await system.post_latest(args.count, args.category, args.style)
         
