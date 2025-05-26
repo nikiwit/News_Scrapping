@@ -26,6 +26,7 @@ embeddings_backup.pkl
 *.log
 
 # Data files
+data/
 data/*
 !data/.gitkeep
 !data/apu_kb.txt
@@ -63,6 +64,9 @@ temp/
 README_Production_Updates.txt
 
 # Additional __pycache__ directories
+__pycache__
+__pycache__/*
+news_system/__pycache__
 news_system/__pycache__/
 news_system/scrapers/__pycache__/
 news_system/utils/__pycache__/
