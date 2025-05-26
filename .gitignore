@@ -1,4 +1,85 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Environment variables
 .env
-data/
-logs/
+
+# Vector store and embeddings
+vector_store
+vector_store/*
+!vector_store/.gitkeep
+embeddings_backup.pkl
+
+# Logs
+*.log
+
+# Data files
+data/*
+!data/.gitkeep
+!data/apu_kb.txt
+
+# OS specific files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Local development files
+.env.local
+.env.development
+
+# Production files
+.env.production
+
+# Temporary files
+tmp/
+temp/
+
+# Temporary files
+README_Production_Updates.txt
+
+# Additional __pycache__ directories
+news_system/__pycache__/
+news_system/scrapers/__pycache__/
+news_system/utils/__pycache__/
+news_system/llm/__pycache__/
+news_system/telegram_client/__pycache__/
+
+# Additional .DS_Store files
+news_system/.DS_Store
+news_system/data/.DS_Store
+
+# Additional temporary files
+news_system/data/26_05_2025/1755/it_news/*.json
+
+# Additional environment files
+news_system/.env
+
+# Ensure state directory is ignored
 state/
+news_system/state/
+/state/

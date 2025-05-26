@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scrapers/tech_news.py - Updated with proper logging
+# scrapers/it_news.py - Updated with proper logging
 
 import sys
 import logging
