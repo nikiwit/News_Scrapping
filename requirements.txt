@@ -1,0 +1,65 @@
+# Enhanced News Scraper Requirements - Steps 1 & 2
+
+# Core dependencies (existing)
+requests>=2.31.0
+feedparser>=6.0.10
+beautifulsoup4>=4.12.2
+newspaper3k>=0.2.8
+python-dateutil>=2.8.2
+pytz>=2023.3
+lxml>=4.9.3
+
+# Step 1: Advanced Request Infrastructure
+urllib3>=2.0.4
+requests-cache>=1.1.0
+
+# Step 2: JavaScript Rendering & Browser Automation
+playwright>=1.40.0
+# Note: After installing playwright, run: playwright install chromium
+
+# Async support
+asyncio-throttle>=1.0.2
+aiofiles>=23.2.1
+
+# Enhanced parsing and content extraction
+selectolax>=0.3.17  # Fast HTML parsing alternative
+readability-lxml>=0.8.1  # Content extraction
+html2text>=2020.1.16
+
+# URL and pattern analysis
+tldextract>=5.0.1
+fuzzywuzzy>=0.18.0
+python-Levenshtein>=0.21.1  # For fuzzy string matching
+
+# Performance and monitoring
+psutil>=5.9.5  # System resource monitoring
+memory-profiler>=0.61.0  # Memory usage tracking
+
+# Data processing
+pandas>=2.1.1  # For URL pattern analysis
+numpy>=1.24.3
+
+# Caching
+diskcache>=5.6.3  # Persistent caching
+
+# Configuration and utilities
+pyyaml>=6.0.1  # YAML config support
+click>=8.1.7  # CLI utilities
+colorlog>=6.8.0  # Colored logging
+
+# Optional: Advanced content analysis
+textstat>=0.7.3  # Text statistics
+langdetect>=1.0.9  # Language detection
+
+# Development and testing (optional)
+pytest>=7.4.2
+pytest-asyncio>=0.21.1
+pytest-mock>=3.11.1
+black>=23.9.1  # Code formatting
+flake8>=6.1.0  # Linting
+
+# Security
+cryptography>=41.0.4  # For secure operations
+
+# Existing project dependencies (unchanged)
+# Add any other dependencies your project already uses

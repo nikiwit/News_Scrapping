@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scrapers/entrepreneurship_news.py - Scraper for entrepreneurship news sources
+# scrapers/entrepreneurship_news.py - Fixed entrepreneurship news scraper
 
 import sys
 import logging
@@ -23,16 +23,11 @@ class EntrepreneurshipNewsScraper(NewsScraperBase):
     
     def __init__(self):
         """Initialize the entrepreneurship news scraper."""
-        # Initialize logger for this specific module
-        self.module_logger = logging.getLogger("NewsSystem.Scraper.Entrepreneurship")
-        self.module_logger.info("Initializing EntrepreneurshipNewsScraper")
-        
-        # Initialize base class
+        # Initialize base class - it handles the logging setup
         super().__init__(
             news_sources=config.ENTREPRENEURSHIP_NEWS_SOURCES,
             category="entrepreneurship_news",
-            user_agent=config.USER_AGENT,
-            rate_limit=config.RATE_LIMIT_SECONDS
+            user_agent=config.USER_AGENT
         )
     
     def scrape(self, past_hours=None):
@@ -45,12 +40,12 @@ class EntrepreneurshipNewsScraper(NewsScraperBase):
         Returns:
             list: Scraped articles
         """
-        self.module_logger.info(f"Starting entrepreneurship news scrape (past_hours={past_hours})...")
+        self.logger.info(f"Starting entrepreneurship news scrape (past_hours={past_hours})...")
         
         # Call the parent class scrape method which handles all the logic
         articles = super().scrape(past_hours)
         
-        self.module_logger.info(f"Entrepreneurship news scrape complete, found {len(articles)} new articles")
+        self.logger.info(f"Entrepreneurship news scrape complete, found {len(articles)} new articles")
         return articles
 
 if __name__ == "__main__":
@@ -66,6 +61,19 @@ if __name__ == "__main__":
     
     # Execute with parsed arguments
     main_logger.info(f"Starting entrepreneurship news scraper with past_hours={args.past_hours}")
-    scraper = EntrepreneurshipNewsScraper()
-    articles = scraper.scrape(args.past_hours)
-    main_logger.info(f"Entrepreneurship news scrape found {len(articles)} articles")
+    
+    try:
+        scraper = EntrepreneurshipNewsScraper()
+        articles = scraper.scrape(args.past_hours)
+        main_logger.info(f"Entrepreneurship news scrape found {len(articles)} articles")
+        
+        if articles:
+            print(f"✅ Success! Found {len(articles)} articles")
+            print(f"📁 Data saved to: {scraper.data_dir}")
+            print(f"📜 Logs saved to: {log_file}")
+        else:
+            print("ℹ️  No new articles found")
+            
+    except Exception as e:
+        main_logger.error(f"Entrepreneurship news scraper failed: {e}", exc_info=True)
+        print(f"❌ Scraper failed: {e}")

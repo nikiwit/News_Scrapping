@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scrapers/business_news.py - Business news scraper implementation
+# scrapers/business_news.py - Fixed business news scraper
 
 import sys
 import logging
@@ -21,14 +21,11 @@ class BusinessNewsScraper(NewsScraperBase):
     
     def __init__(self):
         """Initialize business news scraper with business sources."""
-        # Initialize logger for this specific module
-        self.module_logger = logging.getLogger("NewsSystem.Scraper.Business")
-        self.module_logger.info("Initializing BusinessNewsScraper")
-        
-        # Initialize base class
+        # Initialize base class first - it handles the logging setup
         super().__init__(
             news_sources=config.BUSINESS_NEWS_SOURCES,
-            category="business_news"
+            category="business_news",
+            user_agent=config.USER_AGENT
         )
     
     def scrape(self, past_hours=None):
@@ -41,10 +38,13 @@ class BusinessNewsScraper(NewsScraperBase):
         Returns:
             list: New articles
         """
-        self.module_logger.info(f"Starting business news scrape (past_hours={past_hours})")
-        results = super().scrape(past_hours)
-        self.module_logger.info(f"Business news scrape complete, found {len(results)} new articles")
-        return results
+        self.logger.info(f"Starting business news scrape (past_hours={past_hours})...")
+        
+        # Call the parent class scrape method
+        articles = super().scrape(past_hours)
+        
+        self.logger.info(f"Business news scrape complete, found {len(articles)} new articles")
+        return articles
 
 if __name__ == "__main__":
     # Set up logging when run directly
@@ -59,6 +59,19 @@ if __name__ == "__main__":
     
     # Execute with parsed arguments
     main_logger.info(f"Starting business news scraper with past_hours={args.past_hours}")
-    scraper = BusinessNewsScraper()
-    articles = scraper.scrape(args.past_hours)
-    main_logger.info(f"Business news scrape found {len(articles)} articles")
+    
+    try:
+        scraper = BusinessNewsScraper()
+        articles = scraper.scrape(args.past_hours)
+        main_logger.info(f"Business news scrape found {len(articles)} articles")
+        
+        if articles:
+            print(f"✅ Success! Found {len(articles)} articles")
+            print(f"📁 Data saved to: {scraper.data_dir}")
+            print(f"📜 Logs saved to: {log_file}")
+        else:
+            print("ℹ️  No new articles found")
+            
+    except Exception as e:
+        main_logger.error(f"Business news scraper failed: {e}", exc_info=True)
+        print(f"❌ Scraper failed: {e}")

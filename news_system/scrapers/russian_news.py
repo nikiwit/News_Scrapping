@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# scrapers/russian_news.py - Russian news scraper implementation
+# scrapers/russian_news.py - Fixed Russian news scraper
 
 import sys
 import logging
@@ -21,14 +21,11 @@ class RussianNewsScraper(NewsScraperBase):
     
     def __init__(self):
         """Initialize Russian news scraper with Russian sources."""
-        # Initialize module-specific logger
-        self.module_logger = logging.getLogger("NewsSystem.Scraper.Russian")
-        self.module_logger.info("Initializing RussianNewsScraper")
-        
-        # Initialize base class with our Russian sources
+        # Initialize base class - it handles the logging setup
         super().__init__(
             news_sources=config.RUSSIAN_NEWS_SOURCES,
-            category="russian_news"
+            category="russian_news",
+            user_agent=config.USER_AGENT
         )
     
     def scrape(self, past_hours=None):
@@ -41,10 +38,13 @@ class RussianNewsScraper(NewsScraperBase):
         Returns:
             list: New articles
         """
-        self.module_logger.info(f"Starting Russian news scrape (past_hours={past_hours})")
-        results = super().scrape(past_hours)
-        self.module_logger.info(f"Russian news scrape complete, found {len(results)} new articles")
-        return results
+        self.logger.info(f"Starting Russian news scrape (past_hours={past_hours})...")
+        
+        # Call the parent class scrape method
+        articles = super().scrape(past_hours)
+        
+        self.logger.info(f"Russian news scrape complete, found {len(articles)} new articles")
+        return articles
 
 if __name__ == "__main__":
     # Set up logging when run directly
@@ -59,6 +59,19 @@ if __name__ == "__main__":
     
     # Execute with parsed arguments
     main_logger.info(f"Starting Russian news scraper with past_hours={args.past_hours}")
-    scraper = RussianNewsScraper()
-    articles = scraper.scrape(args.past_hours)
-    main_logger.info(f"Russian news scrape found {len(articles)} articles")
+    
+    try:
+        scraper = RussianNewsScraper()
+        articles = scraper.scrape(args.past_hours)
+        main_logger.info(f"Russian news scrape found {len(articles)} articles")
+        
+        if articles:
+            print(f"✅ Success! Found {len(articles)} articles")
+            print(f"📁 Data saved to: {scraper.data_dir}")
+            print(f"📜 Logs saved to: {log_file}")
+        else:
+            print("ℹ️  No new articles found")
+            
+    except Exception as e:
+        main_logger.error(f"Russian news scraper failed: {e}", exc_info=True)
+        print(f"❌ Scraper failed: {e}")

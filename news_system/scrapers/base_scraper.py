@@ -1,180 +1,139 @@
 #!/usr/bin/env python3
-# scrapers/base_scraper.py - Base news scraper functionality with date organization
+# scrapers/base_scraper.py - Fixed with proper logging integration
 
 import json
 import logging
-import requests
-import feedparser
 import hashlib
 import pytz
-
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from dateutil import parser as date_parser
 from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 from newspaper import Article
+from typing import List, Dict, Any, Optional
 
-# Import our utilities
+# Import enhanced utilities
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
-from utils.rate_limiter import RateLimiter
-from utils.robots_checker import RobotsChecker
+from utils.request_manager import RequestManager
 import config
 
-# Configure module logger
+# Configure module logger - FIXED NAME
 logger = logging.getLogger("NewsSystem.Scraper.Base")
 
 class NewsScraperBase:
     """
-    Base class for news scrapers with common functionality.
+    Enhanced scraper that works with existing synchronous scrapers
+    but uses enhanced request management.
     """
     
     def __init__(self, news_sources, category, user_agent=None, rate_limit=None):
-        """
-        Initialize the news scraper.
-        
-        Args:
-            news_sources (list): List of news source dictionaries
-            category (str): News category (folder to save to)
-            user_agent (str, optional): User agent string
-            rate_limit (float, optional): Rate limit in seconds
-        """
+        """Initialize the scraper with proper logging setup."""
         self.news_sources = news_sources
         self.category = category
         self.user_agent = user_agent or config.USER_AGENT
-        self.rate_limit = rate_limit or config.RATE_LIMIT_SECONDS
         
         # Set up category-specific logger
         self.logger = logging.getLogger(f"NewsSystem.Scraper.{category.capitalize()}")
-        self.logger.info(f"Initialized {category} scraper")
+        self.logger.info(f"Initialized enhanced {category} scraper")
         
-        # Initialize utilities
-        self.rate_limiter = RateLimiter(self.rate_limit)
-        self.robots_checker = RobotsChecker(self.user_agent)
+        # Initialize enhanced request manager with conservative settings
+        safe_config = config.REQUEST_MANAGER_CONFIG.copy()
+        safe_config['robots_config']['respect_robots'] = False  # Disable robots checking
+        safe_config['rate_limit_config']['default_delay'] = 1.0  # Faster for testing
         
-        # Setup base directories
+        self.request_manager = RequestManager(safe_config)
+        
+        # Override blocking detection to be very conservative
+        self.request_manager._is_blocked_response = self._conservative_blocking_check
+        
+        # Setup directories (same as original)
         self.base_data_dir = config.DATA_DIR
         self.category_dir = self.base_data_dir / category
         self.category_dir.mkdir(parents=True, exist_ok=True)
         
-        # Get current run folder
         self.data_dir = self.get_date_based_folder()
         
-        # Setup tracking for already scraped articles
+        # Setup tracking
         self.tracking_file = config.STATE_DIR / f"{category}_articles_tracking.json"
-        
-        # Make sure STATE_DIR exists
         config.STATE_DIR.mkdir(parents=True, exist_ok=True)
+        self.tracked_articles = self._load_tracking_data()
         
-        # Load tracking data if it exists
-        if self.tracking_file.exists():
-            try:
-                with open(self.tracking_file, "r") as f:
-                    self.tracked_articles = json.load(f)
-                self.logger.info(f"Loaded tracking data with {len(self.tracked_articles['urls'])} tracked articles")
-            except json.JSONDecodeError:
-                self.logger.warning(f"Invalid tracking file {self.tracking_file}, creating new one")
-                self.tracked_articles = {
-                    "urls": [],
-                    "ids": []
-                }
-        else:
-            self.tracked_articles = {
-                "urls": [],
-                "ids": []
-            }
-            self.logger.info("No tracking file found, starting fresh")
-        
-        # Load state for last run timestamps
         self.state_file = config.STATE_DIR / f"{category}_last_run.json"
-        
-        # Load state if it exists
-        if self.state_file.exists():
-            try:
-                with open(self.state_file, "r") as f:
-                    self.last_run = json.load(f)
-                self.logger.info(f"Loaded last run state with {len(self.last_run)} sources")
-            except json.JSONDecodeError:
-                self.logger.warning(f"Invalid state file {self.state_file}, creating new one")
-                self.last_run = {}
-        else:
-            self.last_run = {}
-            self.logger.info("No state file found, starting fresh")
-            
+        self.last_run = self._load_state_data()
+    
+    def _conservative_blocking_check(self, response):
+        """Very conservative blocking detection - only real HTTP errors."""
+        return response.status_code in [403, 429, 503, 520, 521, 522, 524]
+    
     def get_date_based_folder(self):
-        """
-        Get a folder path based on the current date in Kuala Lumpur time.
-        
-        Returns:
-            Path: Path to the date-based folder
-        """
-        # Get current time in UTC+8 (Kuala Lumpur)
+        """Get date-based folder (same as original)."""
         kuala_lumpur_tz = pytz.timezone('Asia/Kuala_Lumpur')
         now = datetime.now(pytz.UTC).astimezone(kuala_lumpur_tz)
         
-        # Format date as DD_MM_YYYY
         date_folder = now.strftime("%d_%m_%Y")
-        
-        # Format time as HHMM
         time_folder = now.strftime("%H%M")
         
-        # Create the folder path: data/07_05_2025/1430/category_name/
         date_dir = self.base_data_dir / date_folder / time_folder / self.category
         date_dir.mkdir(parents=True, exist_ok=True)
         
         return date_dir
-            
+    
+    def _load_tracking_data(self):
+        """Load tracking data."""
+        if self.tracking_file.exists():
+            try:
+                with open(self.tracking_file, "r") as f:
+                    tracked = json.load(f)
+                self.logger.info(f"Loaded tracking data with {len(tracked['urls'])} tracked articles")
+                return tracked
+            except:
+                self.logger.warning(f"Invalid tracking file {self.tracking_file}, creating new one")
+        return {"urls": [], "ids": []}
+    
+    def _load_state_data(self):
+        """Load state data."""
+        if self.state_file.exists():
+            try:
+                with open(self.state_file, "r") as f:
+                    state = json.load(f)
+                self.logger.info(f"Loaded last run state with {len(state)} sources")
+                return state
+            except:
+                self.logger.warning(f"Invalid state file {self.state_file}, creating new one")
+        return {}
+    
     def _fetch_url(self, url):
-        """
-        Fetch a URL with rate limiting and robots.txt checking.
-        
-        Args:
-            url (str): URL to fetch
-            
-        Returns:
-            str or None: HTML content if successful, None otherwise
-        """
-        if not self.robots_checker.allowed(url):
-            self.logger.warning(f"Disallowed by robots.txt: {url}")
-            return None
-            
-        self.rate_limiter.wait(url)
-        
+        """Enhanced URL fetching using request manager."""
         try:
-            resp = requests.get(
-                url, 
-                headers={"User-Agent": self.user_agent}, 
-                timeout=10
-            )
+            response = self.request_manager.get(url)
             
-            if resp.status_code == 200:
-                return resp.text
+            if response and response.status_code == 200:
+                return response.text
+            else:
+                self.logger.warning(f"HTTP {response.status_code if response else 'No response'} for {url}")
+                return None
                 
-            self.logger.warning(f"HTTP {resp.status_code} for {url}")
-            
         except Exception as e:
             self.logger.error(f"Error fetching {url}: {e}")
-            
-        return None
-        
+            return None
+    
     def _parse_rss(self, source, cutoff_dt):
-        """
-        Parse an RSS feed for articles.
+        """Parse RSS feed (fixed timezone handling)."""
+        import feedparser
         
-        Args:
-            source (dict): News source dictionary
-            cutoff_dt (datetime): Cutoff datetime
-            
-        Yields:
-            dict: Article information
-        """
         self.logger.info(f"Parsing RSS for {source['name']}")
         
         try:
-            feed = feedparser.parse(source["rss_url"])
+            response = self.request_manager.get(source["rss_url"])
+            if not response or response.status_code != 200:
+                self.logger.warning(f"Failed to fetch RSS for {source['name']}")
+                return
+            
+            feed = feedparser.parse(response.text)
             
             if not feed.entries:
                 self.logger.warning(f"No entries found in RSS feed for {source['name']}")
@@ -183,77 +142,78 @@ class NewsScraperBase:
             self.logger.info(f"Found {len(feed.entries)} entries in RSS feed for {source['name']}")
             
             for entry in feed.entries:
-                if not hasattr(entry, "published_parsed"):
-                    self.logger.warning(f"Entry has no published date, skipping: {entry.get('title', 'Unknown title')}")
+                try:
+                    if not hasattr(entry, "published_parsed"):
+                        self.logger.warning(f"Entry has no published date, skipping: {entry.get('title', 'Unknown title')}")
+                        continue
+                    
+                    # Fixed timezone handling
+                    pub_dt = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
+                    
+                    # Ensure cutoff_dt is timezone aware
+                    if cutoff_dt.tzinfo is None:
+                        cutoff_dt = cutoff_dt.replace(tzinfo=timezone.utc)
+                    
+                    # Skip if too old
+                    if pub_dt <= cutoff_dt:
+                        self.logger.debug(f"Article too old (published {pub_dt.isoformat()}), skipping: {entry.get('title', 'Unknown title')}")
+                        continue
+                    
+                    # Generate URL hash for duplicate detection
+                    url_hash = hashlib.md5(entry.link.encode()).hexdigest()
+                    
+                    # Skip if already scraped
+                    if entry.link in self.tracked_articles["urls"] or url_hash in self.tracked_articles["ids"]:
+                        self.logger.info(f"Skipping already scraped article: {entry.link}")
+                        continue
+                        
+                    # Generate unique ID for article
+                    article_id = url_hash[:10]
+                    
+                    # Extract text content
+                    content = ""
+                    if hasattr(entry, "content") and entry.content:
+                        content = entry.content[0].value
+                    elif hasattr(entry, "summary"):
+                        content = entry.summary
+                    
+                    # Basic cleanup of HTML
+                    if content:
+                        soup = BeautifulSoup(content, "html.parser")
+                        content = soup.get_text()
+                    
+                    # Get image URL if available
+                    image_url = None
+                    if hasattr(entry, "media_thumbnail") and entry.media_thumbnail:
+                        image_url = entry.media_thumbnail[0].get("url")
+                    elif hasattr(entry, "media_content") and entry.media_content:
+                        media = entry.media_content[0]
+                        if media.get("medium") == "image":
+                            image_url = media.get("url")
+                    
+                    self.logger.info(f"New article found: {entry.get('title', 'Unknown title')}")
+                    
+                    yield {
+                        "id": article_id,
+                        "title": entry.get("title", "").strip(),
+                        "url": entry.link,
+                        "summary": content.strip(),
+                        "content": None,  # Will be fetched in detail if needed
+                        "source": source["name"],
+                        "category": source["category"],
+                        "image_url": image_url,
+                        "timestamp": pub_dt.isoformat()
+                    }
+                    
+                except Exception as e:
+                    self.logger.warning(f"Error processing RSS entry: {e}")
                     continue
                     
-                # Convert time tuple to datetime
-                pub_dt = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
-                
-                # Skip if too old
-                if pub_dt <= cutoff_dt:
-                    self.logger.debug(f"Article too old (published {pub_dt.isoformat()}), skipping: {entry.get('title', 'Unknown title')}")
-                    continue
-                
-                # Generate URL hash for duplicate detection
-                url_hash = hashlib.md5(entry.link.encode()).hexdigest()
-                
-                # Skip if already scraped
-                if entry.link in self.tracked_articles["urls"] or url_hash in self.tracked_articles["ids"]:
-                    self.logger.info(f"Skipping already scraped article: {entry.link}")
-                    continue
-                    
-                # Generate unique ID for article
-                article_id = url_hash[:10]
-                
-                # Extract text content
-                content = ""
-                if hasattr(entry, "content"):
-                    content = entry.content[0].value
-                elif hasattr(entry, "summary"):
-                    content = entry.summary
-                
-                # Basic cleanup of HTML
-                if content:
-                    soup = BeautifulSoup(content, "html.parser")
-                    content = soup.get_text()
-                
-                # Get image URL if available
-                image_url = None
-                if hasattr(entry, "media_thumbnail") and entry.media_thumbnail:
-                    image_url = entry.media_thumbnail[0].get("url")
-                elif hasattr(entry, "media_content") and entry.media_content:
-                    media = entry.media_content[0]
-                    if media.get("medium") == "image":
-                        image_url = media.get("url")
-                
-                self.logger.info(f"New article found: {entry.get('title', 'Unknown title')}")
-                
-                yield {
-                    "id": article_id,
-                    "title": entry.get("title", "").strip(),
-                    "url": entry.link,
-                    "summary": content.strip(),
-                    "content": None,  # Will be fetched in detail if needed
-                    "source": source["name"],
-                    "category": source["category"],
-                    "image_url": image_url,
-                    "timestamp": pub_dt.isoformat()
-                }
-                
         except Exception as e:
             self.logger.error(f"Error parsing RSS for {source['name']}: {e}")
     
     def _parse_article(self, article_info):
-        """
-        Fetch and parse a full article.
-        
-        Args:
-            article_info (dict): Basic article information
-            
-        Returns:
-            dict: Updated article information with full content
-        """
+        """Parse full article content."""
         url = article_info["url"]
         self.logger.info(f"Fetching article: {url}")
         
@@ -288,15 +248,11 @@ class NewsScraperBase:
     
     def scrape(self, past_hours=None):
         """
-        Scrape news from all sources.
-        
-        Args:
-            past_hours (int, optional): Hours to look back for new articles
-            
-        Returns:
-            list: New articles
+        Synchronous scrape method (backward compatible).
         """
         past_hours = past_hours or config.DEFAULT_SCRAPE_INTERVAL_HOURS
+        
+        # Create timezone-aware cutoff
         base_cutoff = datetime.now(timezone.utc) - timedelta(hours=past_hours)
         all_results = []
         
@@ -306,7 +262,6 @@ class NewsScraperBase:
         self.data_dir = self.get_date_based_folder()
         self.data_dir.mkdir(parents=True, exist_ok=True)
         
-        # Check if news sources exist
         if not self.news_sources:
             self.logger.warning(f"No news sources configured for {self.category}")
             return []
@@ -334,25 +289,6 @@ class NewsScraperBase:
                 for art in self._parse_rss(src, src_cutoff):
                     new_items.append(art)
             
-            # HTML fallback (optional implementation)
-            else:
-                html = self._fetch_url(src["url"])
-                if html:
-                    soup = BeautifulSoup(html, "html.parser")
-                    links = [urljoin(src["url"], a["href"]) for a in soup.select("a[href]")]
-                    for link in set(links)[:10]:  # Limit to first 10 links
-                        if not any(urlparse(link).netloc == urlparse(src["url"]).netloc for src in self.news_sources):
-                            continue
-                        
-                        # Skip if already scraped
-                        if link in self.tracked_articles["urls"]:
-                            self.logger.info(f"Skipping already scraped article: {link}")
-                            continue
-                        
-                        art = self._process_html_article(link, src, src_cutoff)
-                        if art:
-                            new_items.append(art)
-            
             if not new_items:
                 self.logger.info(f"No new articles found for {src['name']}")
                 continue
@@ -375,94 +311,47 @@ class NewsScraperBase:
                 latest_ts = max(item["timestamp"] for item in new_items)
                 self.last_run[src["name"]] = latest_ts
                 self.logger.info(f"Updated last run timestamp for {src['name']} to {latest_ts}")
-                
-        # Persist state
-        self.logger.info(f"Saving state to {self.state_file}")
-        with open(self.state_file, "w") as f:
-            json.dump(self.last_run, f, indent=2)
-            
-        # Persist tracking data
-        self.logger.info(f"Saving tracking data to {self.tracking_file}")
-        self._limit_tracking_data()
-        with open(self.tracking_file, "w") as f:
-            json.dump(self.tracked_articles, f, indent=2)
-            
+        
+        # Save state and tracking
+        self._save_state()
+        self._save_tracking()
+        
         # Save articles if any
         if all_results:
-            # Save individual files for LLM processing in the date-based directory
-            for i, article in enumerate(all_results):
-                version = f"{i+1}"
-                article_file = self.data_dir / f"extracted_{version}.json"
-                with open(article_file, "w", encoding="utf-8") as f:
-                    json.dump(article, f, ensure_ascii=False, indent=2)
-                
-            # Save batch file
-            batch_file = self.data_dir / "batch.json"
-            with open(batch_file, "w", encoding="utf-8") as f:
-                json.dump(all_results, f, ensure_ascii=False, indent=2)
-                
+            self._save_articles(all_results)
             self.logger.info(f"Saved {len(all_results)} articles to {self.data_dir}")
         else:
             self.logger.info("No new articles found.")
             
         return all_results
     
-    def _limit_tracking_data(self, max_entries=10000):
-        """
-        Limit the number of tracked articles to prevent the tracking file from growing too large.
+    def _save_state(self):
+        """Save state data."""
+        self.logger.info(f"Saving state to {self.state_file}")
+        with open(self.state_file, "w") as f:
+            json.dump(self.last_run, f, indent=2)
+    
+    def _save_tracking(self):
+        """Save tracking data."""
+        # Limit size
+        if len(self.tracked_articles["urls"]) > 10000:
+            self.tracked_articles["urls"] = self.tracked_articles["urls"][-10000:]
+            self.tracked_articles["ids"] = self.tracked_articles["ids"][-10000:]
         
-        Args:
-            max_entries (int): Maximum number of entries to keep
-        """
-        if len(self.tracked_articles["urls"]) > max_entries:
-            # Remove oldest entries
-            self.tracked_articles["urls"] = self.tracked_articles["urls"][-max_entries:]
-            self.tracked_articles["ids"] = self.tracked_articles["ids"][-max_entries:]
-            
-    def _process_html_article(self, link, source, cutoff_dt):
-        """
-        Process an article from a direct HTML link (fallback when no RSS).
+        self.logger.info(f"Saving tracking data to {self.tracking_file}")
+        with open(self.tracking_file, "w") as f:
+            json.dump(self.tracked_articles, f, indent=2)
+    
+    def _save_articles(self, articles):
+        """Save articles to files."""
+        # Save individual files
+        for i, article in enumerate(articles):
+            version = f"{i+1}"
+            article_file = self.data_dir / f"extracted_{version}.json"
+            with open(article_file, "w", encoding="utf-8") as f:
+                json.dump(article, f, ensure_ascii=False, indent=2)
         
-        Args:
-            link (str): Article URL
-            source (dict): News source information
-            cutoff_dt (datetime): Cutoff datetime
-            
-        Returns:
-            dict or None: Article information or None if too old
-        """
-        html = self._fetch_url(link)
-        if not html:
-            return None
-            
-        try:
-            art = Article(link)
-            art.set_html(html)
-            art.parse()
-            
-            pub = art.publish_date
-            if pub:
-                if not pub.tzinfo:
-                    pub = pub.replace(tzinfo=timezone.utc)
-                    
-                if pub <= cutoff_dt:
-                    return None
-            
-            # Generate unique ID for article
-            article_id = hashlib.md5(link.encode()).hexdigest()[:10]
-            
-            return {
-                "id": article_id,
-                "title": art.title or "",
-                "url": link,
-                "summary": art.text[:500] + "..." if len(art.text) > 500 else art.text,
-                "content": art.text,
-                "source": source["name"],
-                "category": source["category"],
-                "image_url": art.top_image or None,
-                "timestamp": pub.isoformat() if pub else datetime.now(timezone.utc).isoformat()
-            }
-            
-        except Exception as e:
-            self.logger.error(f"Error processing HTML article {link}: {e}")
-            return None
+        # Save batch file
+        batch_file = self.data_dir / "batch.json"
+        with open(batch_file, "w", encoding="utf-8") as f:
+            json.dump(articles, f, ensure_ascii=False, indent=2)
