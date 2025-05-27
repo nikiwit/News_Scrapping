@@ -25,7 +25,6 @@ python -m scrapers.it_news
 python -m scrapers.business_news  
 python -m scrapers.entrepreneurship_news
 python -m scrapers.lifestyle_news
-python -m scrapers.russian_news
 ```
 
 ### Time-Based Scraping
@@ -63,33 +62,11 @@ python -m scrapers.entrepreneurship_news --past_hours 72
 python -m scrapers.lifestyle_news --past_hours 24
 python -m scrapers.lifestyle_news --past_hours 48
 python -m scrapers.lifestyle_news --past_hours 72
-
-# Russian News
-python -m scrapers.russian_news --past_hours 24
-python -m scrapers.russian_news --past_hours 48
-python -m scrapers.russian_news --past_hours 72
 ```
 
 ---
 
 ## 🧪 Testing & Diagnostics
-
-### Test All Scrapers
-```bash
-# Test all scrapers at once
-python test_all_enhanced_scrapers.py
-
-# Test with specific time lookback
-python test_all_enhanced_scrapers.py  # Uses 72 hours internally
-```
-
-### Individual Scraper Testing
-```bash
-# Test specific scrapers in isolation
-python test_original.py                    # Test original scraper compatibility
-python backward_compatible_scraper.py     # Test the enhanced features
-python complete_fix_test.py              # Test all bug fixes
-```
 
 ### Quick Single-Source Tests
 ```bash
@@ -530,7 +507,6 @@ python -m scrapers.it_news --past_hours 24 && \
 python -m scrapers.business_news --past_hours 24 && \
 python -m scrapers.entrepreneurship_news --past_hours 24 && \
 python -m scrapers.lifestyle_news --past_hours 24 && \
-python -m scrapers.russian_news --past_hours 24 && \
 echo "✅ All scrapers completed"
 
 # With different time intervals
@@ -710,7 +686,7 @@ done
 
 # Category performance
 echo "📈 Category Performance:"
-for category in it_news business_news entrepreneurship_news lifestyle_news russian_news; do
+for category in it_news business_news entrepreneurship_news lifestyle_news; do
     count=$(find data -path "*/$category/extracted_*.json" -mtime -7 | wc -l)
     echo "  $category: $count articles (last 7 days)"
 done
@@ -972,5 +948,3 @@ tail -f logs/$(date +%Y%m%d)/*.log                     # Monitor logs
 grep -r "ERROR" logs/ | tail -5                        # Check recent errors
 python -c "import config; print('Config OK')"          # Validate config
 ```
-
-This comprehensive reference covers all the commands and variations you can use with your enhanced news scraping system! 🚀

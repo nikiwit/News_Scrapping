@@ -14,7 +14,7 @@ for dir_path in [DATA_DIR, STATE_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
 # Create category directories
-CATEGORIES = ["business_news", "it_news", "entrepreneurship_news", "russian_news"]
+CATEGORIES = ["business_news", "it_news", "entrepreneurship_news", "lifestyle_news"]
 for category in CATEGORIES:
     (DATA_DIR / category).mkdir(exist_ok=True)
 
@@ -255,272 +255,575 @@ RATE_LIMIT_SECONDS = REQUEST_MANAGER_CONFIG['rate_limit_config']['default_delay'
 # NEWS SOURCES CONFIGURATION (Enhanced with discovery metadata)
 # =============================================================================
 
+# News sources configuration
 TECH_NEWS_SOURCES = [
     {
         "name": "The Verge",
         "rss_url": "https://www.theverge.com/rss/index.xml",
         "url": "https://www.theverge.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "TechCrunch",
         "rss_url": "https://techcrunch.com/feed/",
         "url": "https://techcrunch.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap", "categories"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "Ars Technica",
         "rss_url": "https://feeds.arstechnica.com/arstechnica/index",
         "url": "https://arstechnica.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "Hacker News",
         "rss_url": "https://news.ycombinator.com/rss",
         "url": "https://news.ycombinator.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss"],
-        "js_required": False
+        "category": "it_news"
+    },
+    {
+        "name": "The Register",
+        "rss_url": "https://www.theregister.com/headlines.atom",
+        "url": "https://www.theregister.com/security/",
+        "category": "it_news"
     },
     {
         "name": "ZDNet",
         "rss_url": "https://www.zdnet.com/news/rss.xml",
         "url": "https://www.zdnet.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "archives"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "VentureBeat",
-        "rss_url": "https://feeds.venturebeat.com/VentureBeat",
+        "rss_url": "https://venturebeat.com/feed/",
         "url": "https://venturebeat.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "GitHub Blog",
         "rss_url": "https://github.blog/feed/",
-        "url": "https://github.blog",
-        "category": "it_news",
-        "discovery_strategies": ["rss"],
-        "js_required": False
+        "url": "https://github.blog/category/engineering/",
+        "category": "it_news"
     },
     {
         "name": "Wired",
         "rss_url": "https://www.wired.com/feed/rss",
         "url": "https://www.wired.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "MIT Technology Review",
-        "rss_url": "https://www.technologyreview.com/topnews.rss",
+        "rss_url": "https://www.technologyreview.com/feed/",
         "url": "https://www.technologyreview.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "archives"],
-        "js_required": False
+        "category": "it_news"
+    },
+    {
+        "name": "Mashable Tech",
+        "rss_url": "https://mashable.com/feeds/rss/tech",
+        "url": "https://mashable.com/tech",
+        "category": "it_news"
     },
     {
         "name": "Engadget",
         "rss_url": "https://www.engadget.com/rss.xml",
         "url": "https://www.engadget.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "The Next Web",
-        "rss_url": "http://feeds2.feedburner.com/thenextweb",
+        "rss_url": "https://thenextweb.com/feed/",
         "url": "https://thenextweb.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "homepage"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "Slashdot",
         "rss_url": "https://rss.slashdot.org/Slashdot/slashdotMain",
         "url": "https://slashdot.org",
-        "category": "it_news",
-        "discovery_strategies": ["rss"],
-        "js_required": False
+        "category": "it_news"
     },
     {
         "name": "TechRadar",
-        "rss_url": "https://feeds.webservice.techradar.com/rss/new",
+        "rss_url": "https://www.techradar.com/rss",
         "url": "https://www.techradar.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "archives"],
-        "js_required": False
+        "category": "it_news"
     },
     {
-        "name": "TechRepublic",
-        "rss_url": "https://www.techrepublic.com/rssfeeds/articles/?feedType=rssfeeds&sort=latest",
+        "name": "Gizmodo",
+        "rss_url": "https://gizmodo.com/rss",
+        "url": "https://gizmodo.com",
+        "category": "it_news"
+    },
+    {
+        "name": "CNET",
+        "rss_url": "https://www.cnet.com/rss/all/",
+        "url": "https://www.cnet.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Bleeping Computer",
+        "rss_url": "https://www.bleepingcomputer.com/feed/",
+        "url": "https://www.bleepingcomputer.com",
+        "category": "it_news"
+    },
+    {
+        "name": "Tech Republic",
+        "rss_url": "https://www.techrepublic.com/rssfeeds/articles/",
         "url": "https://www.techrepublic.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "archives"],
-        "js_required": False
+        "category": "it_news"
     },
     {
-        "name": "CNET News",
-        "rss_url": "https://www.cnet.com/rss/news/",
-        "url": "https://www.cnet.com/news",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "name": "Digital Trends",
+        "rss_url": "https://www.digitaltrends.com/feed/",
+        "url": "https://www.digitaltrends.com",
+        "category": "it_news"
     },
     {
-        "name": "Tom's Hardware",
-        "rss_url": "https://www.tomshardware.com/feeds/rss2/all.xml",
-        "url": "https://www.tomshardware.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
-    },
-    {
-        "name": "PCWorld",
-        "rss_url": "http://feeds.pcworld.com/pcworld/latestnews",
-        "url": "https://www.pcworld.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "archives"],
-        "js_required": False
-    },
-    {
-        "name": "Computerworld",
-        "rss_url": "https://www.computerworld.com/feed/",
-        "url": "https://www.computerworld.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
-    },
-    {
-        "name": "TechSpot",
-        "rss_url": "https://www.techspot.com/backend.xml",
-        "url": "https://www.techspot.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss"],
-        "js_required": False
-    },
-    {
-        "name": "BetaNews",
-        "rss_url": "https://betanews.com/feed/",
-        "url": "https://betanews.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss"],
-        "js_required": False
-    },
-    {
-        "name": "TechMeme",
-        "rss_url": "https://www.techmeme.com/feed.xml",
-        "url": "https://www.techmeme.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss"],
-        "js_required": False
-    },
-    {
-        "name": "GeekWire",
-        "rss_url": "https://www.geekwire.com/feed/",
-        "url": "https://www.geekwire.com",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "archives"],
-        "js_required": False
-    },
-    # Add some JS-heavy sources for testing
-    {
-        "name": "Dev.to",
-        "rss_url": "https://dev.to/feed",
-        "url": "https://dev.to",
-        "category": "it_news",
-        "discovery_strategies": ["rss", "patterns"],
-        "js_required": True
-    },
-    {
-        "name": "Hashnode",
-        "url": "https://hashnode.com",
-        "category": "it_news",
-        "discovery_strategies": ["patterns", "sitemap"],
-        "js_required": True
+        "name": "Hackaday",
+        "rss_url": "https://hackaday.com/blog/feed/",
+        "url": "https://hackaday.com",
+        "category": "it_news"
     }
 ]
 
-# Business and other sources (simplified for brevity)
 BUSINESS_NEWS_SOURCES = [
     {
         "name": "Forbes",
         "rss_url": "https://www.forbes.com/business/feed/",
         "url": "https://www.forbes.com/business/",
-        "category": "business_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "category": "business_news"
+    },
+    {
+        "name": "Business Insider",
+        "rss_url": "https://www.businessinsider.com/rss",
+        "url": "https://www.businessinsider.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Entrepreneur Magazine",
+        "rss_url": "https://www.entrepreneur.com/latest.rss",
+        "url": "https://www.entrepreneur.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Inc.",
+        "rss_url": "https://www.inc.com/rss.xml",
+        "url": "https://www.inc.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Harvard Business Review",
+        "rss_url": "https://hbr.org/feed",
+        "url": "https://hbr.org",
+        "category": "business_news"
+    },
+    {
+        "name": "Reuters Business",
+        "rss_url": "https://feeds.reuters.com/reuters/businessNews",
+        "url": "https://www.reuters.com/business/",
+        "category": "business_news"
+    },
+    {
+        "name": "CNBC",
+        "rss_url": "https://www.cnbc.com/id/10000664/device/rss/rss.html",
+        "url": "https://www.cnbc.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Financial Times",
+        "rss_url": "https://www.ft.com/rss/home",
+        "url": "https://www.ft.com",
+        "category": "business_news"
+    },
+    {
+        "name": "The Economist",
+        "rss_url": "https://www.economist.com/business/rss.xml",
+        "url": "https://www.economist.com/business",
+        "category": "business_news"
+    },
+    {
+        "name": "Wall Street Journal",
+        "rss_url": "https://feeds.a.dj.com/rss/WSJcomUSBusiness.xml",
+        "url": "https://www.wsj.com",
+        "category": "business_news"
     },
     {
         "name": "Fortune",
         "rss_url": "https://fortune.com/feed/",
         "url": "https://fortune.com",
-        "category": "business_news",
-        "discovery_strategies": ["rss", "archives"],
-        "js_required": False
+        "category": "business_news"
     },
-    # ... (other business sources)
+    {
+        "name": "The Hustle",
+        "rss_url": "https://thehustle.co/feed/",
+        "url": "https://thehustle.co",
+        "category": "business_news"
+    },
+    {
+        "name": "Quartz",
+        "rss_url": "https://qz.com/feed/",
+        "url": "https://qz.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Yahoo Finance",
+        "rss_url": "https://finance.yahoo.com/news/rssindex",
+        "url": "https://finance.yahoo.com",
+        "category": "business_news"
+    },
+    {
+        "name": "McKinsey Insights",
+        "rss_url": "https://www.mckinsey.com/insights/rss.aspx",
+        "url": "https://www.mckinsey.com/insights",
+        "category": "business_news"
+    },
+    {
+        "name": "Moz Blog",
+        "rss_url": "https://moz.com/blog/feed",
+        "url": "https://moz.com/blog",
+        "category": "business_news"
+    },
+    {
+        "name": "Finextra",
+        "rss_url": "https://www.finextra.com/rss/headlines.aspx",
+        "url": "https://www.finextra.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Banking Dive",
+        "rss_url": "https://www.bankingdive.com/feeds/news/",
+        "url": "https://www.bankingdive.com",
+        "category": "business_news"
+    },
+    {
+        "name": "Payments Dive",
+        "rss_url": "https://www.paymentsdive.com/feeds/news/",
+        "url": "https://www.paymentsdive.com",
+        "category": "business_news"
+    },
+    {
+        "name": "The Financial Brand",
+        "rss_url": "https://thefinancialbrand.com/feed/",
+        "url": "https://thefinancialbrand.com",
+        "category": "business_news"
+    }
 ]
 
 ENTREPRENEURSHIP_NEWS_SOURCES = [
+    # === Core Entrepreneurship Sources ===
     {
         "name": "Entrepreneur Magazine",
-        "rss_url": "https://www.entrepreneur.com/latest/feed",
+        "rss_url": "https://www.entrepreneur.com/latest.rss",
         "url": "https://www.entrepreneur.com",
-        "category": "entrepreneurship_news",
-        "discovery_strategies": ["rss", "sitemap"],
-        "js_required": False
+        "category": "entrepreneurship_news"
     },
-    # ... (other entrepreneurship sources)
+    {
+        "name": "Inc.",
+        "rss_url": "https://www.inc.com/rss.xml",
+        "url": "https://www.inc.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Y Combinator Blog",
+        "rss_url": "https://blog.ycombinator.com/feed/",
+        "url": "https://blog.ycombinator.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Foundr",
+        "rss_url": "https://foundr.com/feed",
+        "url": "https://foundr.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Indie Hackers",
+        "rss_url": "https://www.indiehackers.com/feed.xml",
+        "url": "https://www.indiehackers.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "SaaStr",
+        "rss_url": "https://www.saastr.com/feed/",
+        "url": "https://www.saastr.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "A16Z Blog",
+        "rss_url": "https://a16z.com/feed/",
+        "url": "https://a16z.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "First Round Review",
+        "rss_url": "https://review.firstround.com/feed.xml",
+        "url": "https://review.firstround.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "TechCrunch Startups",
+        "rss_url": "https://techcrunch.com/category/startups/feed/",
+        "url": "https://techcrunch.com/category/startups/",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Entrepreneur Asia Pacific",
+        "rss_url": "https://www.entrepreneur.com/asiapacific/rss",
+        "url": "https://www.entrepreneur.com/asiapacific",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Neuroscience & Cognitive Science for Self-Improvement ===
+    {
+        "name": "Neuroleadership Institute",
+        "rss_url": "https://neuroleadership.com/your-brain-at-work/feed/",
+        "url": "https://neuroleadership.com/your-brain-at-work",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Mindful",
+        "rss_url": "https://www.mindful.org/feed/",
+        "url": "https://www.mindful.org",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Brain Pickings",
+        "rss_url": "https://www.brainpickings.org/feed/",
+        "url": "https://www.brainpickings.org",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Farnam Street",
+        "rss_url": "https://fs.blog/feed/",
+        "url": "https://fs.blog",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Selected Tech News Sources ===
+    {
+        "name": "TechCrunch",
+        "rss_url": "https://techcrunch.com/feed/",
+        "url": "https://techcrunch.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "VentureBeat",
+        "rss_url": "https://venturebeat.com/feed/",
+        "url": "https://venturebeat.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "MIT Technology Review",
+        "rss_url": "https://www.technologyreview.com/feed/",
+        "url": "https://www.technologyreview.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "The Next Web",
+        "rss_url": "https://thenextweb.com/feed/",
+        "url": "https://thenextweb.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Wired",
+        "rss_url": "https://www.wired.com/feed/rss",
+        "url": "https://www.wired.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "The Verge",
+        "rss_url": "https://www.theverge.com/rss/index.xml",
+        "url": "https://www.theverge.com",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Selected Business News Sources ===
+    {
+        "name": "Forbes Entrepreneurs",
+        "rss_url": "https://www.forbes.com/entrepreneurs/feed/",
+        "url": "https://www.forbes.com/entrepreneurs/",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Harvard Business Review",
+        "rss_url": "https://hbr.org/feed",
+        "url": "https://hbr.org",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "The Hustle",
+        "rss_url": "https://thehustle.co/feed/",
+        "url": "https://thehustle.co",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "McKinsey Insights",
+        "rss_url": "https://www.mckinsey.com/insights/rss.aspx",
+        "url": "https://www.mckinsey.com/insights",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Bloomberg Entrepreneurs",
+        "rss_url": "https://feed.bloomberg.com/feed/entrepreneurs",
+        "url": "https://www.bloomberg.com/entrepreneurs",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Business Insider",
+        "rss_url": "https://www.businessinsider.com/rss",
+        "url": "https://www.businessinsider.com",
+        "category": "business_news"
+    },
+    
+    # === Lifestyle News for Young Entrepreneurs ===
+    {
+        "name": "Fast Company",
+        "rss_url": "https://www.fastcompany.com/feed",
+        "url": "https://www.fastcompany.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Forbes Under 30",
+        "rss_url": "https://www.forbes.com/30-under-30/feed/",
+        "url": "https://www.forbes.com/30-under-30/",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Success Magazine",
+        "rss_url": "https://www.success.com/feed/",
+        "url": "https://www.success.com",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Tech & Business Celebrities/Popular People ===
+    {
+        "name": "Tech Meme",
+        "rss_url": "https://www.techmeme.com/feed.xml",
+        "url": "https://www.techmeme.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "GeekWire",
+        "rss_url": "https://www.geekwire.com/feed/",
+        "url": "https://www.geekwire.com",
+        "category": "entrepreneurship_news"
+    },
+    
+    # === Social Media & Funny Tech/Startup Content ===
+    {
+        "name": "AI Boom",
+        "rss_url": "https://ai-data-base.com/feed",
+        "url": "https://ai-data-base.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Mashable Startups",
+        "rss_url": "https://mashable.com/feeds/rss/startups",
+        "url": "https://mashable.com/startups",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Morning Brew",
+        "rss_url": "https://www.morningbrew.com/feed",
+        "url": "https://www.morningbrew.com",
+        "category": "entrepreneurship_news"
+    },
+    {
+        "name": "Product Hunt Daily",
+        "rss_url": "https://www.producthunt.com/feed",
+        "url": "https://www.producthunt.com",
+        "category": "entrepreneurship_news"
+    }
 ]
 
-RUSSIAN_NEWS_SOURCES = [
+LIFESTYLE_NEWS_SOURCES = [
+    # Popular and Active Lifestyle Blogs
     {
-        "name": "RT News",
-        "rss_url": "https://www.rt.com/rss/",
-        "url": "https://www.rt.com",
-        "category": "russian_news",
-        "discovery_strategies": ["rss"],
-        "js_required": False
+        "name": "Cup of Jo",
+        "rss_url": "https://feeds.feedburner.com/blogspot/bboSV",
+        "url": "https://cupofjo.com",
+        "category": "manual_news_system"
     },
-    # ... (other Russian sources)
+    {
+        "name": "Lifehacker",
+        "rss_url": "https://lifehacker.com/rss",
+        "url": "https://lifehacker.com",
+        "category": "manual_news_system"
+    },
+    
+    # Health & Wellness
+    {
+        "name": "MindBodyGreen",
+        "rss_url": "https://www.mindbodygreen.com/rss/feed.xml",
+        "url": "https://www.mindbodygreen.com/health",
+        "category": "manual_news_system"
+    },
+    {
+        "name": "Health eHealth Square",
+        "rss_url": "https://ehealthsquare.com/feed",
+        "url": "https://ehealthsquare.com",
+        "category": "manual_news_system"
+    },
+    
+    # Self-Improvement
+    {
+        "name": "Tiny Buddha",
+        "rss_url": "https://tinybuddha.com/feed/",
+        "url": "https://tinybuddha.com",
+        "category": "manual_news_system"
+    },
+    {
+        "name": "BrainFlow",
+        "rss_url": "https://brainflow.co/feed",
+        "url": "https://brainflow.co",
+        "category": "manual_news_system"
+    },
+    
+    # Science & Knowledge
+    {
+        "name": "Science Daily",
+        "rss_url": "https://www.sciencedaily.com/rss/top/health.xml",
+        "url": "https://www.sciencedaily.com",
+        "category": "manual_news_system"
+    },
+    
+    # Fitness & Nutrition
+    {
+        "name": "The Betty Rocker",
+        "rss_url": "https://thebettyrocker.com/feed",
+        "url": "https://thebettyrocker.com",
+        "category": "manual_news_system"
+    },
+    
+    # Home & Design
+    {
+        "name": "Apartment Therapy",
+        "rss_url": "https://www.apartmenttherapy.com/main.rss",
+        "url": "https://www.apartmenttherapy.com",
+        "category": "manual_news_system"
+    },
+    
+    # Entertaining Content
+    {
+        "name": "The Onion",
+        "rss_url": "https://www.theonion.com/rss",
+        "url": "https://www.theonion.com",
+        "category": "manual_news_system"
+    }
 ]
 
 # All news sources combined
-ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES + ENTREPRENEURSHIP_NEWS_SOURCES + RUSSIAN_NEWS_SOURCES
+ALL_NEWS_SOURCES = TECH_NEWS_SOURCES + BUSINESS_NEWS_SOURCES + ENTREPRENEURSHIP_NEWS_SOURCES + LIFESTYLE_NEWS_SOURCES
 
 # =============================================================================
 # TELEGRAM CONFIGURATION (unchanged)
 # =============================================================================
 
 TELEGRAM_BOT_TOKENS = {
-    "business_news": os.environ.get("BUSINESS_BOT_TOKEN", "7753587635:AAGG8-qTogDPtCSL83mr7FBRgIKdijvz89Q"),
-    "it_news": os.environ.get("IT_BOT_TOKEN", "7797865654:AAHIBliz3W_GrOy9ruD6vXwoW5OcLgbhifw"),
-    "entrepreneurship_news": os.environ.get("ENTREPRENEUR_BOT_TOKEN", "7763104070:AAE2RPRGcB7neO1Y8AWt5MVzP9GmVtxUf6g"),
-    "russian_news": os.environ.get("RUSSIAN_BOT_TOKEN", "your_russian_bot_token_here")
 }
 
 TELEGRAM_CHANNELS = {
-    "business_news": "@business_news_hub",
-    "it_news": "@it_geeks_hub",
-    "entrepreneurship_news": "@entrepreneurship_hub",
-    "russian_news": "@russian_news_hub"
 }
 
 BOT_CHANNEL_MAPPING = {
-    "business_news": "business_news",
-    "it_news": "it_news",
-    "entrepreneurship_news": "entrepreneurship_news",
-    "russian_news": "russian_news"
 }
 
 # =============================================================================
