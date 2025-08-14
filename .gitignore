@@ -22,8 +22,13 @@ vector_store/*
 !vector_store/.gitkeep
 embeddings_backup.pkl
 
-# Logs
+# Logs and logging directories
 *.log
+logs/
+logs/*
+news_system/logs/
+news_system/logs/*
+*.log.*
 
 # Data files
 data/
@@ -59,14 +64,29 @@ Thumbs.db
 # Temporary files
 tmp/
 temp/
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# News scraping specific temporary files
+*.json.bak
+*.log.old
+*.csv.temp
 
 # Temporary files
 README_Production_Updates.txt
 
-# Additional __pycache__ directories
-__pycache__
-__pycache__/*
-news_system/__pycache__
+# Python cache directories - comprehensive
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Specific project __pycache__ directories
 news_system/__pycache__/
 news_system/scrapers/__pycache__/
 news_system/utils/__pycache__/
@@ -83,10 +103,21 @@ news_system/data/26_05_2025/1755/it_news/*.json
 # Additional environment files
 news_system/.env
 
-# Ensure state directory is ignored
+# State and generated files
 state/
 news_system/state/
 /state/
+
+# Generated summaries and output files
+summaries_*.json
+summaries_*.md
+*_summaries.json
+*_summaries.md
+
+# News summaries folder (organized output)
+news_summaries/
+news_system/news_summaries/
+**/news_summaries/
 
 # Extra files
 llm_prompt.txt
@@ -126,3 +157,6 @@ dmypy.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+# Claude
+CLAUDE.md

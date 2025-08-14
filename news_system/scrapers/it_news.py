@@ -14,7 +14,14 @@ from logging_setup import setup_logging
 
 # Then import other modules
 from scrapers.base_scraper import NewsScraperBase
-import config
+try:
+    import config
+except ImportError:
+    # Fallback import path
+    import os
+    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, parent_dir)
+    import config
 
 class TechNewsScraper(NewsScraperBase):
     """

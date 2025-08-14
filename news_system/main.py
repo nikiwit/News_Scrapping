@@ -18,14 +18,21 @@ from logging_setup import setup_logging
 logger, log_file = setup_logging(module_name="NewsSystem")
 
 # Import modules
-from scrapers.tech_news import TechNewsScraper
+from scrapers.it_news import TechNewsScraper
 from scrapers.business_news import BusinessNewsScraper
 from scrapers.entrepreneurship_news import EntrepreneurshipNewsScraper
-from scrapers.russian_news import RussianNewsScraper
+# from scrapers.russian_news import RussianNewsScraper
 from telegram_client.bot import NewsBot, NewsBotManager
 from telegram_client.channel_manager import ChannelManager
 from llm.formatter import ContentGenerator
-import config
+try:
+    import config
+except ImportError:
+    # Fallback import path
+    import os
+    parent_dir = os.path.dirname(os.path.abspath(__file__))
+    sys.path.insert(0, parent_dir)
+    import config
 
 class NewsSystem:
     """
@@ -34,10 +41,31 @@ class NewsSystem:
     
     def __init__(self):
         """Initialize the news system."""
+        # Generate a single timestamp for all categories (fixes data collision)
+        import pytz
+        kuala_lumpur_tz = pytz.timezone('Asia/Kuala_Lumpur')
+        now = datetime.now(pytz.UTC).astimezone(kuala_lumpur_tz)
+        self.shared_date_folder = now.strftime("%d_%m_%Y")
+        self.shared_time_folder = now.strftime("%H%M")
+        
+        # Initialize scrapers with shared timestamp
         self.tech_scraper = TechNewsScraper()
         self.business_scraper = BusinessNewsScraper()
         self.entrepreneurship_scraper = EntrepreneurshipNewsScraper()
-        self.russian_scraper = RussianNewsScraper()
+        # self.russian_scraper = RussianNewsScraper()
+        
+        # Override data directories to use shared timestamp
+        for scraper, category in [
+            (self.tech_scraper, "it_news"),
+            (self.business_scraper, "business_news"), 
+            (self.entrepreneurship_scraper, "entrepreneurship_news")
+        ]:
+            shared_dir = config.DATA_DIR / self.shared_date_folder / self.shared_time_folder / category
+            shared_dir.mkdir(parents=True, exist_ok=True)
+            scraper.data_dir = shared_dir
+            
+        logger.info(f"💾 Data will be saved to: {config.DATA_DIR}/{self.shared_date_folder}/{self.shared_time_folder}")
+        
         self.bot_manager = NewsBotManager()
         
         # Initialize channel manager with appropriate category

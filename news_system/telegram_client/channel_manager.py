@@ -11,7 +11,13 @@ import os
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 
-import config
+try:
+    import config
+except ImportError:
+    # Fallback import path
+    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, parent_dir)
+    import config
 from telegram import Bot, ChatPermissions, ChatMemberUpdated
 from telegram.error import TelegramError
 

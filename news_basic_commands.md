@@ -41,6 +41,24 @@ python -m scrapers.it_news --past_hours 168  # Last week
 python -m scrapers.it_news --past_hours 240  # Last 10 days
 ```
 
+### ⚡ SINGLE COMMAND - Scrape ALL Categories
+```bash
+# EASIEST WAY - One command to scrape all news categories
+cd news_system
+python scrape_only.py --hours 12           # All categories, 12 hours (no Telegram issues)
+python scrape_only.py --hours 24           # All categories, 24 hours
+python scrape_only.py --hours 6            # All categories, 6 hours
+python scrape_only.py --hours 48           # All categories, 48 hours
+
+# Alternative with main.py (may have Telegram import issues)
+python main.py --scrape --hours 12           # All categories, 12 hours
+python main.py --scrape --hours 24           # All categories, 24 hours
+
+# 🌟 POPULAR SOURCES ONLY (10 best sources)
+python scrape_popular.py --hours 12         # Top 10 sources from all categories
+python scrape_popular.py --list             # Show which sources are included
+```
+
 ### All Scrapers with Variations
 ```bash
 # IT News
@@ -117,24 +135,44 @@ print(f'Two requests took: {time.time() - start:.2f}s')
 
 ### Using main.py (if available)
 ```bash
+# IMPORTANT: Always run from news_system directory
+cd news_system
+
 # Full system operations
-python main.py --scrape --hours 24                       # Scrape all categories
+python main.py --scrape --hours 12                       # Scrape all categories (12 hours)
+python main.py --scrape --hours 24                       # Scrape all categories (24 hours)
 python main.py --scrape --hours 48 --category it_news    # Specific category
 python main.py --post --count 1                          # Post latest articles
 python main.py --setup                                   # Setup Telegram channels
 python main.py --schedule --hours 3                      # Run on schedule
 
 # Combined operations
-python main.py --scrape --post --hours 24                # Scrape and post
+python main.py --scrape --post --hours 12                # Scrape and post (12 hours)
+python main.py --scrape --post --hours 24                # Scrape and post (24 hours)
 python main.py --scrape --hours 48 --post --count 2      # Scrape 48h, post 2 articles
+
+# Quick morning news update (all categories, 12 hours)
+python main.py --scrape --hours 12 --post --count 1
+
+# Evening comprehensive update (all categories, 24 hours)
+python main.py --scrape --hours 24 --post --count 2
 ```
 
 ### Direct Main System Calls
 ```bash
-# If main.py is configured for your system
-python main.py --scrape --category it_news --hours 24
-python main.py --scrape --category business_news --hours 48
-python main.py --scrape --category entrepreneurship_news --hours 72
+# If main.py is configured for your system (run from news_system directory)
+cd news_system
+
+# Individual category scraping with main.py
+python main.py --scrape --category it_news --hours 12
+python main.py --scrape --category business_news --hours 12  
+python main.py --scrape --category entrepreneurship_news --hours 12
+python main.py --scrape --category lifestyle_news --hours 12
+
+# Different time periods per category
+python main.py --scrape --category it_news --hours 6         # Fresh IT news
+python main.py --scrape --category business_news --hours 24  # Daily business
+python main.py --scrape --category entrepreneurship_news --hours 48  # Extended entrepreneurship
 ```
 
 ---
@@ -501,34 +539,62 @@ done
 
 ### Sequential Scraping (Safer)
 ```bash
-# Run all scrapers one by one
-echo "🚀 Starting sequential scraping..."
+# IMPORTANT: Always run from news_system directory
+cd news_system
+
+# Run all scrapers one by one (12 hours)
+echo "🚀 Starting sequential scraping (12 hours)..."
+python -m scrapers.it_news --past_hours 12 && \
+python -m scrapers.business_news --past_hours 12 && \
+python -m scrapers.entrepreneurship_news --past_hours 12 && \
+python -m scrapers.lifestyle_news --past_hours 12 && \
+echo "✅ All scrapers completed"
+
+# Run all scrapers one by one (24 hours)
+echo "🚀 Starting sequential scraping (24 hours)..."
 python -m scrapers.it_news --past_hours 24 && \
 python -m scrapers.business_news --past_hours 24 && \
 python -m scrapers.entrepreneurship_news --past_hours 24 && \
 python -m scrapers.lifestyle_news --past_hours 24 && \
 echo "✅ All scrapers completed"
 
-# With different time intervals
-python -m scrapers.it_news --past_hours 12 && \
-python -m scrapers.business_news --past_hours 24 && \
-python -m scrapers.entrepreneurship_news --past_hours 48
+# With different time intervals for each category
+echo "🚀 Starting mixed interval scraping..."
+python -m scrapers.it_news --past_hours 6 && \
+python -m scrapers.business_news --past_hours 12 && \
+python -m scrapers.entrepreneurship_news --past_hours 24 && \
+python -m scrapers.lifestyle_news --past_hours 48
 ```
 
 ### Parallel Scraping (Faster)
 ```bash
-# Run multiple scrapers in parallel
-echo "🚀 Starting parallel scraping..."
+# IMPORTANT: Always run from news_system directory
+cd news_system
+
+# Run multiple scrapers in parallel (12 hours)
+echo "🚀 Starting parallel scraping (12 hours)..."
+python -m scrapers.it_news --past_hours 12 &
+python -m scrapers.business_news --past_hours 12 &
+python -m scrapers.entrepreneurship_news --past_hours 12 &
+python -m scrapers.lifestyle_news --past_hours 12 &
+wait  # Wait for all to complete
+echo "✅ All parallel scrapers completed"
+
+# Run multiple scrapers in parallel (24 hours)
+echo "🚀 Starting parallel scraping (24 hours)..."
 python -m scrapers.it_news --past_hours 24 &
 python -m scrapers.business_news --past_hours 24 &
 python -m scrapers.entrepreneurship_news --past_hours 24 &
+python -m scrapers.lifestyle_news --past_hours 24 &
 wait  # Wait for all to complete
 echo "✅ All parallel scrapers completed"
 
 # Parallel with different time intervals
-python -m scrapers.it_news --past_hours 48 &
-python -m scrapers.business_news --past_hours 24 &
-python -m scrapers.entrepreneurship_news --past_hours 72 &
+echo "🚀 Starting mixed parallel scraping..."
+python -m scrapers.it_news --past_hours 6 &
+python -m scrapers.business_news --past_hours 12 &
+python -m scrapers.entrepreneurship_news --past_hours 24 &
+python -m scrapers.lifestyle_news --past_hours 48 &
 wait
 ```
 
@@ -739,18 +805,53 @@ echo "  Log files: $(find logs -name '*.log' | wc -l)"
 
 ### Daily Workflow
 ```bash
-# Morning comprehensive scrape
-echo "🌅 Morning News Scrape"
-python test_all_enhanced_scrapers.py
+# IMPORTANT: Always start from news_system directory
+cd news_system
+
+# Morning comprehensive scrape (all categories, 12 hours)
+echo "🌅 Morning News Scrape (12 hours)"
+python main.py --scrape --hours 12
 
 # Quick IT update check
 echo "💻 Quick IT News Update"
-python -m scrapers.it_news --past_hours 12
+python -m scrapers.it_news --past_hours 6
+
+# Evening comprehensive update (all categories, 24 hours)
+echo "🌆 Evening News Update (24 hours)"
+python main.py --scrape --hours 24
+
+# Weekend catch-up (all categories, 48 hours)
+echo "📰 Weekend News Catch-up (48 hours)"
+python main.py --scrape --hours 48
 
 # Check results
 echo "📊 Today's Results:"
 ls -la data/$(date +%d_%m_%Y)/*/
 find data/$(date +%d_%m_%Y) -name "extracted_*.json" | wc -l | xargs echo "Total articles:"
+```
+
+### Quick Commands for Different Scenarios
+```bash
+# IMPORTANT: Run from news_system directory
+cd news_system
+
+# Emergency news check (last 3 hours, all categories)
+python main.py --scrape --hours 3
+
+# Breaking news check (last hour, IT only)  
+python -m scrapers.it_news --past_hours 1
+
+# Weekly business roundup (7 days)
+python -m scrapers.business_news --past_hours 168
+
+# After system downtime recovery (5 days, all categories)
+python main.py --scrape --hours 120
+
+# Quick parallel update (6 hours, all categories)
+python -m scrapers.it_news --past_hours 6 & \
+python -m scrapers.business_news --past_hours 6 & \
+python -m scrapers.entrepreneurship_news --past_hours 6 & \
+python -m scrapers.lifestyle_news --past_hours 6 & wait
 ```
 
 ### New Source Testing
@@ -934,17 +1035,125 @@ find logs -name "*.log" -mtime -1 | wc -l | xargs echo "Log files today:"
 ## 🎯 Most Used Commands Summary
 
 ```bash
-# Daily essentials
-python test_all_enhanced_scrapers.py                    # Test all scrapers
-python -m scrapers.it_news --past_hours 24             # IT news update
-python -m scrapers.business_news --past_hours 24       # Business news update
+# CRITICAL: Always run from news_system directory first!
+cd news_system
+
+# Daily essentials - scrape all categories
+python main.py --scrape --hours 12                     # Morning update (12h)
+python main.py --scrape --hours 24                     # Evening update (24h)
+
+# Individual category updates  
+python -m scrapers.it_news --past_hours 12             # IT news (12 hours)
+python -m scrapers.business_news --past_hours 24       # Business news (24 hours)
+python -m scrapers.entrepreneurship_news --past_hours 12  # Entrepreneurship (12 hours)
+
+# Quick all-categories parallel scrape (12 hours)
+python -m scrapers.it_news --past_hours 12 & \
+python -m scrapers.business_news --past_hours 12 & \
+python -m scrapers.entrepreneurship_news --past_hours 12 & \
+python -m scrapers.lifestyle_news --past_hours 12 & wait
+
+# Emergency/Breaking news check (3 hours, all categories)
+python main.py --scrape --hours 3
 
 # Check results
 find data -name "extracted_*.json" -mtime -1 | wc -l   # Count today's articles
 ls -la data/$(date +%d_%m_%Y)/*/                       # Show today's data
 
-# Monitor and troubleshoot
+# Monitor and troubleshoot  
 tail -f logs/$(date +%Y%m%d)/*.log                     # Monitor logs
 grep -r "ERROR" logs/ | tail -5                        # Check recent errors
 python -c "import config; print('Config OK')"          # Validate config
+
+# Setup (run once)
+pip install -r requirements.txt && playwright install chromium
+```
+
+---
+
+---
+
+## 🤖 LLM Summarization with Llama 3.1:8B
+
+### Setup Ollama and Llama 3.1:8B
+```bash
+# Install Ollama (if not already installed)
+curl -fsSL https://ollama.com/install.sh | sh
+
+# Start Ollama service
+ollama serve
+
+# Download Llama 3.1:8B model (in another terminal)
+ollama pull llama3.1:8b
+
+# Verify model is available
+ollama list
+```
+
+### Summarize Latest News
+```bash
+cd news_system
+
+# Summarize latest scraped articles (automatic)
+python summarize_news.py
+
+# Advanced: Summarize specific directory
+python llm/llama_summarizer.py data/13_08_2025/1430 --output summaries.json
+
+# Summarize with custom model
+python llm/llama_summarizer.py data/13_08_2025/1430 --model llama3.1:8b --output results.json
+```
+
+### Complete Workflow: Scrape + Summarize
+```bash
+cd news_system
+
+# 1. Scrape latest news (12 hours)
+python main.py --scrape --hours 12
+
+# 2. Summarize the results  
+python summarize_news.py
+
+# One-liner: scrape and summarize
+python main.py --scrape --hours 12 && python summarize_news.py
+```
+
+### What You Get
+The summarizer creates:
+- **JSON file**: Complete results with metadata
+- **Markdown file**: Readable summary with links
+- **Context-aware batching**: Processes up to 15 articles at once
+- **Original URLs**: Every summary includes the source link
+- **Fallback handling**: Individual processing if batch fails
+
+Example output structure:
+```json
+{
+  "generated_at": "2025-08-13T14:30:00",
+  "model_used": "llama3.1:8b", 
+  "total_articles": 12,
+  "summaries": [
+    {
+      "original_article": {...},
+      "summary": "AI company OpenAI announced...",
+      "key_points": ["Major breakthrough", "Industry impact"],
+      "generated_at": "2025-08-13T14:30:15"
+    }
+  ]
+}
+```
+
+---
+
+## 🚨 REMEMBER: Working Directory
+
+**ALWAYS run scraper commands from the `news_system/` directory:**
+
+```bash
+# Correct way - ALWAYS do this first
+cd news_system
+python -m scrapers.it_news --past_hours 12
+
+# OR use absolute paths
+python /path/to/News_Scrapping/news_system/main.py --scrape --hours 12
 ```

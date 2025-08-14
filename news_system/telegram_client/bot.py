@@ -10,8 +10,29 @@ import sys
 # Add parent directory to path
 sys.path.append(str(Path(__file__).parent.parent))
 
-import config
-from telegram import Bot, ParseMode, InputMediaPhoto
+try:
+    import config
+except ImportError:
+    # Fallback import path
+    import sys
+    import os
+    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, parent_dir)
+    import config
+try:
+    # Try newer telegram library format
+    from telegram import Bot, InputMediaPhoto
+    from telegram.constants import ParseMode
+except ImportError:
+    try:
+        # Try older telegram library format
+        from telegram import Bot, ParseMode, InputMediaPhoto
+    except ImportError:
+        # Fallback if telegram library not available
+        print("Warning: telegram library not found. Telegram features disabled.")
+        Bot = None
+        ParseMode = None
+        InputMediaPhoto = None
 
 logger = logging.getLogger("TelegramBot")
 

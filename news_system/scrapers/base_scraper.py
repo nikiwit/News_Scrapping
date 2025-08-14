@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
-# scrapers/base_scraper.py - Fixed with proper logging integration
+# scrapers/base_scraper.py - Enhanced with progress tracking and timeouts
 
 import json
 import logging
 import hashlib
 import pytz
+import signal
+import threading
 from pathlib import Path
 from datetime import datetime, timedelta, timezone
 from dateutil import parser as date_parser
@@ -12,22 +14,32 @@ from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 from newspaper import Article
 from typing import List, Dict, Any, Optional
+import sys
+import time
 
 # Import enhanced utilities
-import sys
-from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
 
 from utils.request_manager import RequestManager
-import config
+try:
+    import config
+except ImportError:
+    # Fallback import path
+    import os
+    parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, parent_dir)
+    import config
 
 # Configure module logger - FIXED NAME
 logger = logging.getLogger("NewsSystem.Scraper.Base")
 
+class TimeoutError(Exception):
+    """Custom timeout exception"""
+    pass
+
 class NewsScraperBase:
     """
-    Enhanced scraper that works with existing synchronous scrapers
-    but uses enhanced request management.
+    Enhanced scraper with progress tracking and timeout handling
     """
     
     def __init__(self, news_sources, category, user_agent=None, rate_limit=None):
@@ -38,14 +50,46 @@ class NewsScraperBase:
         
         # Set up category-specific logger
         self.logger = logging.getLogger(f"NewsSystem.Scraper.{category.capitalize()}")
-        self.logger.info(f"Initialized enhanced {category} scraper")
+        # Initialization message removed to reduce spam
         
-        # Initialize enhanced request manager with conservative settings
+        # Initialize enhanced request manager with optimized settings (quiet mode)
         safe_config = config.REQUEST_MANAGER_CONFIG.copy()
         safe_config['robots_config']['respect_robots'] = False  # Disable robots checking
-        safe_config['rate_limit_config']['default_delay'] = 1.0  # Faster for testing
+        safe_config['rate_limit_config']['default_delay'] = 1.0  # Faster scraping
+        safe_config['timeout'] = 20  # 20s timeout for requests
+        safe_config['max_retries'] = 2  # Only 2 retries to save time
+        
+        # Temporarily suppress logging during initialization
+        original_level = logging.getLogger().level
+        logging.getLogger().setLevel(logging.ERROR)  # Only show errors
+        
+        # Also suppress specific loggers that spam during initialization
+        request_logger = logging.getLogger('NewsSystem.Utils.RequestManager')
+        session_logger = logging.getLogger('NewsSystem.Utils.SessionManager')
+        browser_logger = logging.getLogger('NewsSystem.Utils.BrowserMimicry')
+        rate_logger = logging.getLogger('NewsSystem.Utils.RateLimiter')
+        
+        original_levels = {
+            'root': original_level,
+            'request': request_logger.level,
+            'session': session_logger.level,
+            'browser': browser_logger.level,
+            'rate': rate_logger.level
+        }
+        
+        request_logger.setLevel(logging.ERROR)
+        session_logger.setLevel(logging.ERROR)
+        browser_logger.setLevel(logging.ERROR)
+        rate_logger.setLevel(logging.ERROR)
         
         self.request_manager = RequestManager(safe_config)
+        
+        # Restore logging levels
+        logging.getLogger().setLevel(original_levels['root'])
+        request_logger.setLevel(original_levels['request'])
+        session_logger.setLevel(original_levels['session'])
+        browser_logger.setLevel(original_levels['browser'])
+        rate_logger.setLevel(original_levels['rate'])
         
         # Override blocking detection to be very conservative
         self.request_manager._is_blocked_response = self._conservative_blocking_check
@@ -64,10 +108,91 @@ class NewsScraperBase:
         
         self.state_file = config.STATE_DIR / f"{category}_last_run.json"
         self.last_run = self._load_state_data()
+        
+        # Progress tracking
+        self._progress_start_time = None
+        self._current_source = ""
+        self._current_article = ""
     
     def _conservative_blocking_check(self, response):
         """Very conservative blocking detection - only real HTTP errors."""
         return response.status_code in [403, 429, 503, 520, 521, 522, 524]
+    
+    def _print_progress(self, current, total, prefix="Progress", start_time=None, current_item="", stage=""):
+        """Print a dynamic progress bar on a single line"""
+        import sys
+        
+        if total == 0:
+            return
+            
+        percent = 100.0 * current / total
+        bar_length = 25  # Shorter bar for scraping
+        filled_length = int(bar_length * current / total)
+        bar = '█' * filled_length + '░' * (bar_length - filled_length)
+        
+        # Calculate time estimates
+        time_info = ""
+        if start_time and current > 0:
+            elapsed = time.time() - start_time
+            avg_time = elapsed / current
+            remaining = avg_time * (total - current)
+            
+            if remaining > 60:
+                time_info = f" | ETA: {remaining/60:.1f}m"
+            else:
+                time_info = f" | ETA: {remaining:.0f}s"
+        
+        # Format current item info
+        item_info = ""
+        if current_item:
+            # Truncate long names
+            if len(current_item) > 35:
+                current_item = current_item[:32] + "..."
+            item_info = f" | {current_item}"
+            
+        if stage:
+            item_info += f" ({stage})"
+        
+        # Create progress line
+        progress_line = f"\r{prefix}: {bar} {percent:5.1f}% ({current}/{total}){time_info}{item_info}"
+        
+        # Clear the line and print
+        sys.stdout.write('\033[K')  # Clear line
+        sys.stdout.write(progress_line)
+        sys.stdout.flush()
+        
+        # Print newline when complete
+        if current == total:
+            print()  # Move to next line when done
+    
+    def _timeout_handler(self, signum, frame):
+        """Handle timeout signal"""
+        raise TimeoutError("Operation timed out")
+    
+    def _with_timeout(self, func, timeout_seconds=60, *args, **kwargs):
+        """Execute function with timeout"""
+        result = {'value': None, 'error': None}
+        exception = {'error': None}
+        
+        def target():
+            try:
+                result['value'] = func(*args, **kwargs)
+            except Exception as e:
+                exception['error'] = e
+        
+        thread = threading.Thread(target=target)
+        thread.daemon = True
+        thread.start()
+        thread.join(timeout_seconds)
+        
+        if thread.is_alive():
+            # Thread is still running, operation timed out
+            return None, TimeoutError(f"Operation timed out after {timeout_seconds}s")
+        
+        if exception['error']:
+            return None, exception['error']
+            
+        return result['value'], None
     
     def get_date_based_folder(self):
         """Get date-based folder (same as original)."""
@@ -88,7 +213,7 @@ class NewsScraperBase:
             try:
                 with open(self.tracking_file, "r") as f:
                     tracked = json.load(f)
-                self.logger.info(f"Loaded tracking data with {len(tracked['urls'])} tracked articles")
+                # Loaded tracking data (count shown during scraping)
                 return tracked
             except:
                 self.logger.warning(f"Invalid tracking file {self.tracking_file}, creating new one")
@@ -100,7 +225,7 @@ class NewsScraperBase:
             try:
                 with open(self.state_file, "r") as f:
                     state = json.load(f)
-                self.logger.info(f"Loaded last run state with {len(state)} sources")
+                # Loaded state data (count shown during scraping)
                 return state
             except:
                 self.logger.warning(f"Invalid state file {self.state_file}, creating new one")
@@ -125,7 +250,7 @@ class NewsScraperBase:
         """Parse RSS feed (fixed timezone handling)."""
         import feedparser
         
-        self.logger.info(f"Parsing RSS for {source['name']}")
+        # RSS parsing (progress shown in progress bar)
         
         try:
             response = self.request_manager.get(source["rss_url"])
@@ -139,7 +264,7 @@ class NewsScraperBase:
                 self.logger.warning(f"No entries found in RSS feed for {source['name']}")
                 return
                 
-            self.logger.info(f"Found {len(feed.entries)} entries in RSS feed for {source['name']}")
+            # Found entries (count shown in progress bar)
             
             for entry in feed.entries:
                 try:
@@ -164,7 +289,7 @@ class NewsScraperBase:
                     
                     # Skip if already scraped
                     if entry.link in self.tracked_articles["urls"] or url_hash in self.tracked_articles["ids"]:
-                        self.logger.info(f"Skipping already scraped article: {entry.link}")
+                        # Skip already scraped (no logging to reduce spam)
                         continue
                         
                     # Generate unique ID for article
@@ -191,7 +316,7 @@ class NewsScraperBase:
                         if media.get("medium") == "image":
                             image_url = media.get("url")
                     
-                    self.logger.info(f"New article found: {entry.get('title', 'Unknown title')}")
+                    # Removed individual article logging to reduce spam
                     
                     yield {
                         "id": article_id,
@@ -215,7 +340,7 @@ class NewsScraperBase:
     def _parse_article(self, article_info):
         """Parse full article content."""
         url = article_info["url"]
-        self.logger.info(f"Fetching article: {url}")
+        # Article fetching (progress shown in progress bar)
         
         html = self._fetch_url(url)
         if not html:
@@ -248,7 +373,7 @@ class NewsScraperBase:
     
     def scrape(self, past_hours=None):
         """
-        Synchronous scrape method (backward compatible).
+        Synchronous scrape method with progress tracking and timeouts.
         """
         past_hours = past_hours or config.DEFAULT_SCRAPE_INTERVAL_HOURS
         
@@ -256,7 +381,7 @@ class NewsScraperBase:
         base_cutoff = datetime.now(timezone.utc) - timedelta(hours=past_hours)
         all_results = []
         
-        self.logger.info(f"Starting scrape for {self.category} (looking back {past_hours} hours)")
+        # Starting scrape (info shown in progress output)
         
         # Refresh the data directory for this run
         self.data_dir = self.get_date_based_folder()
@@ -265,52 +390,85 @@ class NewsScraperBase:
         if not self.news_sources:
             self.logger.warning(f"No news sources configured for {self.category}")
             return []
-            
-        self.logger.info(f"Processing {len(self.news_sources)} news sources")
         
-        for src in self.news_sources:
+        # Initialize progress tracking
+        total_sources = len(self.news_sources)
+        self._progress_start_time = time.time()
+        print(f"\n🔄 Scraping {self.category}: {total_sources} sources")
+        
+        for src_idx, src in enumerate(self.news_sources):
+            source_name = src["name"]
+            self._current_source = source_name
+            
+            # Update progress
+            self._print_progress(src_idx, total_sources, "Scraping", self._progress_start_time, 
+                               source_name, "RSS")
+            
             # Determine this source's cutoff
-            last_ts = self.last_run.get(src["name"])
+            last_ts = self.last_run.get(source_name)
             if last_ts:
                 try:
                     src_cutoff = max(base_cutoff, date_parser.parse(last_ts))
-                    self.logger.info(f"Using last run timestamp for {src['name']}: {last_ts}")
                 except (ValueError, TypeError):
-                    self.logger.warning(f"Invalid timestamp in last_run for {src['name']}: {last_ts}")
                     src_cutoff = base_cutoff
             else:
                 src_cutoff = base_cutoff
-                
-            self.logger.info(f"=== Source: {src['name']} (since {src_cutoff.isoformat()}) ===")
+            
             new_items = []
             
-            # Get articles from RSS
+            # Get articles from RSS with timeout
             if src.get("rss_url"):
-                for art in self._parse_rss(src, src_cutoff):
-                    new_items.append(art)
+                rss_result, error = self._with_timeout(
+                    lambda: list(self._parse_rss(src, src_cutoff)), 
+                    timeout_seconds=30  # 30s timeout for RSS parsing
+                )
+                
+                if error:
+                    self.logger.warning(f"RSS timeout/error for {source_name}: {error}")
+                    continue
+                    
+                if rss_result:
+                    new_items.extend(rss_result)
             
             if not new_items:
-                self.logger.info(f"No new articles found for {src['name']}")
                 continue
-                
-            self.logger.info(f"Found {len(new_items)} new articles from {src['name']}")
             
-            # Fetch full content for each article
-            for i, article in enumerate(new_items):
-                self.logger.info(f"Processing article {i+1}/{len(new_items)} from {src['name']}")
-                new_items[i] = self._parse_article(article)
+            # Process articles with progress and timeouts
+            successful_articles = []
+            total_articles = len(new_items)
+            
+            for art_idx, article in enumerate(new_items):
+                # Update progress for article processing
+                article_title = article.get('title', 'Unknown')[:30]
+                self._print_progress(src_idx, total_sources, "Scraping", self._progress_start_time, 
+                                   f"{source_name}: {article_title}", f"Article {art_idx+1}/{total_articles}")
                 
-                # Add to tracking list
+                # Parse article with timeout
+                parsed_article, error = self._with_timeout(
+                    self._parse_article, 
+                    timeout_seconds=45,  # 45s timeout per article
+                    article_info=article
+                )
+                
+                if error:
+                    self.logger.warning(f"Article timeout/error: {article_title[:20]}... - {error}")
+                    # Use original article data as fallback
+                    parsed_article = article
+                
+                # Add to tracking
                 self.tracked_articles["urls"].append(article["url"])
                 self.tracked_articles["ids"].append(article["id"])
+                successful_articles.append(parsed_article)
             
-            # Save new items
-            if new_items:
-                all_results.extend(new_items)
-                # Update last_run to the newest timestamp we just saw
-                latest_ts = max(item["timestamp"] for item in new_items)
-                self.last_run[src["name"]] = latest_ts
-                self.logger.info(f"Updated last run timestamp for {src['name']} to {latest_ts}")
+            # Save successful items
+            if successful_articles:
+                all_results.extend(successful_articles)
+                # Update last_run to the newest timestamp
+                latest_ts = max(item["timestamp"] for item in successful_articles)
+                self.last_run[source_name] = latest_ts
+        
+        # Final progress update
+        self._print_progress(total_sources, total_sources, "Scraping", self._progress_start_time)
         
         # Save state and tracking
         self._save_state()
@@ -319,15 +477,15 @@ class NewsScraperBase:
         # Save articles if any
         if all_results:
             self._save_articles(all_results)
-            self.logger.info(f"Saved {len(all_results)} articles to {self.data_dir}")
+            print(f"✅ Found {len(all_results)} new articles in {self.category}")
         else:
-            self.logger.info("No new articles found.")
+            print(f"ℹ️  No new articles found in {self.category}")
             
         return all_results
     
     def _save_state(self):
         """Save state data."""
-        self.logger.info(f"Saving state to {self.state_file}")
+        # Saving state data
         with open(self.state_file, "w") as f:
             json.dump(self.last_run, f, indent=2)
     
@@ -338,7 +496,7 @@ class NewsScraperBase:
             self.tracked_articles["urls"] = self.tracked_articles["urls"][-10000:]
             self.tracked_articles["ids"] = self.tracked_articles["ids"][-10000:]
         
-        self.logger.info(f"Saving tracking data to {self.tracking_file}")
+        # Saving tracking data
         with open(self.tracking_file, "w") as f:
             json.dump(self.tracked_articles, f, indent=2)
     
