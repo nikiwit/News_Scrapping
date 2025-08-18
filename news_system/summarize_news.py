@@ -21,6 +21,14 @@ except ImportError:
     sys.path.insert(0, parent_dir)
     import config
 
+def create_summary_output_path(article_count: int) -> Path:
+    """Create organized output path for summaries"""
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    folder_name = f"summaries_{article_count}_{timestamp}"
+    summary_dir = config.SUMMARIES_DIR / folder_name
+    summary_dir.mkdir(parents=True, exist_ok=True)
+    return summary_dir / "summaries.json"
+
 def main():
     """Summarize the latest scraped news"""
     print("🦙 Llama News Summarizer")
@@ -120,8 +128,8 @@ def main():
     
     print(f"📊 Total articles to summarize: {total_article_count}")
     
-    # Process only the latest directory
-    output_file = config.DATA_DIR / f"summaries_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    # Create organized output directory and file
+    output_file = create_summary_output_path(total_article_count)
     
     print(f"🔄 Processing articles from latest session ({len(all_time_dirs)} timestamps)")
     print(f"📊 Starting summarization of {total_article_count} articles...")

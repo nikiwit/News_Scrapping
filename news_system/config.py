@@ -8,9 +8,10 @@ from pathlib import Path
 BASE_DIR = Path(os.path.dirname(os.path.abspath(__file__)))
 DATA_DIR = BASE_DIR / "data"
 STATE_DIR = BASE_DIR / "state"
+SUMMARIES_DIR = BASE_DIR / "news_summaries"
 
 # Create necessary directories
-for dir_path in [DATA_DIR, STATE_DIR]:
+for dir_path in [DATA_DIR, STATE_DIR, SUMMARIES_DIR]:
     dir_path.mkdir(parents=True, exist_ok=True)
 
 # Create category directories

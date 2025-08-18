@@ -519,6 +519,14 @@ Please provide just the summary text, nothing else."""
             print(f"❌ Error creating markdown: {e}")
 
 
+def create_thermal_summary_output_path(article_count: int) -> Path:
+    """Create organized output path for thermal-optimized summaries"""
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    folder_name = f"thermal_summaries_{article_count}_{timestamp}"
+    summary_dir = config.SUMMARIES_DIR / folder_name
+    summary_dir.mkdir(parents=True, exist_ok=True)
+    return summary_dir / "thermal_optimized_summaries.json"
+
 def main():
     """Main function with thermal optimization"""
     print("🌡️ Thermal-Optimized Llama News Summarizer")
@@ -617,7 +625,7 @@ def main():
     print()
     
     # Process with thermal optimization
-    output_file = config.DATA_DIR / f"thermal_optimized_summaries_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
+    output_file = create_thermal_summary_output_path(total_article_count)
     
     results = summarizer.process_multiple_directories(all_time_dirs, output_file)
     

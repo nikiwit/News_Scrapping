@@ -813,29 +813,71 @@ Please provide just the summary text, nothing else."""
         return results
     
     def _save_results(self, results: List[Dict[str, Any]], output_file: Path):
-        """Save summarized results to file"""
+        """Save summarized results to organized folder structure"""
         try:
             output_file.parent.mkdir(parents=True, exist_ok=True)
             
-            # Create a comprehensive output format
+            # Create a comprehensive output format with enhanced metadata
+            success_count = len([r for r in results if r.get('processing_method') != 'failed'])
             output_data = {
-                "generated_at": datetime.now().isoformat(),
-                "model_used": self.model,
-                "total_articles": len(results),
+                "session_info": {
+                    "generated_at": datetime.now().isoformat(),
+                    "total_articles": len(results),
+                    "successful_summaries": success_count,
+                    "success_rate": f"{(success_count/len(results)*100):.1f}%" if results else "0%",
+                    "model_used": self.model,
+                    "folder_name": output_file.parent.name
+                },
                 "summaries": results
             }
             
+            # Save main JSON file
             with open(output_file, 'w', encoding='utf-8') as f:
                 json.dump(output_data, f, ensure_ascii=False, indent=2)
             
-            # Results saved (path shown in output)
+            # Create additional useful files in the same folder
+            folder = output_file.parent
             
-            # Also create a simplified markdown format
-            md_file = output_file.with_suffix('.md')
+            # 1. Create markdown summary
+            md_file = folder / "summary.md"
             self._create_markdown_summary(results, md_file)
+            
+            # 2. Create a simple text summary list
+            txt_file = folder / "article_list.txt"
+            self._create_text_list(results, txt_file)
+            
+            # 3. Create session info file
+            info_file = folder / "session_info.json"
+            with open(info_file, 'w', encoding='utf-8') as f:
+                json.dump(output_data["session_info"], f, ensure_ascii=False, indent=2)
             
         except Exception as e:
             logger.error(f"Error saving results: {e}")
+    
+    def _create_text_list(self, results: List[Dict[str, Any]], txt_file: Path):
+        """Create a simple text list of articles and summaries"""
+        try:
+            with open(txt_file, 'w', encoding='utf-8') as f:
+                f.write(f"News Articles Summary - {datetime.now().strftime('%Y-%m-%d %H:%M')}\n")
+                f.write("=" * 60 + "\n\n")
+                f.write(f"Total Articles: {len(results)}\n")
+                success_count = len([r for r in results if r.get('processing_method') != 'failed'])
+                f.write(f"Successfully Summarized: {success_count}\n")
+                f.write(f"Success Rate: {(success_count/len(results)*100):.1f}%\n\n")
+                
+                for i, result in enumerate(results, 1):
+                    original = result['original_article']
+                    f.write(f"{i}. {original.get('title', 'Untitled')}\n")
+                    f.write(f"   Source: {original.get('source', 'Unknown')}\n")
+                    f.write(f"   Category: {original.get('category', 'news')}\n")
+                    f.write(f"   URL: {original.get('url', '')}\n")
+                    f.write(f"   Summary: {result['summary']}\n")
+                    if result.get('error'):
+                        f.write(f"   Error: {result['error']}\n")
+                    f.write("\n" + "-" * 60 + "\n\n")
+                        
+        except Exception as e:
+            logger.error(f"Error creating text list: {e}")
     
     def _create_markdown_summary(self, results: List[Dict[str, Any]], md_file: Path):
         """Create a readable markdown summary"""
